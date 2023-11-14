@@ -1,0 +1,9 @@
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\bin\Debug\EMPPS.exe.config
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\bin\Debug\EMPPS.exe
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\bin\Debug\EMPPS.pdb
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.csproj.AssemblyReference.cache
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Properties.Resources.resources
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.csproj.GenerateResource.cache
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.csproj.CoreCompileInputs.cache
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.exe
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.pdb
