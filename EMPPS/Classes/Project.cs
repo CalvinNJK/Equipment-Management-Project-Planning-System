@@ -14,6 +14,7 @@ namespace EMPPS.Classes
         private string p_desc;
         private string p_leaderId;
         private string p_duration;
+        private string p_budget;
 
         // Setter & Getter
         public string P_ID
@@ -40,6 +41,12 @@ namespace EMPPS.Classes
         {
             get { return p_duration; }
             set { p_duration = value; }
+        }
+
+        public string P_Budget
+        {
+            get { return p_budget; }
+            set { p_budget = value; }
         }
 
         // Default Constructor
