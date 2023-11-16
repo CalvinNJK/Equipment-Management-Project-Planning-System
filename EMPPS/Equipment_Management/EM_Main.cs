@@ -19,7 +19,11 @@ namespace EMPPS.Equipment_Management
 
         private void EM_Main_Load(object sender, EventArgs e)
         {
-
+            Console.WriteLine("EM_MAIN SCREEN");
+            foreach (var item in FileHandling.equipmentList)
+            {
+                Console.WriteLine($"{item.E_Id} {item.E_Name} {item.E_Desc} {item.E_Cost} {item.E_Category} {item.E_Status}");
+            }
         }
     }
 }
