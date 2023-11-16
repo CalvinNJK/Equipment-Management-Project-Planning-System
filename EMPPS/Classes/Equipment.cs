@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace EMPPS.Classes
 {
@@ -49,6 +52,16 @@ namespace EMPPS.Classes
         }
 
         // Default Constructor
+        public Equipment()
+        {
+            this.e_Id = "";
+            this.e_Name = "";
+            this.e_Desc = "";
+            this.e_Cost = 0;
+            this.e_Category = "";
+            this.e_Status = -1;
+        }
+
         public Equipment(string id, string name, string desc, double cost, string cat, int status) 
         { 
             this.e_Id = id;
