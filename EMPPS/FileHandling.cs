@@ -20,7 +20,7 @@ namespace EMPPS
         // File Paths
         private static string equipment_path = @"C:\EMPPS\equipment.csv";
         private static string category_path = @"C:\EMPPS\category.csv";
-        private static string project_Path = @"C:\EMPPS\project.csv";
+        private static string project_path = @"C:\EMPPS\project.csv";
 
 
         // Initial Reading for EQUIPMENT.csv
@@ -103,7 +103,7 @@ namespace EMPPS
         {
             try
             {
-                using (StreamReader readerProjectCSV = new StreamReader(project_Path))
+                using (StreamReader readerProjectCSV = new StreamReader(project_path))
                 {
                     string headerLine = readerProjectCSV.ReadLine();   // To ignore the first (HEADER) line
 
@@ -181,7 +181,21 @@ namespace EMPPS
         // Save PROJECT to PROJECT.csv
         public static void WriteAllProject()
         {
-            // JIA WEN' CODES
+            File.WriteAllText(project_path, String.Empty);
+
+            using (StreamWriter writerProjectCSV = new StreamWriter(project_path))
+            {
+                Console.WriteLine(" --------------------");
+                Console.WriteLine("| Write PROJECT.csv |");
+                Console.WriteLine(" --------------------");
+                writerProjectCSV.WriteLine($"ID,NAME,DESCRIPTION,LEADER ID,DURATION,BUDGET");   // Project Header Line
+                foreach (var item in FileHandling.projectList)
+                {
+                    writerProjectCSV.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget}");
+                    Console.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget}");
+                }
+                Console.WriteLine("");
+            }
         }
     }
 }
