@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using EMPPS.Classes;
 
 namespace EMPPS
 {
@@ -36,7 +38,18 @@ namespace EMPPS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            // READ ALL THE INITIAL FILES HERE
+            FileHandling.ReadAllEquipment();
+            FileHandling.ReadAllCategory();
+            FileHandling.ReadAllProject();
+
+
+
+
 
         }
     }
+
+
 }
