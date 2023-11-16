@@ -44,6 +44,7 @@ namespace EMPPS
                 // Testing Purpose - Check List Input
                 Console.WriteLine(" --------------------");
                 Console.WriteLine("| Read EQUIPMENT.csv |");
+                Console.WriteLine($"| Items: {equipmentList.Count,-11} |");
                 Console.WriteLine(" --------------------");
                 foreach (var item in FileHandling.equipmentList)
                 {
@@ -79,6 +80,7 @@ namespace EMPPS
                 // Testing Purpose - Check List input
                 Console.WriteLine(" -------------------");
                 Console.WriteLine("| Read Category.csv |");
+                Console.WriteLine($"| Items: {categoryList.Count,-10} |");
                 Console.WriteLine(" -------------------");
                 foreach (var item in FileHandling.categoryList)
                 {
@@ -141,8 +143,8 @@ namespace EMPPS
                 {
                     writerEquipmentCSV.WriteLine($"{item.C_Index},{item.C_Name}");
                     Console.WriteLine($"{item.C_Index},{item.C_Name}");
-                    Console.WriteLine("");
                 }
+                Console.WriteLine("");
             }
         }
 
