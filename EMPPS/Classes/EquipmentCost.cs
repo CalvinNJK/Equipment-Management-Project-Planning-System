@@ -18,9 +18,9 @@ namespace EMPPS.Classes
 
         }
 
-        public void EquipmentCost(string e_cost, string e_duration)
+        public double EquipmentCost(string e_cost, string e_duration)
         {
-            return (e_cost * e_duration);
+            return (Double.Parse(e_cost) * Double.Parse(e_duration));
         }
     }
 }
