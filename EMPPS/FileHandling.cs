@@ -17,16 +17,17 @@ namespace EMPPS
         public static List<Category> categoryList = new List<Category>();
         public static List<Project> projectList = new List<Project>();
 
+        // File Paths
+        private static string equipment_path = @"C:\EMPPS\equipment.csv";
+        private static string category_path = @"C:\EMPPS\category.csv";
+
 
         // Initial Reading for EQUIPMENT.csv
         public static void ReadAllEquipment()
         {
-
-            string file_path = @"C:\EMPPS\equipment.csv";
-
             try
             {
-                using (StreamReader readerEquipmentCSV = new StreamReader(file_path))
+                using (StreamReader readerEquipmentCSV = new StreamReader(equipment_path))
                 {
                     string headerLine = readerEquipmentCSV.ReadLine();   // To ignore the first (HEADER) line
 
@@ -48,12 +49,9 @@ namespace EMPPS
         // Initial Reading for CATEGORY.csv
         public static void ReadAllCategory()
         {
-
-            string file_path = @"C:\EMPPS\category.csv";
-
             try
             {
-                using (StreamReader readerCategorytCSV = new StreamReader(file_path))
+                using (StreamReader readerCategorytCSV = new StreamReader(category_path))
                 {
                     string headerLine = readerCategorytCSV.ReadLine();   // To ignore the first (HEADER) line
 
