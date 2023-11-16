@@ -101,7 +101,37 @@ namespace EMPPS
         // Initial Reading for PROJECT.csv
         public static void ReadAllProject()
         {
-            // JIA WEN' CODES
+            try
+            {
+                using (StreamReader readerProjectCSV = new StreamReader(project_Path))
+                {
+                    string headerLine = readerProjectCSV.ReadLine();   // To ignore the first (HEADER) line
+
+                    string line;
+                    while ((line = readerProjectCSV.ReadLine()) != null)
+                    {
+                        string[] temp = line.Split(',');
+
+                        projectList.Add(new Project(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]));
+                    }
+                }
+
+                // Testing Purpose - Check List input
+                Console.WriteLine(" -------------------");
+                Console.WriteLine("| Read Project.csv |");
+                Console.WriteLine($"| Items: {projectList.Count,-10} |");
+                Console.WriteLine(" -------------------");
+                foreach (var item in FileHandling.projectList)
+                {
+                    Console.WriteLine($"{item.P_ID} {item.P_Name} {item.P_Desc} {item.P_LeaderId} {item.P_Duration} {item.P_Budget}");
+                }
+                Console.WriteLine("");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
 
