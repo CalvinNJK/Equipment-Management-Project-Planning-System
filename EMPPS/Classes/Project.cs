@@ -57,6 +57,7 @@ namespace EMPPS.Classes
             this.p_desc = desc;
             this.p_leaderId = leaderid;
             this.p_duration = duration;
+            this.p_budget = null;
         }
     }
 }
