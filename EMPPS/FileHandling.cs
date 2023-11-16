@@ -20,6 +20,7 @@ namespace EMPPS
         // File Paths
         private static string equipment_path = @"C:\EMPPS\equipment.csv";
         private static string category_path = @"C:\EMPPS\category.csv";
+        private static string project_Path = @"C:\EMPPS\project.csv";
 
 
         // Initial Reading for EQUIPMENT.csv
@@ -39,6 +40,17 @@ namespace EMPPS
                         equipmentList.Add(new Equipment(temp[0], temp[1], temp[2], Double.Parse(temp[3]), temp[4], Int32.Parse(temp[5])));
                     }
                 }
+
+                // Testing Purpose - Check List Input
+                Console.WriteLine(" --------------------");
+                Console.WriteLine("| Read EQUIPMENT.csv |");
+                Console.WriteLine(" --------------------");
+                foreach (var item in FileHandling.equipmentList)
+                {
+                    Console.WriteLine($"{item.E_Id} {item.E_Name} {item.E_Desc} {item.E_Cost} {item.E_Category} {item.E_Status}");
+                }
+                Console.WriteLine("");
+
             }
             catch (Exception ex)
             {
@@ -63,6 +75,17 @@ namespace EMPPS
                         categoryList.Add(new Category(Int32.Parse(temp[0]), temp[1]));
                     }
                 }
+
+                // Testing Purpose - Check List input
+                Console.WriteLine(" -------------------");
+                Console.WriteLine("| Read Category.csv |");
+                Console.WriteLine(" -------------------");
+                foreach (var item in FileHandling.categoryList)
+                {
+                    Console.WriteLine($"{item.C_Index} {item.C_Name} ");
+                }
+                Console.WriteLine("");
+
             }
             catch (Exception ex)
             {
@@ -80,5 +103,53 @@ namespace EMPPS
         }
 
 
+        // -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // Save EQUIPMENT to EQUIPMENT.csv
+        public static void WriteAllEquipment() 
+        {
+            File.WriteAllText(equipment_path, String.Empty);
+
+            using (StreamWriter writerEquipmentCSV = new StreamWriter(equipment_path))
+            {
+                Console.WriteLine(" ---------------------");
+                Console.WriteLine("| Write EQUIPMENT.csv |");
+                Console.WriteLine(" ---------------------");
+                writerEquipmentCSV.WriteLine($"ID,NAME,DESCRIPTION,COST,CATEGORY,STATUS");  // Equipment Header Line
+                foreach (var item in FileHandling.equipmentList)
+                {
+                    writerEquipmentCSV.WriteLine($"{item.E_Id},{item.E_Name},{item.E_Desc},{item.E_Cost},{item.E_Category},{item.E_Status}");
+                    Console.WriteLine($"{item.E_Id},{item.E_Name},{item.E_Desc},{item.E_Cost},{item.E_Category},{item.E_Status}");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+        // Save CATEGORY to CATEGORY.csv
+        public static void WriteAllCategory()
+        {
+            File.WriteAllText(category_path, String.Empty);
+
+            using (StreamWriter writerEquipmentCSV = new StreamWriter(category_path))
+            {
+                Console.WriteLine(" --------------------");
+                Console.WriteLine("| Write CATEGORY.csv |");
+                Console.WriteLine(" --------------------");
+                writerEquipmentCSV.WriteLine($"INDEX,CATEGORY NAME");   // Category Header Line
+                foreach (var item in FileHandling.categoryList)
+                {
+                    writerEquipmentCSV.WriteLine($"{item.C_Index},{item.C_Name}");
+                    Console.WriteLine($"{item.C_Index},{item.C_Name}");
+                    Console.WriteLine("");
+                }
+            }
+        }
+
+        // Save PROJECT to PROJECT.csv
+        public static void WriteAllProject()
+        {
+            // JIA WEN' CODES
+        }
     }
 }
