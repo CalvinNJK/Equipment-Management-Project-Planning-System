@@ -15,7 +15,7 @@ namespace EMPPS
         // List Array (Globally used)
         public static List<Equipment> equipmentList = new List<Equipment>();
         public static List<Category> categoryList = new List<Category>();
-        public static List<Project> ProjectList = new List<Project>();
+        public static List<Project> projectList = new List<Project>();
 
 
         // Initial Reading for EQUIPMENT.csv
