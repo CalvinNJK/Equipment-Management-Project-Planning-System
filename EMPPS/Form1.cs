@@ -24,16 +24,14 @@ namespace EMPPS
         private void button_em_Click(object sender, EventArgs e)
         {
             var em_win = new EM_Main();
-            em_win.Show();
-            this.Hide();
+            em_win.ShowDialog();
             
         }
 
         private void button_pp_Click(object sender, EventArgs e)
         {
             var pp_win = new PP_Main();
-            pp_win.Show();
-            this.Hide();
+            pp_win.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,10 +41,6 @@ namespace EMPPS
             FileHandling.ReadAllEquipment();
             FileHandling.ReadAllCategory();
             FileHandling.ReadAllProject();
-
-
-
-
 
         }
     }

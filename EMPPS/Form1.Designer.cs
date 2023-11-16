@@ -34,7 +34,7 @@
             // 
             // button_em
             // 
-            this.button_em.Location = new System.Drawing.Point(268, 112);
+            this.button_em.Location = new System.Drawing.Point(12, 12);
             this.button_em.Name = "button_em";
             this.button_em.Size = new System.Drawing.Size(260, 23);
             this.button_em.TabIndex = 0;
@@ -44,9 +44,9 @@
             // 
             // button_pp
             // 
-            this.button_pp.Location = new System.Drawing.Point(268, 172);
+            this.button_pp.Location = new System.Drawing.Point(12, 41);
             this.button_pp.Name = "button_pp";
-            this.button_pp.Size = new System.Drawing.Size(245, 23);
+            this.button_pp.Size = new System.Drawing.Size(260, 23);
             this.button_pp.TabIndex = 1;
             this.button_pp.Text = "Project Planning";
             this.button_pp.UseVisualStyleBackColor = true;
@@ -56,10 +56,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(284, 334);
             this.Controls.Add(this.button_pp);
             this.Controls.Add(this.button_em);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Equipment Management & Project Planning Systen";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
