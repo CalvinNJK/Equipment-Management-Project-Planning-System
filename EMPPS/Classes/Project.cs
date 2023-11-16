@@ -50,14 +50,14 @@ namespace EMPPS.Classes
         }
 
         // Default Constructor
-        public Project(string id, string name, string desc, string leaderid, string duration)
+        public Project(string id, string name, string desc, string leaderid, string duration, string budget)
         {
             this.p_id = id;
             this.p_name = name;
             this.p_desc = desc;
             this.p_leaderId = leaderid;
             this.p_duration = duration;
-            this.p_budget = null;
+            this.p_budget = budget;
         }
     }
 }
