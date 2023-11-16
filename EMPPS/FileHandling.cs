@@ -49,7 +49,7 @@ namespace EMPPS
         public static void ReadAllCategory()
         {
 
-            string file_path = @"C:\EMPPS\Category.csv";
+            string file_path = @"C:\EMPPS\category.csv";
 
             try
             {
