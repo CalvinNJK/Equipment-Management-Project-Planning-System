@@ -1,6 +1,6 @@
 ﻿namespace EMPPS.Equipment_Management
 {
-    partial class EquipmentModify
+    partial class FormEquipmentModify
     {
         /// <summary>
         /// Required designer variable.
@@ -166,7 +166,7 @@
             this.label1.Text = "MODIFY EQUIPMENT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // EquipmentModify
+            // FormEquipmentModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,9 +183,10 @@
             this.Controls.Add(this.l_name);
             this.Controls.Add(this.l_id);
             this.Controls.Add(this.label1);
-            this.Name = "EquipmentModify";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "FormEquipmentModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EquipmentModify";
+            this.Text = "Modify Equipment";
             this.Load += new System.EventHandler(this.EquipmentModify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

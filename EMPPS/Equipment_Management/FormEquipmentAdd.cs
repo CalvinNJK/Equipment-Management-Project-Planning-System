@@ -12,13 +12,13 @@ using static System.Windows.Forms.ListView;
 
 namespace EMPPS.Equipment_Management
 {
-    public partial class EquipmentAdd : Form
+    public partial class FormEquipmentAdd : Form
     {
         // New Equipment
         Equipment newItem = new Equipment();
 
 
-        public EquipmentAdd()
+        public FormEquipmentAdd()
         {
             InitializeComponent();
         }
@@ -54,11 +54,10 @@ namespace EMPPS.Equipment_Management
             newItem.E_Desc = textBox_desc.Text;
             newItem.E_Cost = Double.Parse(textBox_cost.Text);
             newItem.E_Category = Int32.Parse(comboBox_cat.SelectedValue.ToString());
-            Console.WriteLine("// EQUIPMENT ADDED: " + newItem.ToString());
 
             // Add the new equipement to equipmentList
             FileHandling.equipmentList.Add(newItem);
-
+            Console.WriteLine("// EQUIPMENT ADDED: " + newItem.ToString());
 
             FileHandling.WriteAllEquipment();
             this.Close();

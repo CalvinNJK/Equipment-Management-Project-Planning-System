@@ -1,6 +1,6 @@
 ﻿namespace EMPPS.Equipment_Management
 {
-    partial class EM_Main
+    partial class FormEM_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -47,6 +47,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEquipmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categorizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editCategToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCategoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ch_CostPerDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -82,7 +86,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(735, 507);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Inventory";
+            this.tabPage1.Text = "Equipment Inventory";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // b_eAdd
@@ -140,8 +144,9 @@
             this.ch_ID,
             this.ch_Name,
             this.ch_Desc,
-            this.ch_Cost,
             this.ch_Category,
+            this.ch_Cost,
+            this.ch_CostPerDay,
             this.ch_Status});
             this.listView_eq.Cursor = System.Windows.Forms.Cursors.Default;
             this.listView_eq.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -157,12 +162,12 @@
             // ch_ID
             // 
             this.ch_ID.Text = "ID";
-            this.ch_ID.Width = 64;
+            this.ch_ID.Width = 72;
             // 
             // ch_Name
             // 
             this.ch_Name.Text = "Name";
-            this.ch_Name.Width = 92;
+            this.ch_Name.Width = 77;
             // 
             // ch_Desc
             // 
@@ -172,12 +177,12 @@
             // ch_Cost
             // 
             this.ch_Cost.Text = "Cost";
-            this.ch_Cost.Width = 103;
+            this.ch_Cost.Width = 90;
             // 
             // ch_Category
             // 
             this.ch_Category.Text = "Category";
-            this.ch_Category.Width = 180;
+            this.ch_Category.Width = 84;
             // 
             // ch_Status
             // 
@@ -205,7 +210,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addCategoryToolStripMenuItem});
+            this.addCategoryToolStripMenuItem,
+            this.categorizationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(743, 24);
@@ -217,14 +223,42 @@
             this.addCategoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addEquipmentToolStripMenuItem});
             this.addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
-            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.addCategoryToolStripMenuItem.Text = "Inventory";
+            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.addCategoryToolStripMenuItem.Text = "Equipment Inventory";
             // 
             // addEquipmentToolStripMenuItem
             // 
             this.addEquipmentToolStripMenuItem.Name = "addEquipmentToolStripMenuItem";
             this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.addEquipmentToolStripMenuItem.Text = "Add Equipment";
+            this.addEquipmentToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentToolStripMenuItem_Click);
+            // 
+            // categorizationToolStripMenuItem
+            // 
+            this.categorizationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editCategToolStripMenuItem,
+            this.addCategoryToolStripMenuItem1});
+            this.categorizationToolStripMenuItem.Name = "categorizationToolStripMenuItem";
+            this.categorizationToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.categorizationToolStripMenuItem.Text = "Categorization";
+            // 
+            // editCategToolStripMenuItem
+            // 
+            this.editCategToolStripMenuItem.Name = "editCategToolStripMenuItem";
+            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.editCategToolStripMenuItem.Text = "Configuration";
+            this.editCategToolStripMenuItem.Click += new System.EventHandler(this.editCategToolStripMenuItem_Click);
+            // 
+            // addCategoryToolStripMenuItem1
+            // 
+            this.addCategoryToolStripMenuItem1.Name = "addCategoryToolStripMenuItem1";
+            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.addCategoryToolStripMenuItem1.Text = "Add Category";
+            // 
+            // ch_CostPerDay
+            // 
+            this.ch_CostPerDay.Text = "Cost Per Day";
+            this.ch_CostPerDay.Width = 147;
             // 
             // equipmentBindingSource
             // 
@@ -238,7 +272,7 @@
             // 
             this.fileHandlingBindingSource1.DataSource = typeof(EMPPS.FileHandling);
             // 
-            // EM_Main
+            // FormEM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,7 +283,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EM_Main";
+            this.Name = "FormEM_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Equipment Management";
             this.Load += new System.EventHandler(this.EM_Main_Load);
@@ -289,5 +323,9 @@
         private System.Windows.Forms.Button b_eModify;
         private System.Windows.Forms.Button b_eAdd;
         private System.Windows.Forms.ToolStripMenuItem addEquipmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categorizationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editCategToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCategoryToolStripMenuItem1;
+        private System.Windows.Forms.ColumnHeader ch_CostPerDay;
     }
 }

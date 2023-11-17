@@ -23,7 +23,7 @@ namespace EMPPS
 
         private void button_em_Click(object sender, EventArgs e)
         {
-            var em_win = new EM_Main();
+            var em_win = new FormEM_Main();
             em_win.ShowDialog();
             
         }

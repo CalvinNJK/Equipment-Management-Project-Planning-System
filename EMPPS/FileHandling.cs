@@ -37,7 +37,7 @@ namespace EMPPS
                     {
                         string[] temp = line.Split(',');
 
-                        equipmentList.Add(new Equipment(temp[0], temp[1], temp[2], Double.Parse(temp[3]), Int32.Parse(temp[4]), Int32.Parse(temp[5])));
+                        equipmentList.Add(new Equipment(temp[0], temp[1], temp[2], Double.Parse(temp[3]), Double.Parse(temp[4]), Int32.Parse(temp[5]), Int32.Parse(temp[6])));
                     }
                 }
 
@@ -48,7 +48,7 @@ namespace EMPPS
                 Console.WriteLine(" --------------------");
                 foreach (var item in FileHandling.equipmentList)
                 {
-                    Console.WriteLine($"{item.E_Id} {item.E_Name} {item.E_Desc} {item.E_Cost} {item.E_Category} {item.E_Status}");
+                    Console.WriteLine($"{item.E_Id} {item.E_Name} {item.E_Desc} {item.E_Cost} {item.E_CostPerDay} {item.E_Category} {item.E_Status}");
                 }
                 Console.WriteLine("");
 
@@ -148,11 +148,11 @@ namespace EMPPS
                 Console.WriteLine(" ---------------------");
                 Console.WriteLine("| Write EQUIPMENT.csv |");
                 Console.WriteLine(" ---------------------");
-                writerEquipmentCSV.WriteLine($"ID,NAME,DESCRIPTION,COST,CATEGORY,STATUS");  // Equipment Header Line
+                writerEquipmentCSV.WriteLine($"ID,NAME,DESCRIPTION,COST,COST PER DAY,CATEGORY,STATUS");  // Equipment Header Line
                 foreach (var item in FileHandling.equipmentList)
                 {
-                    writerEquipmentCSV.WriteLine($"{item.E_Id},{item.E_Name},{item.E_Desc},{item.E_Cost},{item.E_Category},{item.E_Status}");
-                    Console.WriteLine($"{item.E_Id},{item.E_Name},{item.E_Desc},{item.E_Cost},{item.E_Category},{item.E_Status}");
+                    writerEquipmentCSV.WriteLine($"{item.E_Id},{item.E_Name},{item.E_Desc},{item.E_Cost},{item.E_CostPerDay},{item.E_Category},{item.E_Status}");
+                    Console.WriteLine($"{item.E_Id},{item.E_Name},{item.E_Desc},{item.E_Cost},{item.E_CostPerDay},{item.E_Category},{item.E_Status}");
                 }
                 Console.WriteLine("");
             }

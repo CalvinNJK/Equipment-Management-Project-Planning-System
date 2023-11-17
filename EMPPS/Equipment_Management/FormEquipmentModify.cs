@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace EMPPS.Equipment_Management
 {
-    public partial class EquipmentModify : Form
+    public partial class FormEquipmentModify : Form
     {
         // ID passed from ListView_equipment
         private string id;
 
-        public EquipmentModify(string id)
+        public FormEquipmentModify(string id)
         {
             InitializeComponent();
 

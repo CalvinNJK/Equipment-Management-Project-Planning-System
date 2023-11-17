@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace EMPPS.Equipment_Management
 {
-    public partial class EM_Main : Form
+    public partial class FormEM_Main : Form
     {
-        public EM_Main()
+        public FormEM_Main()
         {
             InitializeComponent();
 
@@ -29,6 +29,27 @@ namespace EMPPS.Equipment_Management
 
 
 
+
+
+
+        //
+        // Menu
+        //
+
+        private void addEquipmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ea_win = new FormEquipmentAdd();
+            ea_win.ShowDialog();
+            listView_eq.Items.Clear();
+            LoadListView_eq();
+        }
+        private void editCategToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cc_win = new FormCategory();
+            cc_win.ShowDialog();
+            //listView_eq.Items.Clear();
+            //LoadListView_eq();
+        }
 
 
 
@@ -55,10 +76,24 @@ namespace EMPPS.Equipment_Management
 
 
 
+
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            b_eModify.Enabled = true;
-            b_eDelete.Enabled = true;
+            // Toggle enable when item selected
+            if (listView_eq.SelectedItems.Count == 0)
+            {
+                b_eModify.Enabled = false;
+                b_eDelete.Enabled = false;
+            }
+            else
+            {
+                b_eModify.Enabled = true;
+                b_eDelete.Enabled = true;
+            }
+
+
+            
         }
 
         private void listView_eq_MouseDoubleClick(object sender, EventArgs e)
@@ -75,7 +110,7 @@ namespace EMPPS.Equipment_Management
 
         private void b_eAdd_Click(object sender, EventArgs e)
         {
-            var ea_win = new EquipmentAdd();
+            var ea_win = new FormEquipmentAdd();
             ea_win.ShowDialog();
             listView_eq.Items.Clear();
             LoadListView_eq();
@@ -83,7 +118,7 @@ namespace EMPPS.Equipment_Management
 
         private void b_eModify_Click(object sender, EventArgs e)
         {
-            var em_win = new EquipmentModify(listView_eq.SelectedItems[0].Text.ToString());
+            var em_win = new FormEquipmentModify(listView_eq.SelectedItems[0].Text.ToString());
             em_win.ShowDialog();
             listView_eq.Items.Clear();
             LoadListView_eq();
@@ -101,6 +136,7 @@ namespace EMPPS.Equipment_Management
                     if (item.E_Status == 0 || item.E_Status == 2)
                     {
                         FileHandling.equipmentList.Remove(item);
+                        FileHandling.WriteAllEquipment();
                         Console.WriteLine("// Removed selected equipement: " + listView_eq.SelectedItems[0].Text.ToString());
                     }
                     else
@@ -116,7 +152,7 @@ namespace EMPPS.Equipment_Management
             b_eModify.Enabled = false;
             b_eDelete.Enabled = false;
 
-            FileHandling.WriteAllEquipment();
+            
         }
 
 
@@ -154,7 +190,6 @@ namespace EMPPS.Equipment_Management
                 ListViewItem lvItem = new ListViewItem(item.E_Id);
                 lvItem.SubItems.Add(item.E_Name);
                 lvItem.SubItems.Add(item.E_Desc);
-                lvItem.SubItems.Add(item.E_Cost.ToString("0.00"));
                 foreach (var ci in FileHandling.categoryList)
                 {
                     if (item.E_Category == ci.C_Index)
@@ -163,6 +198,8 @@ namespace EMPPS.Equipment_Management
                     }
 
                 }
+                lvItem.SubItems.Add(item.E_Cost.ToString("0.00"));
+                lvItem.SubItems.Add(item.E_CostPerDay.ToString("0.00"));
                 lvItem.SubItems.Add(item.E_Status.ToString());
                 listView_eq.Items.Add(lvItem);
             }
