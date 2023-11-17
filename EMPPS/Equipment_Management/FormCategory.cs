@@ -16,11 +16,18 @@ namespace EMPPS.Equipment_Management
         {
             InitializeComponent();
         }
+
         private void FormCategory_Load(object sender, EventArgs e)
         {
             LoadListView_c();
         }
 
+
+
+
+        //
+        // ListView
+        //
         private void listView_c_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Toggle enable when item selected
@@ -37,6 +44,12 @@ namespace EMPPS.Equipment_Management
             
         }
 
+
+
+        
+        //
+        // Buttons
+        //
         private void b_cAdd_Click(object sender, EventArgs e)
         {
             var ca_win = new FormCategoryAdd();
@@ -47,7 +60,12 @@ namespace EMPPS.Equipment_Management
 
         private void b_cModify_Click(object sender, EventArgs e)
         {
-            
+            var cm_win = new FormCategoryModify(listView_c.SelectedItems[0].SubItems[1].Text);
+            cm_win.ShowDialog();
+            listView_c.Items.Clear();
+            LoadListView_c();
+            b_cModify.Enabled = false;
+            b_cDelete.Enabled = false;
         }
 
         private void b_cDelete_Click(object sender, EventArgs e)
@@ -71,8 +89,8 @@ namespace EMPPS.Equipment_Management
                     if (string.Compare(item.C_Index.ToString(), listView_c.SelectedItems[0].SubItems[1].Text) == 0)
                     { 
                         FileHandling.categoryList.Remove(item);
-                        FileHandling.WriteAllCategory();
                         Console.WriteLine("// Removed selected category: " + listView_c.SelectedItems[0].SubItems[1].Text + " " + listView_c.SelectedItems[0].Text);
+                        FileHandling.WriteAllCategory();
                         break;
                     }
                 }
@@ -91,10 +109,7 @@ namespace EMPPS.Equipment_Management
 
 
 
-
-
-
-
+        // Load all the Categories into Table
         private void LoadListView_c()
         {
             foreach (var item in FileHandling.categoryList)
@@ -104,7 +119,5 @@ namespace EMPPS.Equipment_Management
                 listView_c.Items.Add(lvItem);
             }
         }
-
-        
     }
 }

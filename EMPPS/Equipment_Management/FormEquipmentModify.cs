@@ -55,12 +55,18 @@ namespace EMPPS.Equipment_Management
                         }
 
                     }
+                    break;
                 }
             }
         }
 
         private void button_Modify_Click(object sender, EventArgs e)
         {
+
+            //
+            //  DATA VALIDATION NEED!!!!!!!!
+            //
+
             foreach (var item in FileHandling.equipmentList)
             {
                 if (string.Compare(id, item.E_Id) == 0)

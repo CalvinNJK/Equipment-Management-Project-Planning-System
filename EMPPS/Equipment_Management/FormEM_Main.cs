@@ -35,7 +35,6 @@ namespace EMPPS.Equipment_Management
         //
         // Menu
         //
-
         private void addEquipmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var ea_win = new FormEquipmentAdd();
@@ -47,9 +46,18 @@ namespace EMPPS.Equipment_Management
         {
             var cc_win = new FormCategory();
             cc_win.ShowDialog();
-            //listView_eq.Items.Clear();
-            //LoadListView_eq();
         }
+
+        private void addCategoryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var ca_win = new FormCategoryAdd();
+            ca_win.ShowDialog();
+        }
+
+
+
+
+
 
 
 
@@ -78,6 +86,15 @@ namespace EMPPS.Equipment_Management
 
 
 
+
+
+
+
+
+
+        //
+        // ListView
+        //
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Toggle enable when item selected
@@ -105,9 +122,9 @@ namespace EMPPS.Equipment_Management
 
 
 
-
-
-
+        //
+        // Buttons
+        //
         private void b_eAdd_Click(object sender, EventArgs e)
         {
             var ea_win = new FormEquipmentAdd();
@@ -136,8 +153,8 @@ namespace EMPPS.Equipment_Management
                     if (item.E_Status == 0 || item.E_Status == 2)
                     {
                         FileHandling.equipmentList.Remove(item);
-                        FileHandling.WriteAllEquipment();
                         Console.WriteLine("// Removed selected equipement: " + listView_eq.SelectedItems[0].Text.ToString());
+                        FileHandling.WriteAllEquipment();
                     }
                     else
                     {
@@ -151,38 +168,13 @@ namespace EMPPS.Equipment_Management
             LoadListView_eq();
             b_eModify.Enabled = false;
             b_eDelete.Enabled = false;
-
-            
         }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //
         // Load all the Equipments into Table
+        //
         private void LoadListView_eq()
         {
             foreach (var item in FileHandling.equipmentList)

@@ -24,11 +24,11 @@ namespace EMPPS.Classes
             set { eu_cost = value; }
         }
 
-        public string EU_Duration
+        /*public string EU_Duration
         {
             get { return e_duration; }
             set { e_duration = value; }
 
-        }
+        }*/
     }
 }

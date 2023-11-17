@@ -80,6 +80,12 @@
     <Compile Include="Equipment_Management\FormCategoryAdd.Designer.cs">
       <DependentUpon>FormCategoryAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Equipment_Management\FormCategoryModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment_Management\FormCategoryModify.Designer.cs">
+      <DependentUpon>FormCategoryModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipment_Management\FormEM_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipment_Management\FormCategoryAdd.resx">
       <DependentUpon>FormCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment_Management\FormCategoryModify.resx">
+      <DependentUpon>FormCategoryModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Equipment_Management\FormEM_Main.resx">
       <DependentUpon>FormEM_Main.cs</DependentUpon>

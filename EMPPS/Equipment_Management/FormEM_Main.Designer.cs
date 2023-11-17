@@ -39,8 +39,9 @@
             this.ch_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_Cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_Cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_CostPerDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -50,7 +51,6 @@
             this.categorizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCategToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ch_CostPerDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -174,15 +174,20 @@
             this.ch_Desc.Text = "Description";
             this.ch_Desc.Width = 140;
             // 
+            // ch_Category
+            // 
+            this.ch_Category.Text = "Category";
+            this.ch_Category.Width = 84;
+            // 
             // ch_Cost
             // 
             this.ch_Cost.Text = "Cost";
             this.ch_Cost.Width = 90;
             // 
-            // ch_Category
+            // ch_CostPerDay
             // 
-            this.ch_Category.Text = "Category";
-            this.ch_Category.Width = 84;
+            this.ch_CostPerDay.Text = "Cost Per Day";
+            this.ch_CostPerDay.Width = 147;
             // 
             // ch_Status
             // 
@@ -245,20 +250,16 @@
             // editCategToolStripMenuItem
             // 
             this.editCategToolStripMenuItem.Name = "editCategToolStripMenuItem";
-            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editCategToolStripMenuItem.Text = "Configuration";
             this.editCategToolStripMenuItem.Click += new System.EventHandler(this.editCategToolStripMenuItem_Click);
             // 
             // addCategoryToolStripMenuItem1
             // 
             this.addCategoryToolStripMenuItem1.Name = "addCategoryToolStripMenuItem1";
-            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.addCategoryToolStripMenuItem1.Text = "Add Category";
-            // 
-            // ch_CostPerDay
-            // 
-            this.ch_CostPerDay.Text = "Cost Per Day";
-            this.ch_CostPerDay.Width = 147;
+            this.addCategoryToolStripMenuItem1.Click += new System.EventHandler(this.addCategoryToolStripMenuItem1_Click);
             // 
             // equipmentBindingSource
             // 

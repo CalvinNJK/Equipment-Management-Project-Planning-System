@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace EMPPS.Classes
 {
@@ -30,6 +31,12 @@ namespace EMPPS.Classes
         {
             this.c_Index = cc_Index;
             this.c_Name = cc_Name;
+        }
+
+        public override string ToString()
+        {
+            return ($"{C_Index},{C_Name}");
+
         }
     }
 }

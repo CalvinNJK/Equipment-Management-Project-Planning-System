@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,11 @@ namespace EMPPS.Equipment_Management
             InitializeComponent();
         }
 
+        private void FormCategoryAdd_Load(object sender, EventArgs e)
+        {
+            Console.WriteLine("\n// Add Category Window Created");
+        }
+
         private void button_Add_Click(object sender, EventArgs e)
         {
             bool check = false;
@@ -28,6 +34,17 @@ namespace EMPPS.Equipment_Management
                 MessageBox.Show("Category name cannot be blank.", "Warning", 0, MessageBoxIcon.Warning);
                 check = true;
             }
+            /*else if(Regex.IsMatch(textBox_cName.Text, "/^[A-Za-z\\s]*$/") == false)
+            {
+                MessageBox.Show("Category name cannot other than alphabets.", "Warning", 0, MessageBoxIcon.Warning);
+                check = true;
+            }*/
+
+
+            //
+            //  DATA VALIDATION NEED!!!!!!!!
+            //
+
 
             if (check == false)
             {
@@ -42,5 +59,7 @@ namespace EMPPS.Equipment_Management
             }
 
         }
+
+        
     }
 }

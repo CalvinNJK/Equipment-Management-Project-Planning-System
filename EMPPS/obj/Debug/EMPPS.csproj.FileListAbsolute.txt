@@ -32,3 +32,4 @@ C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMP
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.FormEquipmentModify.resources
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.FormCategory.resources
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.FormCategoryAdd.resources
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.FormCategoryModify.resources

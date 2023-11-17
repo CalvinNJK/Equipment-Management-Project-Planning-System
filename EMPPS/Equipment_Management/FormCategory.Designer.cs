@@ -43,21 +43,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 24);
+            this.label1.Location = new System.Drawing.Point(75, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 25);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Category Configuration";
+            this.label1.Size = new System.Drawing.Size(165, 50);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Categorization\r\nConfiguration";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // b_cAdd
             // 
             this.b_cAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_cAdd.Location = new System.Drawing.Point(35, 446);
+            this.b_cAdd.Location = new System.Drawing.Point(35, 462);
             this.b_cAdd.Name = "b_cAdd";
             this.b_cAdd.Size = new System.Drawing.Size(97, 38);
-            this.b_cAdd.TabIndex = 35;
+            this.b_cAdd.TabIndex = 40;
             this.b_cAdd.Text = "Add";
             this.b_cAdd.UseVisualStyleBackColor = true;
             this.b_cAdd.Click += new System.EventHandler(this.b_cAdd_Click);
@@ -67,10 +67,10 @@
             this.b_cDelete.Enabled = false;
             this.b_cDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_cDelete.ForeColor = System.Drawing.Color.Red;
-            this.b_cDelete.Location = new System.Drawing.Point(182, 490);
+            this.b_cDelete.Location = new System.Drawing.Point(182, 506);
             this.b_cDelete.Name = "b_cDelete";
             this.b_cDelete.Size = new System.Drawing.Size(97, 38);
-            this.b_cDelete.TabIndex = 34;
+            this.b_cDelete.TabIndex = 39;
             this.b_cDelete.Text = "Delete";
             this.b_cDelete.UseVisualStyleBackColor = true;
             this.b_cDelete.Click += new System.EventHandler(this.b_cDelete_Click);
@@ -80,10 +80,10 @@
             this.b_cModify.Enabled = false;
             this.b_cModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_cModify.ForeColor = System.Drawing.Color.Green;
-            this.b_cModify.Location = new System.Drawing.Point(182, 446);
+            this.b_cModify.Location = new System.Drawing.Point(182, 462);
             this.b_cModify.Name = "b_cModify";
             this.b_cModify.Size = new System.Drawing.Size(97, 38);
-            this.b_cModify.TabIndex = 33;
+            this.b_cModify.TabIndex = 38;
             this.b_cModify.Text = "Modify";
             this.b_cModify.UseVisualStyleBackColor = true;
             this.b_cModify.Click += new System.EventHandler(this.b_cModify_Click);
@@ -95,10 +95,10 @@
             this.listView_c.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_c.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.listView_c.HideSelection = false;
-            this.listView_c.Location = new System.Drawing.Point(35, 72);
+            this.listView_c.Location = new System.Drawing.Point(35, 88);
             this.listView_c.Name = "listView_c";
             this.listView_c.Size = new System.Drawing.Size(244, 358);
-            this.listView_c.TabIndex = 32;
+            this.listView_c.TabIndex = 37;
             this.listView_c.UseCompatibleStateImageBehavior = false;
             this.listView_c.View = System.Windows.Forms.View.Details;
             this.listView_c.SelectedIndexChanged += new System.EventHandler(this.listView_c_SelectedIndexChanged);
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 542);
+            this.ClientSize = new System.Drawing.Size(315, 567);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.b_cAdd);
             this.Controls.Add(this.b_cDelete);
@@ -123,7 +123,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormCategory";
+            this.Text = "Categorization Configuration";
             this.Load += new System.EventHandler(this.FormCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

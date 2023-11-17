@@ -49,6 +49,11 @@ namespace EMPPS.Equipment_Management
 
         private void button_Add_Click(object sender, EventArgs e)
         {
+
+            //
+            //  DATA VALIDATION NEED!!!!!!!!
+            //
+
             newItem.E_Id = textBox_id.Text;
             newItem.E_Name = textBox_name.Text;
             newItem.E_Desc = textBox_desc.Text;
