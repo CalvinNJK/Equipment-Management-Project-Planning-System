@@ -86,5 +86,20 @@ namespace EMPPS.Project_Planning
         {
             timer1.Start();
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView_eq_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

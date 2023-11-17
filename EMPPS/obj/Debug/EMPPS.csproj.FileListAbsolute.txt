@@ -27,3 +27,5 @@ C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\o
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.EquipmentAdd.resources
 >>>>>>> Stashed changes
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.EquipmentModify.resources
+C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\obj\Debug\EMPPS.Equipment_Management.EquipmentAdd.resources
+C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\obj\Debug\EMPPS.Equipment_Management.EquipmentModify.resources
