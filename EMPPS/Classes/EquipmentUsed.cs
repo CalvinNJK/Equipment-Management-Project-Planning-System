@@ -8,9 +8,15 @@ namespace EMPPS.Classes
 {
     internal class EquipmentUsed
     {
+        private string p_id;
         private string eu_id;
         private string eu_cost;
         private string eu_duration;
+
+        public string P_ID
+        {
+
+        }
 
         public string EU_ID
         {
