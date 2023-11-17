@@ -44,8 +44,8 @@ namespace EMPPS.Classes
 
         public double E_CostPerDay
         {
-            get { return e_Cost; }
-            set { e_Cost = value; }
+            get { return e_CostPerDay; }
+            set { e_CostPerDay = value; }
         }
 
         public int E_Category

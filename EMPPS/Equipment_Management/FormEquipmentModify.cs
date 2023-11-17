@@ -44,6 +44,7 @@ namespace EMPPS.Equipment_Management
                     textBox_name.Text = item.E_Name;
                     textBox_desc.Text = item.E_Desc;
                     textBox_cost.Text = item.E_Cost.ToString("0.00");
+                    textBox_costPerDay.Text = item.E_CostPerDay.ToString("0.00");
 
                     foreach (var ci in FileHandling.categoryList)
                     {
@@ -66,8 +67,9 @@ namespace EMPPS.Equipment_Management
                 {
                     item.E_Name = textBox_name.Text;
                     item.E_Desc = textBox_desc.Text;
-                    item.E_Cost = Double.Parse(textBox_cost.Text);
                     item.E_Category = Int32.Parse(comboBox_cat.SelectedValue.ToString());
+                    item.E_Cost = Double.Parse(textBox_cost.Text);
+                    item.E_CostPerDay = Double.Parse(textBox_costPerDay.Text);
                     Console.WriteLine("// EQUIPMENT MODIFIED: " + item.ToString());
                     break;
                 }
