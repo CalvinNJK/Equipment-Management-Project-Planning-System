@@ -17,10 +17,5 @@ namespace EMPPS.Classes
             set { e_duration = value; }
 
         }
-
-        public double EquipmentCost(string e_cost, string e_duration)
-        {
-            return (Double.Parse(e_cost) * Double.Parse(e_duration));
-        }
     }
 }
