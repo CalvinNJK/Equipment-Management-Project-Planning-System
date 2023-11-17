@@ -37,7 +37,7 @@ namespace EMPPS
                     {
                         string[] temp = line.Split(',');
 
-                        equipmentList.Add(new Equipment(temp[0], temp[1], temp[2], Double.Parse(temp[3]), temp[4], Int32.Parse(temp[5])));
+                        equipmentList.Add(new Equipment(temp[0], temp[1], temp[2], Double.Parse(temp[3]), Int32.Parse(temp[4]), Int32.Parse(temp[5])));
                     }
                 }
 

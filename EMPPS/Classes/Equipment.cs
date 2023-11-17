@@ -16,7 +16,7 @@ namespace EMPPS.Classes
         private string e_Name;
         private string e_Desc;
         private double e_Cost;
-        private string e_Category;
+        private int e_Category;
         private int e_Status;
 
         // Setter & Getter
@@ -40,7 +40,7 @@ namespace EMPPS.Classes
             get { return e_Cost; }
             set { e_Cost = value; }
         }
-        public string E_Category
+        public int E_Category
         {
             get { return e_Category; }
             set { e_Category = value; }
@@ -58,18 +58,24 @@ namespace EMPPS.Classes
             this.e_Name = "";
             this.e_Desc = "";
             this.e_Cost = 0;
-            this.e_Category = "";
+            this.e_Category = -1;
             this.e_Status = -1;
         }
 
-        public Equipment(string id, string name, string desc, double cost, string cat, int status) 
-        { 
+        public Equipment(string id, string name, string desc, double cost, int cat, int status)
+        {
             this.e_Id = id;
             this.e_Name = name;
             this.e_Desc = desc;
             this.e_Cost = cost;
             this.e_Category = cat;
             this.e_Status = status;
+        }
+
+        public override string ToString()
+        {
+            return ($"{E_Id},{E_Name},{E_Desc},{E_Cost},{E_Category},{E_Status}");
+
         }
     }
 }
