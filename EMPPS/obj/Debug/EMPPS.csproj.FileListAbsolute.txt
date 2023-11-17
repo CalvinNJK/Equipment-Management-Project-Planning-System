@@ -10,6 +10,7 @@ C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMP
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Form1.resources
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.EM_Main.resources
 C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Project_Planning.PP_Main.resources
+<<<<<<< Updated upstream
 C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\bin\Debug\EMPPS.exe.config
 C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\bin\Debug\EMPPS.exe
 C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\bin\Debug\EMPPS.pdb
@@ -22,3 +23,7 @@ C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\o
 C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\obj\Debug\EMPPS.csproj.CoreCompileInputs.cache
 C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\obj\Debug\EMPPS.exe
 C:\Users\USER1\source\repos\Equipment-Management-Project-Planning-System\EMPPS\obj\Debug\EMPPS.pdb
+=======
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.EquipmentAdd.resources
+>>>>>>> Stashed changes
+C:\Users\calvi\Desktop\Usains_TrainingProgram\CapstonProj\Group4_EMPPS\EMPPS\EMPPS\obj\Debug\EMPPS.Equipment_Management.EquipmentModify.resources

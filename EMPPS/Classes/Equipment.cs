@@ -59,7 +59,7 @@ namespace EMPPS.Classes
             this.e_Desc = "";
             this.e_Cost = 0;
             this.e_Category = -1;
-            this.e_Status = -1;
+            this.e_Status = 0;
         }
 
         public Equipment(string id, string name, string desc, double cost, int cat, int status)
