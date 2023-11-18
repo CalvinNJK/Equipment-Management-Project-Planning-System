@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ColumnHeader chA_Eid;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -64,7 +64,6 @@
             this.b_eAdd = new System.Windows.Forms.Button();
             this.b_eDelete = new System.Windows.Forms.Button();
             this.b_eModify = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.listView_eq = new System.Windows.Forms.ListView();
             this.ch_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -130,7 +129,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(1, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(877, 652);
@@ -340,40 +339,40 @@
             // 
             // chart2
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            legend3.Alignment = System.Drawing.StringAlignment.Center;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.IsDockedInsideChartArea = false;
-            legend3.Name = "Legend1";
-            this.chart2.Legends.Add(legend3);
+            chartArea13.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea13);
+            legend13.Alignment = System.Drawing.StringAlignment.Center;
+            legend13.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend13.IsDockedInsideChartArea = false;
+            legend13.Name = "Legend1";
+            this.chart2.Legends.Add(legend13);
             this.chart2.Location = new System.Drawing.Point(446, 67);
             this.chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "s1";
-            this.chart2.Series.Add(series3);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series13.Legend = "Legend1";
+            series13.Name = "s1";
+            this.chart2.Series.Add(series13);
             this.chart2.Size = new System.Drawing.Size(400, 328);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.IsDockedInsideChartArea = false;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea14.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea14);
+            legend14.Alignment = System.Drawing.StringAlignment.Center;
+            legend14.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend14.IsDockedInsideChartArea = false;
+            legend14.Name = "Legend1";
+            this.chart1.Legends.Add(legend14);
             this.chart1.Location = new System.Drawing.Point(24, 67);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "s1";
-            this.chart1.Series.Add(series4);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series14.Legend = "Legend1";
+            series14.Name = "s1";
+            this.chart1.Series.Add(series14);
             this.chart1.Size = new System.Drawing.Size(400, 328);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -388,7 +387,6 @@
             this.tabPage2.Controls.Add(this.b_eAdd);
             this.tabPage2.Controls.Add(this.b_eDelete);
             this.tabPage2.Controls.Add(this.b_eModify);
-            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.listView_eq);
             this.tabPage2.Controls.Add(this.textBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -402,7 +400,7 @@
             // label_TotalEquipment2
             // 
             this.label_TotalEquipment2.AutoSize = true;
-            this.label_TotalEquipment2.Location = new System.Drawing.Point(363, 583);
+            this.label_TotalEquipment2.Location = new System.Drawing.Point(363, 575);
             this.label_TotalEquipment2.Name = "label_TotalEquipment2";
             this.label_TotalEquipment2.Size = new System.Drawing.Size(13, 20);
             this.label_TotalEquipment2.TabIndex = 13;
@@ -412,7 +410,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(198, 583);
+            this.label10.Location = new System.Drawing.Point(198, 575);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(159, 20);
             this.label10.TabIndex = 12;
@@ -421,7 +419,7 @@
             // b_eAdd
             // 
             this.b_eAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_eAdd.Location = new System.Drawing.Point(28, 574);
+            this.b_eAdd.Location = new System.Drawing.Point(28, 566);
             this.b_eAdd.Name = "b_eAdd";
             this.b_eAdd.Size = new System.Drawing.Size(151, 38);
             this.b_eAdd.TabIndex = 11;
@@ -434,7 +432,7 @@
             this.b_eDelete.Enabled = false;
             this.b_eDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_eDelete.ForeColor = System.Drawing.Color.Red;
-            this.b_eDelete.Location = new System.Drawing.Point(744, 574);
+            this.b_eDelete.Location = new System.Drawing.Point(744, 566);
             this.b_eDelete.Name = "b_eDelete";
             this.b_eDelete.Size = new System.Drawing.Size(97, 38);
             this.b_eDelete.TabIndex = 10;
@@ -447,23 +445,13 @@
             this.b_eModify.Enabled = false;
             this.b_eModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_eModify.ForeColor = System.Drawing.Color.Green;
-            this.b_eModify.Location = new System.Drawing.Point(641, 574);
+            this.b_eModify.Location = new System.Drawing.Point(641, 566);
             this.b_eModify.Name = "b_eModify";
             this.b_eModify.Size = new System.Drawing.Size(97, 38);
             this.b_eModify.TabIndex = 9;
             this.b_eModify.Text = "Modify";
             this.b_eModify.UseVisualStyleBackColor = true;
             this.b_eModify.Click += new System.EventHandler(this.b_eModify_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(467, 580);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // listView_eq
             // 
@@ -481,7 +469,7 @@
             this.listView_eq.HideSelection = false;
             this.listView_eq.Location = new System.Drawing.Point(28, 83);
             this.listView_eq.Name = "listView_eq";
-            this.listView_eq.Size = new System.Drawing.Size(813, 485);
+            this.listView_eq.Size = new System.Drawing.Size(813, 477);
             this.listView_eq.TabIndex = 7;
             this.listView_eq.UseCompatibleStateImageBehavior = false;
             this.listView_eq.View = System.Windows.Forms.View.Details;
@@ -582,9 +570,9 @@
             this.button_ToAvailable.Enabled = false;
             this.button_ToAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ToAvailable.ForeColor = System.Drawing.Color.Green;
-            this.button_ToAvailable.Location = new System.Drawing.Point(445, 566);
+            this.button_ToAvailable.Location = new System.Drawing.Point(445, 565);
             this.button_ToAvailable.Name = "button_ToAvailable";
-            this.button_ToAvailable.Size = new System.Drawing.Size(146, 38);
+            this.button_ToAvailable.Size = new System.Drawing.Size(120, 38);
             this.button_ToAvailable.TabIndex = 12;
             this.button_ToAvailable.Text = "<   Available";
             this.button_ToAvailable.UseVisualStyleBackColor = true;
@@ -595,9 +583,9 @@
             this.button_ToDamaged.Enabled = false;
             this.button_ToDamaged.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ToDamaged.ForeColor = System.Drawing.Color.Red;
-            this.button_ToDamaged.Location = new System.Drawing.Point(276, 565);
+            this.button_ToDamaged.Location = new System.Drawing.Point(302, 565);
             this.button_ToDamaged.Name = "button_ToDamaged";
-            this.button_ToDamaged.Size = new System.Drawing.Size(146, 38);
+            this.button_ToDamaged.Size = new System.Drawing.Size(120, 38);
             this.button_ToDamaged.TabIndex = 11;
             this.button_ToDamaged.Text = "Damaged   >";
             this.button_ToDamaged.UseVisualStyleBackColor = true;
@@ -859,7 +847,6 @@
         private System.Windows.Forms.Button b_eAdd;
         private System.Windows.Forms.Button b_eDelete;
         private System.Windows.Forms.Button b_eModify;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView_eq;
         private System.Windows.Forms.ColumnHeader ch_ID;
         private System.Windows.Forms.ColumnHeader ch_Name;

@@ -72,18 +72,6 @@ namespace EMPPS.Equipment_Management
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Console.WriteLine(listView_eq.SelectedItems[0]);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
 
 
 
@@ -112,12 +100,33 @@ namespace EMPPS.Equipment_Management
                 b_eDelete.Enabled = true;
             }
         }
+        
+
+
+
+
 
         private void listView_eq_MouseDoubleClick(object sender, EventArgs e)
         {
             //Console.WriteLine($"{listView_eq.SelectedItems[0].Text} selected.");
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //
