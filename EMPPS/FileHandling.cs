@@ -161,7 +161,7 @@ namespace EMPPS
                 Console.WriteLine(" -------------------");
                 foreach (var item in FileHandling.equipmentUsedList)
                 {
-                    Console.WriteLine($"{item.EUP_ID} {item.EU_ID} {item.EU_Cost} {item.EU_Duration}");
+                    Console.WriteLine($"{item.EUP_ID} {item.EU_ID} {item.EU_CostPerDay} {item.EU_Duration}");
                 }
                 Console.WriteLine("");
 
@@ -248,8 +248,8 @@ namespace EMPPS
                 writerProjectCSV.WriteLine($"EQUIPMENT USED PROJECT ID,EQUIPMENT USED ID,COST PER DAY,DURATION");   // Project Header Line
                 foreach (var item in FileHandling.equipmentUsedList)
                 {
-                    writerProjectCSV.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_Cost},{item.EU_Duration}");
-                    Console.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_Cost},{item.EU_Duration}");
+                    writerProjectCSV.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_CostPerDay},{item.EU_Duration}");
+                    Console.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_CostPerDay},{item.EU_Duration}");
 
                 }
                 Console.WriteLine("");

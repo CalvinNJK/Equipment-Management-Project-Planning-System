@@ -10,7 +10,7 @@ namespace EMPPS.Classes
     {
         private string eup_id;
         private string eu_id;
-        private string eu_cost;
+        private string eu_costPerDay;
         private int eu_duration;
 
         public string EUP_ID
@@ -25,10 +25,10 @@ namespace EMPPS.Classes
             set { eu_id = value; }
         }
 
-        public string EU_Cost
+        public string EU_CostPerDay
         {
-            get { return eu_cost; }
-            set { eu_cost = value; }
+            get { return eu_costPerDay; }
+            set { eu_costPerDay = value; }
         }
 
         public int EU_Duration
@@ -42,7 +42,7 @@ namespace EMPPS.Classes
         {
             this.eup_id = eup_id;
             this.eu_id = eu_id;
-            this.eu_cost = eu_cost;
+            this.eu_costPerDay = eu_cost;
             this.eu_duration = eu_duration;
         }
     }
