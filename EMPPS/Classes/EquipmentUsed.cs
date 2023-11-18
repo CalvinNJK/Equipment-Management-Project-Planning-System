@@ -11,7 +11,7 @@ namespace EMPPS.Classes
         private string eup_id;
         private string eu_id;
         private string eu_cost;
-        private string eu_duration;
+        private int eu_duration;
 
         public string EUP_ID
         {
@@ -31,7 +31,7 @@ namespace EMPPS.Classes
             set { eu_cost = value; }
         }
 
-        public string EU_Duration
+        public int EU_Duration
         {
             get { return eu_duration; }
             set { eu_duration = value; }
