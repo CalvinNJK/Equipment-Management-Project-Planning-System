@@ -71,7 +71,7 @@
             this.b_cDelete.Name = "b_cDelete";
             this.b_cDelete.Size = new System.Drawing.Size(97, 38);
             this.b_cDelete.TabIndex = 39;
-            this.b_cDelete.Text = "Delete";
+            this.b_cDelete.Text = "Remove";
             this.b_cDelete.UseVisualStyleBackColor = true;
             this.b_cDelete.Click += new System.EventHandler(this.b_cDelete_Click);
             // 

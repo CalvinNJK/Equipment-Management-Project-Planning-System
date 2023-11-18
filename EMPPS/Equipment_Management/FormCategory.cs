@@ -87,11 +87,21 @@ namespace EMPPS.Equipment_Management
                 foreach (var item in FileHandling.categoryList)
                 {
                     if (string.Compare(item.C_Index.ToString(), listView_c.SelectedItems[0].SubItems[1].Text) == 0)
-                    { 
-                        FileHandling.categoryList.Remove(item);
-                        Console.WriteLine("// Removed selected category: " + listView_c.SelectedItems[0].SubItems[1].Text + " " + listView_c.SelectedItems[0].Text);
-                        FileHandling.WriteAllCategory();
-                        break;
+                    {
+                        DialogResult diaResult = MessageBox.Show($"Are you sure to remove {item.C_Name} from category list?", "Removing Category", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (diaResult == DialogResult.Yes)
+                        {
+                            FileHandling.categoryList.Remove(item);
+                            Console.WriteLine("// REMOVED SELECTED CATEGORY: " + item.ToString());
+                            //Console.WriteLine("// Removed selected category: " + listView_c.SelectedItems[0].SubItems[1].Text + " " + listView_c.SelectedItems[0].Text);  // DO NOT USE THIS ANYMORE
+                            // -----
+                            LoadListView_c();
+                            // -----
+                            FileHandling.WriteAllCategory();
+                            MessageBox.Show(($"({item.C_Name}) removed from the category list."), "Successful Removed Category", 0, MessageBoxIcon.Information);
+                            break;
+                        }
+                        else { }
                     }
                 }
             }
@@ -99,19 +109,20 @@ namespace EMPPS.Equipment_Management
             {
                 MessageBox.Show("The selected category currently in used.", "Warning", 0, MessageBoxIcon.Warning);
             }
-
-            listView_c.Items.Clear();
-            LoadListView_c();
+            
             b_cModify.Enabled = false;
             b_cDelete.Enabled = false;
         }
 
 
 
-
+        //
         // Load all the Categories into Table
+        //
         private void LoadListView_c()
         {
+            listView_c.Items.Clear();
+
             foreach (var item in FileHandling.categoryList)
             {
                 ListViewItem lvItem = new ListViewItem(item.C_Name);

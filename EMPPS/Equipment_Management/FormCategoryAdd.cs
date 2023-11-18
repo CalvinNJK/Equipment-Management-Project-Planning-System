@@ -29,23 +29,33 @@ namespace EMPPS.Equipment_Management
         {
             bool check = false;
 
-            if (textBox_cName.Text == "")
+            // Regex patterns for input validation (textBox_cName.Text)
+            Regex regex1 = new Regex("^[A-Za-z]+(?:[ A-Za-z]*)$");
+
+            // Input Validation for (textBox_cName.Text)
+            foreach (var item in FileHandling.categoryList)
             {
-                MessageBox.Show("Category name cannot be blank.", "Warning", 0, MessageBoxIcon.Warning);
-                check = true;
+                if (textBox_cName.Text == item.C_Name)
+                {
+                    MessageBox.Show("Name cannot be duplicated.", "Warning", 0, MessageBoxIcon.Warning);
+                    check = true;
+                    break;
+                }
+                else if (textBox_cName.Text == "")
+                {
+                    MessageBox.Show("Name cannot be blank.", "Warning", 0, MessageBoxIcon.Warning);
+                    check = true;
+                    break;
+                }
+                else if (!regex1.IsMatch(textBox_cName.Text))
+                {
+                    MessageBox.Show("Name can only have letters and spaces.", "Warning", 0, MessageBoxIcon.Warning);
+                    check = true;
+                    break;
+                }
             }
-            /*else if(Regex.IsMatch(textBox_cName.Text, "/^[A-Za-z\\s]*$/") == false)
-            {
-                MessageBox.Show("Category name cannot other than alphabets.", "Warning", 0, MessageBoxIcon.Warning);
-                check = true;
-            }*/
 
-
-            //
-            //  DATA VALIDATION NEED!!!!!!!!
-            //
-
-
+            // If all input correct, proceed...
             if (check == false)
             {
                 Category newCategory = new Category((FileHandling.categoryList.Last().C_Index+1),textBox_cName.Text);
@@ -54,6 +64,7 @@ namespace EMPPS.Equipment_Management
                 FileHandling.categoryList.Add(newCategory);
                 Console.WriteLine("// CATEGORY ADDED: " + newCategory.ToString());
 
+                MessageBox.Show(($"({newCategory.C_Name}) added to the category list."), "Successful added category", 0, MessageBoxIcon.Information);
                 FileHandling.WriteAllCategory();
                 this.Close();
             }

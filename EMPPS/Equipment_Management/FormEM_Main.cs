@@ -152,9 +152,20 @@ namespace EMPPS.Equipment_Management
                 {
                     if (item.E_Status == 0 || item.E_Status == 2)
                     {
-                        FileHandling.equipmentList.Remove(item);
-                        Console.WriteLine("// Removed selected equipement: " + listView_eq.SelectedItems[0].Text.ToString());
-                        FileHandling.WriteAllEquipment();
+                        DialogResult diaResult = MessageBox.Show($"Are you sure to remove Equipment (ID: {item.E_Id})?", "Removing Equipment", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (diaResult == DialogResult.Yes)
+                        {
+                            FileHandling.equipmentList.Remove(item);
+                            Console.WriteLine("// REMOVED SELECTED EQUIPMENT: " + item.ToString());
+                            //Console.WriteLine("// REMOVED SELECTED EQUIPMENT: " + listView_eq.SelectedItems[0].Text.ToString());  // DO NOT USE THIS ANYMORE
+                            FileHandling.WriteAllEquipment();
+                            // -----
+                            LoadReloadViews();
+                            // -----
+                            MessageBox.Show(($"Equipment (ID: {item.E_Id}) removed from inventory."), "Successful removed equipment", 0, MessageBoxIcon.Information);
+                        }
+                        else {}
+                        
                     }
                     else
                     {
@@ -165,7 +176,7 @@ namespace EMPPS.Equipment_Management
             }
 
 
-            LoadReloadViews();
+            
             b_eModify.Enabled = false;
             b_eDelete.Enabled = false;
         }
@@ -219,15 +230,15 @@ namespace EMPPS.Equipment_Management
                     item.E_Status = 2;
                     Console.WriteLine("// Selected equipement status changed to DAMAGED: " + listView_availableStatus.SelectedItems[0].Text.ToString());
                     FileHandling.WriteAllEquipment();
-                    MessageBox.Show(("Equipment ID (" + item.E_Id + ") updated to Damaged Status."), "Successful updated status", 0, MessageBoxIcon.Exclamation);
+                    // -----
+                    LoadReloadViews();
+                    button_ToAvailable.Enabled = false;
+                    button_ToDamaged.Enabled = false;
+                    // -----
+                    MessageBox.Show(("Equipment ID (" + item.E_Id + ") updated to DAMAGED status."), "Successful updated status", 0, MessageBoxIcon.Information);
                     break;
                 }
             }
-
-
-            LoadReloadViews();
-            button_ToAvailable.Enabled = false;
-            button_ToDamaged.Enabled = false;
         }
 
         private void button_ToAvailable_Click(object sender, EventArgs e)
@@ -240,16 +251,15 @@ namespace EMPPS.Equipment_Management
                     item.E_Status = 0;
                     Console.WriteLine("// Selected equipement status changed to DAMAGED: " + listView_damagedStatus.SelectedItems[0].Text.ToString());
                     FileHandling.WriteAllEquipment();
-                    MessageBox.Show(("Equipment ID (" + item.E_Id + ") updated to Available Status."), "Successful updated status", 0, MessageBoxIcon.Exclamation);
+                    // -----
+                    LoadReloadViews();
+                    button_ToAvailable.Enabled = false;
+                    button_ToDamaged.Enabled = false;
+                    // -----
+                    MessageBox.Show(("Equipment ID (" + item.E_Id + ") updated to AVAILABLE status."), "Successful updated status", 0, MessageBoxIcon.Information);
                     break;
                 }
             }
-
-
-            LoadReloadViews();
-            button_ToAvailable.Enabled = false;
-            button_ToDamaged.Enabled = false;
-            
         }
 
 
@@ -351,6 +361,8 @@ namespace EMPPS.Equipment_Management
                 ListViewItem lvItem = new ListViewItem(item.E_Id);
                 lvItem.SubItems.Add(item.E_Name);
                 lvItem.SubItems.Add(item.E_Desc);
+
+                // Set Category index -> Category Name
                 foreach (var ci in FileHandling.categoryList)
                 {
                     if (item.E_Category == ci.C_Index)
@@ -359,9 +371,28 @@ namespace EMPPS.Equipment_Management
                     }
 
                 }
+
                 lvItem.SubItems.Add(item.E_Cost.ToString("0.00"));
                 lvItem.SubItems.Add(item.E_CostPerDay.ToString("0.00"));
-                lvItem.SubItems.Add(item.E_Status.ToString());
+
+                // Set Status index -> Status Name
+                lvItem.UseItemStyleForSubItems = false;
+                if (item.E_Status == 0)
+                {
+                    lvItem.SubItems.Add("Available");
+                    lvItem.SubItems[6].ForeColor = Color.Green;
+                }
+                else if (item.E_Status == 1)
+                {
+                    lvItem.SubItems.Add("On Loan");
+                    lvItem.SubItems[6].ForeColor = Color.Gray;
+                }
+                else if (item.E_Status == 2)
+                {
+                    lvItem.SubItems.Add("Damaged");
+                    lvItem.SubItems[6].ForeColor = Color.Red;
+                }
+
                 listView_eq.Items.Add(lvItem);
             }
 

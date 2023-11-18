@@ -48,7 +48,8 @@ namespace EMPPS
                 Console.WriteLine(" --------------------");
                 foreach (var item in FileHandling.equipmentList)
                 {
-                    Console.WriteLine($"{item.E_Id} {item.E_Name} {item.E_Desc} {item.E_Cost} {item.E_CostPerDay} {item.E_Category} {item.E_Status}");
+                    Console.WriteLine($"ID:{{{item.E_Id}}} Name:{{{item.E_Name}}} Desc:{{{item.E_Desc}}} Cost:{{{item.E_Cost}}} " +
+                        $" CostPerDay:{{{item.E_CostPerDay}}} CategoryIndex:{{{item.E_Category}}} StatusIndex:{{{item.E_Status}}}");
                 }
                 Console.WriteLine("");
 
@@ -84,7 +85,7 @@ namespace EMPPS
                 Console.WriteLine(" -------------------");
                 foreach (var item in FileHandling.categoryList)
                 {
-                    Console.WriteLine($"{item.C_Index} {item.C_Name} ");
+                    Console.WriteLine($" Index: {{{item.C_Index}}}  Name: {{{item.C_Name}}} ");
                 }
                 Console.WriteLine("");
 
@@ -129,7 +130,7 @@ namespace EMPPS
                     Console.WriteLine("Status: " + item.P_Status);
                     foreach (var item2 in item.P_EID)
                     {
-                        Console.WriteLine($"Equipment ID: "+ item2);
+                        Console.WriteLine($"  Equipment ID: "+ item2);
                     }
                 }
                 Console.WriteLine("");
