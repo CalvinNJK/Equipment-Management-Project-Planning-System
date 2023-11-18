@@ -41,10 +41,6 @@ namespace EMPPS
             FileHandling.ReadAllEquipment();
             FileHandling.ReadAllCategory();
             FileHandling.ReadAllProject();
-
-            // FOR JIAWEN EXAMPLE REFER
-            FileHandlingForTesting.ReadAllTesting();
-            FileHandlingForTesting.WriteAllTesting();
         }
     }
 

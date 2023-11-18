@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace EMPPS.Project_Planning
 {
@@ -89,7 +90,38 @@ namespace EMPPS.Project_Planning
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
+            System.Data.DataTable projectDataExcel = new System.Data.DataTable();
+            projectDataExcel.TableName = "ProjectData";
+            string sourceConstr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source='C:\EMPPS\project.xls';Extended Properties='excel 8.0;HDR=Yes;IMEX=1'";
+            OleDbConnection con = new OleDbConnection(sourceConstr);
+            string query = "SELECT * FROM [Sheet1$]";
+            OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query,con);
+            dataAdapter.Fill(projectDataExcel);
+            AllProjectListView.Columns.Add("PROJECT ID", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("NAME", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("DESCRIPTION", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("LEADER ID", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("DURATION", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("BUDGET", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("STATUS", 100, HorizontalAlignment.Left);
+            AllProjectListView.Columns.Add("EQUIPMENT ID", 100, HorizontalAlignment.Left);
+            AllProjectListView.Items.Clear();
+            for (int i = 0; i < projectDataExcel.Rows.Count; i++)
+            {
+                DataRow dr = projectDataExcel.Rows[i];
+                if (dr.RowState != DataRowState.Deleted)
+                {
+                    ListViewItem lvi = new ListViewItem(dr["PROJECT ID"].ToString());
+                    lvi.SubItems.Add(dr["NAME"].ToString());
+                    lvi.SubItems.Add(dr["DESCRIPTION"].ToString());
+                    lvi.SubItems.Add(dr["LEADER ID"].ToString());
+                    lvi.SubItems.Add(dr["DURATION"].ToString());
+                    lvi.SubItems.Add(dr["BUDGET"].ToString());
+                    lvi.SubItems.Add(dr["STATUS"].ToString());
+                    lvi.SubItems.Add(dr["EQUIPMENT ID"].ToString());
+                    AllProjectListView.Items.Add(lvi);
+                }
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)

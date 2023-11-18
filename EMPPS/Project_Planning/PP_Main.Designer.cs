@@ -47,14 +47,8 @@
             this.DeleteProject = new System.Windows.Forms.Button();
             this.ModifyProject = new System.Windows.Forms.Button();
             this.CreateProject = new System.Windows.Forms.Button();
-            this.listView_eq = new System.Windows.Forms.ListView();
-            this.p_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.p_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.p_Desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.p_LeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.p_Duration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.p_budget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.AllProjectListView = new System.Windows.Forms.ListView();
             this.panelFilterCategory.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.AllProjectTabPage.SuspendLayout();
@@ -254,13 +248,13 @@
             // 
             // AllProjectTabPage
             // 
+            this.AllProjectTabPage.Controls.Add(this.AllProjectListView);
             this.AllProjectTabPage.Controls.Add(this.b_eAdd);
             this.AllProjectTabPage.Controls.Add(this.panelFilterCategory);
             this.AllProjectTabPage.Controls.Add(this.DeleteProject);
             this.AllProjectTabPage.Controls.Add(this.AllProjectSearchBar);
             this.AllProjectTabPage.Controls.Add(this.ModifyProject);
             this.AllProjectTabPage.Controls.Add(this.CreateProject);
-            this.AllProjectTabPage.Controls.Add(this.listView_eq);
             this.AllProjectTabPage.Location = new System.Drawing.Point(4, 34);
             this.AllProjectTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.AllProjectTabPage.Name = "AllProjectTabPage";
@@ -322,58 +316,6 @@
             this.CreateProject.UseVisualStyleBackColor = true;
             this.CreateProject.Click += new System.EventHandler(this.CreateProject_Click);
             // 
-            // listView_eq
-            // 
-            this.listView_eq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView_eq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.p_ID,
-            this.p_Name,
-            this.p_Desc,
-            this.p_LeaderID,
-            this.p_Duration,
-            this.p_budget});
-            this.listView_eq.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listView_eq.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView_eq.HideSelection = false;
-            this.listView_eq.Location = new System.Drawing.Point(27, 71);
-            this.listView_eq.Margin = new System.Windows.Forms.Padding(4);
-            this.listView_eq.Name = "listView_eq";
-            this.listView_eq.Size = new System.Drawing.Size(923, 487);
-            this.listView_eq.TabIndex = 1;
-            this.listView_eq.UseCompatibleStateImageBehavior = false;
-            this.listView_eq.View = System.Windows.Forms.View.Details;
-            this.listView_eq.SelectedIndexChanged += new System.EventHandler(this.listView_eq_SelectedIndexChanged);
-            // 
-            // p_ID
-            // 
-            this.p_ID.Text = "ID";
-            this.p_ID.Width = 82;
-            // 
-            // p_Name
-            // 
-            this.p_Name.Text = "Name";
-            this.p_Name.Width = 123;
-            // 
-            // p_Desc
-            // 
-            this.p_Desc.Text = "Description";
-            this.p_Desc.Width = 262;
-            // 
-            // p_LeaderID
-            // 
-            this.p_LeaderID.Text = "Leader ID";
-            this.p_LeaderID.Width = 103;
-            // 
-            // p_Duration
-            // 
-            this.p_Duration.Text = "Project Duration";
-            this.p_Duration.Width = 155;
-            // 
-            // p_budget
-            // 
-            this.p_budget.Text = "Project Budget (RM)";
-            this.p_budget.Width = 192;
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
@@ -385,6 +327,15 @@
             this.tabPage2.Text = "Status Management";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // AllProjectListView
+            // 
+            this.AllProjectListView.HideSelection = false;
+            this.AllProjectListView.Location = new System.Drawing.Point(27, 67);
+            this.AllProjectListView.Name = "AllProjectListView";
+            this.AllProjectListView.Size = new System.Drawing.Size(923, 492);
+            this.AllProjectListView.TabIndex = 6;
+            this.AllProjectListView.UseCompatibleStateImageBehavior = false;
             // 
             // PP_Main
             // 
@@ -424,13 +375,7 @@
         private System.Windows.Forms.Button DeleteProject;
         private System.Windows.Forms.Button ModifyProject;
         private System.Windows.Forms.Button CreateProject;
-        private System.Windows.Forms.ListView listView_eq;
-        private System.Windows.Forms.ColumnHeader p_ID;
-        private System.Windows.Forms.ColumnHeader p_Name;
-        private System.Windows.Forms.ColumnHeader p_Desc;
-        private System.Windows.Forms.ColumnHeader p_LeaderID;
-        private System.Windows.Forms.ColumnHeader p_Duration;
-        private System.Windows.Forms.ColumnHeader p_budget;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListView AllProjectListView;
     }
 }
