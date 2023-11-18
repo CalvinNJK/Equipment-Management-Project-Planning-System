@@ -13,7 +13,7 @@ namespace EMPPS.Classes
         private string eu_cost;
         private string eu_duration;
 
-        public string P_ID
+        public string EUP_ID
         {
             get { return eup_id; }
             set {  eup_id = value; }
