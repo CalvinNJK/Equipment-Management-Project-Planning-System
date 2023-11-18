@@ -16,11 +16,13 @@ namespace EMPPS
         public static List<Equipment> equipmentList = new List<Equipment>();
         public static List<Category> categoryList = new List<Category>();
         public static List<Project> projectList = new List<Project>();
+        public static List<EquipmentUsed> equipmentUsedList = new List<EquipmentUsed>();
 
         // File Paths
         private static string equipment_path = @"C:\EMPPS\equipment.csv";
         private static string category_path = @"C:\EMPPS\category.csv";
         private static string project_path = @"C:\EMPPS\project.csv";
+        private static string equipmentUsed_path = @"C:\EMPPS\equipmentUsed.csv";
 
 
         // Initial Reading for EQUIPMENT.csv
@@ -112,7 +114,7 @@ namespace EMPPS
                     {
                         string[] temp = line.Split(',');
 
-                        projectList.Add(new Project(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]));
+                        projectList.Add(new Project(temp[0], temp[1], temp[2], temp[3], Int32.Parse(temp[4]), Double.Parse(temp[5])));
                     }
                 }
 
@@ -134,6 +136,41 @@ namespace EMPPS
             }
         }
 
+        // Initial Reading for PROJECT.csv
+        public static void ReadAllEquipmentUsed()
+        {
+            try
+            {
+                using (StreamReader readerEquipmentUsedCSV = new StreamReader(equipmentUsed_path))
+                {
+                    string headerLine = readerEquipmentUsedCSV.ReadLine();   // To ignore the first (HEADER) line
+
+                    string line;
+                    while ((line = readerEquipmentUsedCSV.ReadLine()) != null)
+                    {
+                        string[] temp = line.Split(',');
+
+                        equipmentUsedList.Add(new EquipmentUsed(temp[0], temp[1], temp[2], Int32.Parse(temp[3])));
+                    }
+                }
+
+                // Testing Purpose - Check List input
+                Console.WriteLine(" -------------------");
+                Console.WriteLine("| Read Equipment Used.csv |");
+                Console.WriteLine($"| Items: {equipmentUsedList.Count,-10} |");
+                Console.WriteLine(" -------------------");
+                foreach (var item in FileHandling.equipmentUsedList)
+                {
+                    Console.WriteLine($"{item.EUP_ID} {item.EU_ID} {item.EU_Cost} {item.EU_Duration}");
+                }
+                Console.WriteLine("");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
         // -----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -193,6 +230,27 @@ namespace EMPPS
                 {
                     writerProjectCSV.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget}");
                     Console.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget}");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+        // Save EQUIPMENT USED to EuipmentUsed.csv
+        public static void WriteAllEquipmentUsed()
+        {
+            File.WriteAllText(equipmentUsed_path, String.Empty);
+
+            using (StreamWriter writerProjectCSV = new StreamWriter(equipmentUsed_path))
+            {
+                Console.WriteLine(" --------------------");
+                Console.WriteLine("| Write EuipmentUsed.csv |");
+                Console.WriteLine(" --------------------");
+                writerProjectCSV.WriteLine($"EQUIPMENT USED PROJECT ID,EQUIPMENT USED ID,COST PER DAY,DURATION");   // Project Header Line
+                foreach (var item in FileHandling.equipmentUsedList)
+                {
+                    writerProjectCSV.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_Cost},{item.EU_Duration}");
+                    Console.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_Cost},{item.EU_Duration}");
+
                 }
                 Console.WriteLine("");
             }
