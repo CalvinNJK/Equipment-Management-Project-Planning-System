@@ -47,12 +47,18 @@ namespace EMPPS.Equipment_Management
         }
 
 
-        private void button_Add_Click_1(object sender, EventArgs e)
+        private void button_Add_Click(object sender, EventArgs e)
         {
+
+            //
+            //  DATA VALIDATION NEED!!!!!!!!
+            //
+
             newItem.E_Id = textBox_id.Text;
             newItem.E_Name = textBox_name.Text;
             newItem.E_Desc = textBox_desc.Text;
             newItem.E_Cost = Double.Parse(textBox_cost.Text);
+            newItem.E_CostPerDay = Double.Parse(textBox_costPerDay.Text);
             newItem.E_Category = Int32.Parse(comboBox_cat.SelectedValue.ToString());
 
             // Add the new equipement to equipmentList
@@ -62,6 +68,5 @@ namespace EMPPS.Equipment_Management
             FileHandling.WriteAllEquipment();
             this.Close();
         }
-
     }
 }

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +80,12 @@
     </Compile>
     <Compile Include="Equipment_Management\FormCategoryAdd.Designer.cs">
       <DependentUpon>FormCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment_Management\FormCategoryModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Equipment_Management\FormCategoryModify.Designer.cs">
+      <DependentUpon>FormCategoryModify.cs</DependentUpon>
     </Compile>
     <Compile Include="Equipment_Management\FormEM_Main.cs">
       <SubType>Form</SubType>
@@ -118,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipment_Management\FormCategoryAdd.resx">
       <DependentUpon>FormCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment_Management\FormCategoryModify.resx">
+      <DependentUpon>FormCategoryModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Equipment_Management\FormEM_Main.resx">
       <DependentUpon>FormEM_Main.cs</DependentUpon>
