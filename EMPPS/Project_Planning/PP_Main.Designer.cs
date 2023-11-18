@@ -44,8 +44,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.AllProjectTabPage = new System.Windows.Forms.TabPage();
             this.b_eAdd = new System.Windows.Forms.Button();
-            this.b_eDelete = new System.Windows.Forms.Button();
-            this.b_eModify = new System.Windows.Forms.Button();
+            this.DeleteProject = new System.Windows.Forms.Button();
+            this.ModifyProject = new System.Windows.Forms.Button();
             this.CreateProject = new System.Windows.Forms.Button();
             this.listView_eq = new System.Windows.Forms.ListView();
             this.p_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -256,9 +256,9 @@
             // 
             this.AllProjectTabPage.Controls.Add(this.b_eAdd);
             this.AllProjectTabPage.Controls.Add(this.panelFilterCategory);
-            this.AllProjectTabPage.Controls.Add(this.b_eDelete);
+            this.AllProjectTabPage.Controls.Add(this.DeleteProject);
             this.AllProjectTabPage.Controls.Add(this.AllProjectSearchBar);
-            this.AllProjectTabPage.Controls.Add(this.b_eModify);
+            this.AllProjectTabPage.Controls.Add(this.ModifyProject);
             this.AllProjectTabPage.Controls.Add(this.CreateProject);
             this.AllProjectTabPage.Controls.Add(this.listView_eq);
             this.AllProjectTabPage.Location = new System.Drawing.Point(4, 34);
@@ -277,47 +277,50 @@
             this.b_eAdd.Location = new System.Drawing.Point(27, 566);
             this.b_eAdd.Margin = new System.Windows.Forms.Padding(4);
             this.b_eAdd.Name = "b_eAdd";
-            this.b_eAdd.Size = new System.Drawing.Size(201, 47);
+            this.b_eAdd.Size = new System.Drawing.Size(0, 0);
             this.b_eAdd.TabIndex = 5;
             this.b_eAdd.Text = "Add Equipment";
             this.b_eAdd.UseVisualStyleBackColor = true;
             // 
-            // b_eDelete
+            // DeleteProject
             // 
-            this.b_eDelete.Enabled = false;
-            this.b_eDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_eDelete.ForeColor = System.Drawing.Color.Red;
-            this.b_eDelete.Location = new System.Drawing.Point(821, 566);
-            this.b_eDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.b_eDelete.Name = "b_eDelete";
-            this.b_eDelete.Size = new System.Drawing.Size(129, 47);
-            this.b_eDelete.TabIndex = 4;
-            this.b_eDelete.Text = "Delete";
-            this.b_eDelete.UseVisualStyleBackColor = true;
+            this.DeleteProject.Enabled = false;
+            this.DeleteProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteProject.ForeColor = System.Drawing.Color.Red;
+            this.DeleteProject.Location = new System.Drawing.Point(821, 566);
+            this.DeleteProject.Margin = new System.Windows.Forms.Padding(4);
+            this.DeleteProject.Name = "DeleteProject";
+            this.DeleteProject.Size = new System.Drawing.Size(129, 47);
+            this.DeleteProject.TabIndex = 4;
+            this.DeleteProject.Text = "Delete";
+            this.DeleteProject.UseVisualStyleBackColor = true;
+            this.DeleteProject.Click += new System.EventHandler(this.DeleteProject_Click);
             // 
-            // b_eModify
+            // ModifyProject
             // 
-            this.b_eModify.Enabled = false;
-            this.b_eModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_eModify.ForeColor = System.Drawing.Color.Green;
-            this.b_eModify.Location = new System.Drawing.Point(684, 566);
-            this.b_eModify.Margin = new System.Windows.Forms.Padding(4);
-            this.b_eModify.Name = "b_eModify";
-            this.b_eModify.Size = new System.Drawing.Size(129, 47);
-            this.b_eModify.TabIndex = 3;
-            this.b_eModify.Text = "Modify";
-            this.b_eModify.UseVisualStyleBackColor = true;
+            this.ModifyProject.Enabled = false;
+            this.ModifyProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModifyProject.ForeColor = System.Drawing.Color.Green;
+            this.ModifyProject.Location = new System.Drawing.Point(684, 566);
+            this.ModifyProject.Margin = new System.Windows.Forms.Padding(4);
+            this.ModifyProject.Name = "ModifyProject";
+            this.ModifyProject.Size = new System.Drawing.Size(129, 47);
+            this.ModifyProject.TabIndex = 3;
+            this.ModifyProject.Text = "Modify";
+            this.ModifyProject.UseVisualStyleBackColor = true;
+            this.ModifyProject.Click += new System.EventHandler(this.ModifyProject_Click);
             // 
             // CreateProject
             // 
             this.CreateProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.CreateProject.Location = new System.Drawing.Point(743, 32);
+            this.CreateProject.Location = new System.Drawing.Point(27, 566);
             this.CreateProject.Margin = new System.Windows.Forms.Padding(4);
             this.CreateProject.Name = "CreateProject";
-            this.CreateProject.Size = new System.Drawing.Size(207, 28);
+            this.CreateProject.Size = new System.Drawing.Size(201, 47);
             this.CreateProject.TabIndex = 2;
             this.CreateProject.Text = "Create New Project";
             this.CreateProject.UseVisualStyleBackColor = true;
+            this.CreateProject.Click += new System.EventHandler(this.CreateProject_Click);
             // 
             // listView_eq
             // 
@@ -344,17 +347,17 @@
             // p_ID
             // 
             this.p_ID.Text = "ID";
-            this.p_ID.Width = 64;
+            this.p_ID.Width = 82;
             // 
             // p_Name
             // 
             this.p_Name.Text = "Name";
-            this.p_Name.Width = 92;
+            this.p_Name.Width = 123;
             // 
             // p_Desc
             // 
             this.p_Desc.Text = "Description";
-            this.p_Desc.Width = 140;
+            this.p_Desc.Width = 262;
             // 
             // p_LeaderID
             // 
@@ -364,12 +367,12 @@
             // p_Duration
             // 
             this.p_Duration.Text = "Project Duration";
-            this.p_Duration.Width = 180;
+            this.p_Duration.Width = 155;
             // 
             // p_budget
             // 
             this.p_budget.Text = "Project Budget (RM)";
-            this.p_budget.Width = 172;
+            this.p_budget.Width = 192;
             // 
             // tabPage2
             // 
@@ -387,7 +390,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(995, 701);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -418,8 +421,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage AllProjectTabPage;
         private System.Windows.Forms.Button b_eAdd;
-        private System.Windows.Forms.Button b_eDelete;
-        private System.Windows.Forms.Button b_eModify;
+        private System.Windows.Forms.Button DeleteProject;
+        private System.Windows.Forms.Button ModifyProject;
         private System.Windows.Forms.Button CreateProject;
         private System.Windows.Forms.ListView listView_eq;
         private System.Windows.Forms.ColumnHeader p_ID;

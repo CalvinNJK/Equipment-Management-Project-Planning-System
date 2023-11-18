@@ -39,8 +39,9 @@
             this.ch_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_Cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_Cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_CostPerDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -50,7 +51,6 @@
             this.categorizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCategToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ch_CostPerDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -67,10 +67,11 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 33);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(743, 540);
+            this.tabControl1.Size = new System.Drawing.Size(991, 665);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -81,20 +82,23 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.listView_eq);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(735, 507);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(983, 627);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Equipment Inventory";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // b_eAdd
             // 
             this.b_eAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_eAdd.Location = new System.Drawing.Point(20, 460);
+            this.b_eAdd.Location = new System.Drawing.Point(27, 566);
+            this.b_eAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.b_eAdd.Name = "b_eAdd";
-            this.b_eAdd.Size = new System.Drawing.Size(151, 38);
+            this.b_eAdd.Size = new System.Drawing.Size(201, 47);
             this.b_eAdd.TabIndex = 5;
             this.b_eAdd.Text = "Add Equipment";
             this.b_eAdd.UseVisualStyleBackColor = true;
@@ -105,9 +109,10 @@
             this.b_eDelete.Enabled = false;
             this.b_eDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_eDelete.ForeColor = System.Drawing.Color.Red;
-            this.b_eDelete.Location = new System.Drawing.Point(616, 460);
+            this.b_eDelete.Location = new System.Drawing.Point(821, 566);
+            this.b_eDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.b_eDelete.Name = "b_eDelete";
-            this.b_eDelete.Size = new System.Drawing.Size(97, 38);
+            this.b_eDelete.Size = new System.Drawing.Size(129, 47);
             this.b_eDelete.TabIndex = 4;
             this.b_eDelete.Text = "Delete";
             this.b_eDelete.UseVisualStyleBackColor = true;
@@ -118,9 +123,10 @@
             this.b_eModify.Enabled = false;
             this.b_eModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_eModify.ForeColor = System.Drawing.Color.Green;
-            this.b_eModify.Location = new System.Drawing.Point(513, 460);
+            this.b_eModify.Location = new System.Drawing.Point(684, 566);
+            this.b_eModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.b_eModify.Name = "b_eModify";
-            this.b_eModify.Size = new System.Drawing.Size(97, 38);
+            this.b_eModify.Size = new System.Drawing.Size(129, 47);
             this.b_eModify.TabIndex = 3;
             this.b_eModify.Text = "Modify";
             this.b_eModify.UseVisualStyleBackColor = true;
@@ -129,9 +135,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(592, 26);
+            this.button1.Location = new System.Drawing.Point(789, 32);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -151,9 +158,10 @@
             this.listView_eq.Cursor = System.Windows.Forms.Cursors.Default;
             this.listView_eq.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_eq.HideSelection = false;
-            this.listView_eq.Location = new System.Drawing.Point(20, 58);
+            this.listView_eq.Location = new System.Drawing.Point(27, 71);
+            this.listView_eq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView_eq.Name = "listView_eq";
-            this.listView_eq.Size = new System.Drawing.Size(693, 396);
+            this.listView_eq.Size = new System.Drawing.Size(923, 487);
             this.listView_eq.TabIndex = 1;
             this.listView_eq.UseCompatibleStateImageBehavior = false;
             this.listView_eq.View = System.Windows.Forms.View.Details;
@@ -174,15 +182,20 @@
             this.ch_Desc.Text = "Description";
             this.ch_Desc.Width = 140;
             // 
+            // ch_Category
+            // 
+            this.ch_Category.Text = "Category";
+            this.ch_Category.Width = 84;
+            // 
             // ch_Cost
             // 
             this.ch_Cost.Text = "Cost";
             this.ch_Cost.Width = 90;
             // 
-            // ch_Category
+            // ch_CostPerDay
             // 
-            this.ch_Category.Text = "Category";
-            this.ch_Category.Width = 84;
+            this.ch_CostPerDay.Text = "Cost Per Day";
+            this.ch_CostPerDay.Width = 147;
             // 
             // ch_Status
             // 
@@ -191,30 +204,33 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(20, 26);
+            this.textBox1.Location = new System.Drawing.Point(27, 32);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.Size = new System.Drawing.Size(132, 30);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(735, 507);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(983, 627);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Status Management";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addCategoryToolStripMenuItem,
             this.categorizationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(743, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(991, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -223,13 +239,13 @@
             this.addCategoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addEquipmentToolStripMenuItem});
             this.addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
-            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.addCategoryToolStripMenuItem.Text = "Equipment Inventory";
             // 
             // addEquipmentToolStripMenuItem
             // 
             this.addEquipmentToolStripMenuItem.Name = "addEquipmentToolStripMenuItem";
-            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.addEquipmentToolStripMenuItem.Text = "Add Equipment";
             this.addEquipmentToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentToolStripMenuItem_Click);
             // 
@@ -239,26 +255,21 @@
             this.editCategToolStripMenuItem,
             this.addCategoryToolStripMenuItem1});
             this.categorizationToolStripMenuItem.Name = "categorizationToolStripMenuItem";
-            this.categorizationToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.categorizationToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.categorizationToolStripMenuItem.Text = "Categorization";
             // 
             // editCategToolStripMenuItem
             // 
             this.editCategToolStripMenuItem.Name = "editCategToolStripMenuItem";
-            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.editCategToolStripMenuItem.Text = "Configuration";
             this.editCategToolStripMenuItem.Click += new System.EventHandler(this.editCategToolStripMenuItem_Click);
             // 
             // addCategoryToolStripMenuItem1
             // 
             this.addCategoryToolStripMenuItem1.Name = "addCategoryToolStripMenuItem1";
-            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.addCategoryToolStripMenuItem1.Text = "Add Category";
-            // 
-            // ch_CostPerDay
-            // 
-            this.ch_CostPerDay.Text = "Cost Per Day";
-            this.ch_CostPerDay.Width = 147;
             // 
             // equipmentBindingSource
             // 
@@ -274,13 +285,14 @@
             // 
             // FormEM_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 566);
+            this.ClientSize = new System.Drawing.Size(991, 697);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEM_Main";

@@ -101,5 +101,20 @@ namespace EMPPS.Project_Planning
         {
 
         }
+
+        private void ModifyProject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteProject_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateProject_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
