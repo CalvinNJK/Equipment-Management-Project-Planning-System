@@ -13,8 +13,9 @@ namespace EMPPS.Classes
         private string p_name;
         private string p_desc;
         private string p_leaderId;
-        private string p_duration;
-        private string p_budget;
+        private int p_duration;
+        private double p_budget;
+        private int[] eu_ID;
 
         // Setter & Getter
         public string P_ID
@@ -37,20 +38,26 @@ namespace EMPPS.Classes
             get { return p_leaderId; }
             set { p_leaderId = value; }
         }
-        public string P_Duration
+        public int P_Duration
         {
             get { return p_duration; }
             set { p_duration = value; }
         }
 
-        public string P_Budget
+        public double P_Budget
         {
             get { return p_budget; }
             set { p_budget = value; }
         }
 
+        public int[] EU_ID
+        {
+            get { return  eu_ID; }
+            set { eu_ID = value; }
+        }
+
         // Default Constructor
-        public Project(string id, string name, string desc, string leaderid, string duration, string budget)
+        public Project(string id, string name, string desc, string leaderid, int duration, double budget, int[] eu_id)
         {
             this.p_id = id;
             this.p_name = name;
@@ -58,6 +65,7 @@ namespace EMPPS.Classes
             this.p_leaderId = leaderid;
             this.p_duration = duration;
             this.p_budget = budget;
+            this.eu_ID = eu_id;
         }
     }
 }
