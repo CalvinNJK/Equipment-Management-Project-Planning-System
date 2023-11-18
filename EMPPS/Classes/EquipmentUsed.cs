@@ -37,5 +37,13 @@ namespace EMPPS.Classes
             set { eu_duration = value; }
 
         }
+
+        public EquipmentUsed(string eup_id, string eu_id, string eu_cost, int eu_duration)
+        {
+            this.eup_id = eup_id;
+            this.eu_id = eu_id;
+            this.eu_cost = eu_cost;
+            this.eu_duration = eu_duration;
+        }
     }
 }
