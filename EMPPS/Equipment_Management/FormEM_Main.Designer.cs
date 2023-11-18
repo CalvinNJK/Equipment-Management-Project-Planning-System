@@ -95,7 +95,8 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 33);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(877, 609);
@@ -125,6 +126,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label3
             // 
@@ -336,6 +338,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addCategoryToolStripMenuItem,
             this.categorizationToolStripMenuItem});
@@ -350,13 +353,13 @@
             this.addCategoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addEquipmentToolStripMenuItem});
             this.addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
-            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
             this.addCategoryToolStripMenuItem.Text = "Equipment Inventory";
             // 
             // addEquipmentToolStripMenuItem
             // 
             this.addEquipmentToolStripMenuItem.Name = "addEquipmentToolStripMenuItem";
-            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.addEquipmentToolStripMenuItem.Text = "Add Equipment";
             this.addEquipmentToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentToolStripMenuItem_Click);
             // 
@@ -366,20 +369,20 @@
             this.editCategToolStripMenuItem,
             this.addCategoryToolStripMenuItem1});
             this.categorizationToolStripMenuItem.Name = "categorizationToolStripMenuItem";
-            this.categorizationToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.categorizationToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.categorizationToolStripMenuItem.Text = "Categorization";
             // 
             // editCategToolStripMenuItem
             // 
             this.editCategToolStripMenuItem.Name = "editCategToolStripMenuItem";
-            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.editCategToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.editCategToolStripMenuItem.Text = "Configuration";
             this.editCategToolStripMenuItem.Click += new System.EventHandler(this.editCategToolStripMenuItem_Click);
             // 
             // addCategoryToolStripMenuItem1
             // 
             this.addCategoryToolStripMenuItem1.Name = "addCategoryToolStripMenuItem1";
-            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.addCategoryToolStripMenuItem1.Text = "Add Category";
             this.addCategoryToolStripMenuItem1.Click += new System.EventHandler(this.addCategoryToolStripMenuItem1_Click);
             // 
@@ -509,13 +512,14 @@
             // 
             // FormEM_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 633);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEM_Main";
