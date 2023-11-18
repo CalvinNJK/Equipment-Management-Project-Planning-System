@@ -16,13 +16,11 @@ namespace EMPPS
         public static List<Equipment> equipmentList = new List<Equipment>();
         public static List<Category> categoryList = new List<Category>();
         public static List<Project> projectList = new List<Project>();
-        public static List<EquipmentUsed> equipmentUsedList = new List<EquipmentUsed>();
 
         // File Paths
         private static string equipment_path = @"C:\EMPPS\equipment.csv";
         private static string category_path = @"C:\EMPPS\category.csv";
         private static string project_path = @"C:\EMPPS\project.csv";
-        private static string equipmentUsed_path = @"C:\EMPPS\equipmentUsed.csv";
 
 
         // Initial Reading for EQUIPMENT.csv
@@ -97,9 +95,6 @@ namespace EMPPS
             }
         }
 
-
-
-
         // Initial Reading for PROJECT.csv
         public static void ReadAllProject()
         {
@@ -113,8 +108,8 @@ namespace EMPPS
                     while ((line = readerProjectCSV.ReadLine()) != null)
                     {
                         string[] temp = line.Split(',');
-
-                        projectList.Add(new Project(temp[0], temp[1], temp[2], temp[3], Int32.Parse(temp[4]), Double.Parse(temp[5])));
+                        int[] eidArray = temp[7].Split('.').Select(int.Parse).ToArray();
+                        projectList.Add(new Project(temp[0], temp[1], temp[2], temp[3], Int32.Parse(temp[4]), Double.Parse(temp[5]), Int32.Parse(temp[6]), eidArray));
                     }
                 }
 
@@ -125,44 +120,18 @@ namespace EMPPS
                 Console.WriteLine(" -------------------");
                 foreach (var item in FileHandling.projectList)
                 {
-                    Console.WriteLine($"{item.P_ID} {item.P_Name} {item.P_Desc} {item.P_LeaderId} {item.P_Duration} {item.P_Budget}");
-                }
-                Console.WriteLine("");
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        // Initial Reading for PROJECT.csv
-        public static void ReadAllEquipmentUsed()
-        {
-            try
-            {
-                using (StreamReader readerEquipmentUsedCSV = new StreamReader(equipmentUsed_path))
-                {
-                    string headerLine = readerEquipmentUsedCSV.ReadLine();   // To ignore the first (HEADER) line
-
-                    string line;
-                    while ((line = readerEquipmentUsedCSV.ReadLine()) != null)
+                    Console.WriteLine("\nProject ID: "+ item.P_ID);
+                    Console.WriteLine("Name: " + item.P_Name);
+                    Console.WriteLine("Description: " + item.P_Desc);
+                    Console.WriteLine("Leader ID: " + item.P_LeaderId);
+                    Console.WriteLine("Duration: " + item.P_Duration);
+                    Console.WriteLine("Budget: " + item.P_Budget);
+                    Console.WriteLine("Status: " + item.P_Status);
+                    foreach (var item2 in item.P_EID)
                     {
-                        string[] temp = line.Split(',');
-
-                        equipmentUsedList.Add(new EquipmentUsed(temp[0], temp[1], temp[2], Int32.Parse(temp[3])));
+                        Console.WriteLine($"Equipment ID: "+ item2);
                     }
                 }
-
-                // Testing Purpose - Check List input
-                Console.WriteLine(" -------------------");
-                Console.WriteLine("| Read Equipment Used.csv |");
-                Console.WriteLine($"| Items: {equipmentUsedList.Count,-10} |");
-                Console.WriteLine(" -------------------");
-                foreach (var item in FileHandling.equipmentUsedList)
-                {
-                    Console.WriteLine($"{item.EUP_ID} {item.EU_ID} {item.EU_CostPerDay} {item.EU_Duration}");
-                }
                 Console.WriteLine("");
 
             }
@@ -171,6 +140,8 @@ namespace EMPPS
                 Console.WriteLine(ex.Message);
             }
         }
+
+        
 
         // -----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -225,35 +196,20 @@ namespace EMPPS
                 Console.WriteLine(" --------------------");
                 Console.WriteLine("| Write PROJECT.csv |");
                 Console.WriteLine(" --------------------");
-                writerProjectCSV.WriteLine($"ID,NAME,DESCRIPTION,LEADER ID,DURATION,BUDGET");   // Project Header Line
+                
+                writerProjectCSV.WriteLine($"ID,NAME,DESCRIPTION,LEADER ID,DURATION,BUDGET,EQUIPMENT ID");   // Project Header Line
+                
                 foreach (var item in FileHandling.projectList)
                 {
-                    writerProjectCSV.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget}");
-                    Console.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget}");
+                    string[] eidArrayString = item.P_EID.Select(x=> x.ToString()).ToArray();
+                    string p_eid = string.Join(",", eidArrayString);
+
+                    writerProjectCSV.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget},{item.P_Status},{p_eid}");
+                    Console.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget},{item.P_Status},{p_eid}");
                 }
                 Console.WriteLine("");
             }
         }
 
-        // Save EQUIPMENT USED to EuipmentUsed.csv
-        public static void WriteAllEquipmentUsed()
-        {
-            File.WriteAllText(equipmentUsed_path, String.Empty);
-
-            using (StreamWriter writerProjectCSV = new StreamWriter(equipmentUsed_path))
-            {
-                Console.WriteLine(" --------------------");
-                Console.WriteLine("| Write EuipmentUsed.csv |");
-                Console.WriteLine(" --------------------");
-                writerProjectCSV.WriteLine($"EQUIPMENT USED PROJECT ID,EQUIPMENT USED ID,COST PER DAY,DURATION");   // Project Header Line
-                foreach (var item in FileHandling.equipmentUsedList)
-                {
-                    writerProjectCSV.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_CostPerDay},{item.EU_Duration}");
-                    Console.WriteLine($"{item.EUP_ID},{item.EU_ID},{item.EU_CostPerDay},{item.EU_Duration}");
-
-                }
-                Console.WriteLine("");
-            }
-        }
     }
 }
