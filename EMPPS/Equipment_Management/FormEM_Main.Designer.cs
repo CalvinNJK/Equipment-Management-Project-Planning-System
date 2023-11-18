@@ -29,20 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label_TotalCat = new System.Windows.Forms.Label();
+            this.label_Damaged = new System.Windows.Forms.Label();
+            this.label_OnLoan = new System.Windows.Forms.Label();
+            this.label_Available = new System.Windows.Forms.Label();
+            this.label_TotalEquipment = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label_TotalEquipment2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.b_eAdd = new System.Windows.Forms.Button();
             this.b_eDelete = new System.Windows.Forms.Button();
             this.b_eModify = new System.Windows.Forms.Button();
@@ -63,21 +75,9 @@
             this.categorizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCategToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label_TotalEquipment = new System.Windows.Forms.Label();
-            this.label_Available = new System.Windows.Forms.Label();
-            this.label_OnLoan = new System.Windows.Forms.Label();
-            this.label_Damaged = new System.Windows.Forms.Label();
-            this.label_TotalCat = new System.Windows.Forms.Label();
             this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label_TotalEquipment2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
@@ -96,7 +96,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(877, 609);
@@ -119,14 +119,106 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.chart2);
             this.tabPage1.Controls.Add(this.chart1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(869, 576);
+            this.tabPage1.Size = new System.Drawing.Size(869, 571);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label_TotalCat
+            // 
+            this.label_TotalCat.AutoSize = true;
+            this.label_TotalCat.Location = new System.Drawing.Point(638, 428);
+            this.label_TotalCat.Name = "label_TotalCat";
+            this.label_TotalCat.Size = new System.Drawing.Size(17, 25);
+            this.label_TotalCat.TabIndex = 15;
+            this.label_TotalCat.Text = " ";
+            // 
+            // label_Damaged
+            // 
+            this.label_Damaged.AutoSize = true;
+            this.label_Damaged.Location = new System.Drawing.Point(205, 531);
+            this.label_Damaged.Name = "label_Damaged";
+            this.label_Damaged.Size = new System.Drawing.Size(0, 25);
+            this.label_Damaged.TabIndex = 14;
+            // 
+            // label_OnLoan
+            // 
+            this.label_OnLoan.AutoSize = true;
+            this.label_OnLoan.Location = new System.Drawing.Point(205, 501);
+            this.label_OnLoan.Name = "label_OnLoan";
+            this.label_OnLoan.Size = new System.Drawing.Size(0, 25);
+            this.label_OnLoan.TabIndex = 13;
+            // 
+            // label_Available
+            // 
+            this.label_Available.AutoSize = true;
+            this.label_Available.Location = new System.Drawing.Point(205, 471);
+            this.label_Available.Name = "label_Available";
+            this.label_Available.Size = new System.Drawing.Size(17, 25);
+            this.label_Available.TabIndex = 12;
+            this.label_Available.Text = " ";
+            // 
+            // label_TotalEquipment
+            // 
+            this.label_TotalEquipment.AutoSize = true;
+            this.label_TotalEquipment.Location = new System.Drawing.Point(205, 428);
+            this.label_TotalEquipment.Name = "label_TotalEquipment";
+            this.label_TotalEquipment.Size = new System.Drawing.Size(17, 25);
+            this.label_TotalEquipment.TabIndex = 11;
+            this.label_TotalEquipment.Text = " ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(103, 531);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 25);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Damaged :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(112, 501);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 25);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "On Loan :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(110, 471);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 25);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Available :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(481, 428);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(185, 25);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Total Categories :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(40, 428);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(193, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Total Equipments :";
             // 
             // label3
             // 
@@ -134,7 +226,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(442, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 24);
+            this.label3.Size = new System.Drawing.Size(250, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "Equipment Category";
             // 
@@ -144,7 +236,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 24);
+            this.label2.Size = new System.Drawing.Size(217, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "Equipment Status";
             // 
@@ -153,45 +245,45 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(256, 166);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 3;
             // 
             // chart2
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            legend3.Alignment = System.Drawing.StringAlignment.Center;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.IsDockedInsideChartArea = false;
-            legend3.Name = "Legend1";
-            this.chart2.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.IsDockedInsideChartArea = false;
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(446, 67);
             this.chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "s1";
-            this.chart2.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(400, 328);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.IsDockedInsideChartArea = false;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.IsDockedInsideChartArea = false;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(24, 67);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "s1";
-            this.chart1.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "s1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(400, 328);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
@@ -206,13 +298,32 @@
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.listView_eq);
             this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(869, 576);
+            this.tabPage2.Size = new System.Drawing.Size(869, 571);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Equipment Inventory";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label_TotalEquipment2
+            // 
+            this.label_TotalEquipment2.AutoSize = true;
+            this.label_TotalEquipment2.Location = new System.Drawing.Point(363, 536);
+            this.label_TotalEquipment2.Name = "label_TotalEquipment2";
+            this.label_TotalEquipment2.Size = new System.Drawing.Size(17, 25);
+            this.label_TotalEquipment2.TabIndex = 13;
+            this.label_TotalEquipment2.Text = " ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(198, 536);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(193, 25);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Total Equipments :";
             // 
             // b_eAdd
             // 
@@ -323,15 +434,15 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(61, 17);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.Size = new System.Drawing.Size(100, 30);
             this.textBox1.TabIndex = 6;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(869, 576);
+            this.tabPage3.Size = new System.Drawing.Size(869, 571);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Status Management";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -344,7 +455,7 @@
             this.categorizationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(877, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(877, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -386,99 +497,6 @@
             this.addCategoryToolStripMenuItem1.Text = "Add Category";
             this.addCategoryToolStripMenuItem1.Click += new System.EventHandler(this.addCategoryToolStripMenuItem1_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 428);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Total Equipments :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(481, 428);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Total Categories :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(110, 471);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Available :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(112, 501);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "On Loan :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(103, 531);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 20);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Damaged :";
-            // 
-            // label_TotalEquipment
-            // 
-            this.label_TotalEquipment.AutoSize = true;
-            this.label_TotalEquipment.Location = new System.Drawing.Point(205, 428);
-            this.label_TotalEquipment.Name = "label_TotalEquipment";
-            this.label_TotalEquipment.Size = new System.Drawing.Size(13, 20);
-            this.label_TotalEquipment.TabIndex = 11;
-            this.label_TotalEquipment.Text = " ";
-            // 
-            // label_Available
-            // 
-            this.label_Available.AutoSize = true;
-            this.label_Available.Location = new System.Drawing.Point(205, 471);
-            this.label_Available.Name = "label_Available";
-            this.label_Available.Size = new System.Drawing.Size(13, 20);
-            this.label_Available.TabIndex = 12;
-            this.label_Available.Text = " ";
-            // 
-            // label_OnLoan
-            // 
-            this.label_OnLoan.AutoSize = true;
-            this.label_OnLoan.Location = new System.Drawing.Point(205, 501);
-            this.label_OnLoan.Name = "label_OnLoan";
-            this.label_OnLoan.Size = new System.Drawing.Size(0, 20);
-            this.label_OnLoan.TabIndex = 13;
-            // 
-            // label_Damaged
-            // 
-            this.label_Damaged.AutoSize = true;
-            this.label_Damaged.Location = new System.Drawing.Point(205, 531);
-            this.label_Damaged.Name = "label_Damaged";
-            this.label_Damaged.Size = new System.Drawing.Size(0, 20);
-            this.label_Damaged.TabIndex = 14;
-            // 
-            // label_TotalCat
-            // 
-            this.label_TotalCat.AutoSize = true;
-            this.label_TotalCat.Location = new System.Drawing.Point(638, 428);
-            this.label_TotalCat.Name = "label_TotalCat";
-            this.label_TotalCat.Size = new System.Drawing.Size(13, 20);
-            this.label_TotalCat.TabIndex = 15;
-            this.label_TotalCat.Text = " ";
-            // 
             // equipmentBindingSource
             // 
             this.equipmentBindingSource.DataSource = typeof(EMPPS.Classes.Equipment);
@@ -491,25 +509,6 @@
             // 
             this.fileHandlingBindingSource1.DataSource = typeof(EMPPS.FileHandling);
             // 
-            // label_TotalEquipment2
-            // 
-            this.label_TotalEquipment2.AutoSize = true;
-            this.label_TotalEquipment2.Location = new System.Drawing.Point(363, 536);
-            this.label_TotalEquipment2.Name = "label_TotalEquipment2";
-            this.label_TotalEquipment2.Size = new System.Drawing.Size(13, 20);
-            this.label_TotalEquipment2.TabIndex = 13;
-            this.label_TotalEquipment2.Text = " ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(198, 536);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(159, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Total Equipments :";
-            // 
             // FormEM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -519,7 +518,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEM_Main";
