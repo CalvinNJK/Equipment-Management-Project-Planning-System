@@ -8,14 +8,15 @@ namespace EMPPS.Classes
 {
     internal class EquipmentUsed
     {
-        private string p_id;
+        private string eup_id;
         private string eu_id;
         private string eu_cost;
         private string eu_duration;
 
         public string P_ID
         {
-
+            get { return eup_id; }
+            set {  eup_id = value; }
         }
 
         public string EU_ID
@@ -32,8 +33,8 @@ namespace EMPPS.Classes
 
         public string EU_Duration
         {
-            get { return e_duration; }
-            set { e_duration = value; }
+            get { return eu_duration; }
+            set { eu_duration = value; }
 
         }
     }
