@@ -68,6 +68,7 @@
     <Compile Include="Classes\Category.cs" />
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\EquipmentUsed.cs" />
+    <Compile Include="Classes\Testing.cs" />
     <Compile Include="Classes\Project.cs" />
     <Compile Include="Equipment_Management\FormCategory.cs">
       <SubType>Form</SubType>
