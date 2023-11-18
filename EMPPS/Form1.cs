@@ -36,13 +36,10 @@ namespace EMPPS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             // READ ALL THE INITIAL FILES HERE
             FileHandling.ReadAllEquipment();
             FileHandling.ReadAllCategory();
             FileHandling.ReadAllProject();
         }
     }
-
-
 }

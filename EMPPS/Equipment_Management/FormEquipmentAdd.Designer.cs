@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEquipmentAdd));
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_cost = new System.Windows.Forms.TextBox();
             this.button_Add = new System.Windows.Forms.Button();
@@ -245,6 +246,7 @@
             this.Controls.Add(this.l_id);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormEquipmentAdd";

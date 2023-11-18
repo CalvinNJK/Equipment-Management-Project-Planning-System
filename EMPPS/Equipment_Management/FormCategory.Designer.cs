@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategory));
             this.label1 = new System.Windows.Forms.Label();
             this.b_cAdd = new System.Windows.Forms.Button();
             this.b_cDelete = new System.Windows.Forms.Button();
@@ -119,6 +120,7 @@
             this.Controls.Add(this.b_cModify);
             this.Controls.Add(this.listView_c);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCategory";

@@ -64,13 +64,19 @@ namespace EMPPS.Equipment_Management
 
 
 
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        //
+        // Searching functions
+        //
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
 
         }
+        private void comboBoxFilterByCat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
 
 
 
@@ -492,10 +498,12 @@ namespace EMPPS.Equipment_Management
 
 
             // Update labels
-            label_TotalOnLoan.Text = "(" + totalDamaged.ToString() + ")";
+            label_TotalOnLoan.Text = "(" + totalOnLoan.ToString() + ")";
             label_TotalAvailable.Text = "(" + totalAvailable.ToString() + ")";
             label_TotalDamaged.Text = "(" + totalDamaged.ToString() + ")";
 
         }
+
+        
     }
 }

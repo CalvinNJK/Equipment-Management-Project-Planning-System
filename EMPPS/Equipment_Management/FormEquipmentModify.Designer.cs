@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEquipmentModify));
             this.textBox_costPerDay = new System.Windows.Forms.TextBox();
             this.l_costPerDay = new System.Windows.Forms.Label();
             this.button_Modify = new System.Windows.Forms.Button();
@@ -202,6 +203,7 @@
             this.Controls.Add(this.l_id);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormEquipmentModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Equipment";
