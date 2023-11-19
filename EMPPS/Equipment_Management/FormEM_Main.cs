@@ -761,9 +761,9 @@ namespace EMPPS.Equipment_Management
 
 
             // Update labels
-            label_TotalOnLoan.Text = "(" + totalOnLoan.ToString() + ")";
-            label_TotalAvailable.Text = "(" + totalAvailable.ToString() + ")";
-            label_TotalDamaged.Text = "(" + totalDamaged.ToString() + ")";
+            label_TotalOnLoan.Text = "( " + totalOnLoan.ToString() + " )";
+            label_TotalAvailable.Text = "( " + totalAvailable.ToString() + " )";
+            label_TotalDamaged.Text = "( " + totalDamaged.ToString() + " )";
 
         }
     }
