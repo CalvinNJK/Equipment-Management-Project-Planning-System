@@ -314,7 +314,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(479, 27);
+            this.label3.Location = new System.Drawing.Point(602, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 24);
             this.label3.TabIndex = 5;
@@ -324,7 +324,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 27);
+            this.label2.Location = new System.Drawing.Point(162, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 24);
             this.label2.TabIndex = 4;
@@ -431,7 +431,7 @@
             // label_TotalEquipment2
             // 
             this.label_TotalEquipment2.AutoSize = true;
-            this.label_TotalEquipment2.Location = new System.Drawing.Point(363, 575);
+            this.label_TotalEquipment2.Location = new System.Drawing.Point(419, 575);
             this.label_TotalEquipment2.Name = "label_TotalEquipment2";
             this.label_TotalEquipment2.Size = new System.Drawing.Size(13, 20);
             this.label_TotalEquipment2.TabIndex = 13;
@@ -443,9 +443,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(198, 575);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(159, 20);
+            this.label10.Size = new System.Drawing.Size(215, 20);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Total Equipments :";
+            this.label10.Text = "Total Found Equipments :";
             // 
             // b_eAdd
             // 
