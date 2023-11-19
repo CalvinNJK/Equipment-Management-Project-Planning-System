@@ -16,5 +16,60 @@ namespace EMPPS.Project_Planning
         {
             InitializeComponent();
         }
+
+        private void p_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p_leaderID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p_duration_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p_desc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EquipmentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChooseEquipmentListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearEqBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddEqBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateProject_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
