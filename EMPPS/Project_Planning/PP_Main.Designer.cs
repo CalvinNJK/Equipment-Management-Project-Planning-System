@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PP_Main));
             this.AllProjectSearchBar = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.AllProjectFilterCategory = new System.Windows.Forms.Button();
@@ -48,7 +49,14 @@
             this.ModifyProject = new System.Windows.Forms.Button();
             this.CreateProject = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.AllProjectListView = new System.Windows.Forms.ListView();
+            this.listView_eq = new System.Windows.Forms.ListView();
+            this.p_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_Desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_LeaderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_duration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_budget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelFilterCategory.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.AllProjectTabPage.SuspendLayout();
@@ -71,7 +79,7 @@
             this.AllProjectFilterCategory.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.AllProjectFilterCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllProjectFilterCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AllProjectFilterCategory.Image = global::EMPPS.Properties.Resources.Expand;
+            this.AllProjectFilterCategory.Image = ((System.Drawing.Image)(resources.GetObject("AllProjectFilterCategory.Image")));
             this.AllProjectFilterCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AllProjectFilterCategory.Location = new System.Drawing.Point(0, 13);
             this.AllProjectFilterCategory.Name = "AllProjectFilterCategory";
@@ -248,7 +256,7 @@
             // 
             // AllProjectTabPage
             // 
-            this.AllProjectTabPage.Controls.Add(this.AllProjectListView);
+            this.AllProjectTabPage.Controls.Add(this.listView_eq);
             this.AllProjectTabPage.Controls.Add(this.b_eAdd);
             this.AllProjectTabPage.Controls.Add(this.panelFilterCategory);
             this.AllProjectTabPage.Controls.Add(this.DeleteProject);
@@ -328,20 +336,68 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // AllProjectListView
+            // listView_eq
             // 
-            this.AllProjectListView.HideSelection = false;
-            this.AllProjectListView.Location = new System.Drawing.Point(27, 67);
-            this.AllProjectListView.Name = "AllProjectListView";
-            this.AllProjectListView.Size = new System.Drawing.Size(923, 492);
-            this.AllProjectListView.TabIndex = 6;
-            this.AllProjectListView.UseCompatibleStateImageBehavior = false;
+            this.listView_eq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView_eq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.p_ID,
+            this.p_Name,
+            this.p_Desc,
+            this.p_LeaderID,
+            this.p_duration,
+            this.p_budget,
+            this.p_Status});
+            this.listView_eq.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listView_eq.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_eq.HideSelection = false;
+            this.listView_eq.Location = new System.Drawing.Point(19, 64);
+            this.listView_eq.Margin = new System.Windows.Forms.Padding(4);
+            this.listView_eq.Name = "listView_eq";
+            this.listView_eq.Size = new System.Drawing.Size(956, 488);
+            this.listView_eq.TabIndex = 8;
+            this.listView_eq.UseCompatibleStateImageBehavior = false;
+            this.listView_eq.View = System.Windows.Forms.View.Details;
+            // 
+            // p_ID
+            // 
+            this.p_ID.Text = "ID";
+            this.p_ID.Width = 91;
+            // 
+            // p_Name
+            // 
+            this.p_Name.Text = "Name";
+            this.p_Name.Width = 150;
+            // 
+            // p_Desc
+            // 
+            this.p_Desc.Text = "Description";
+            this.p_Desc.Width = 150;
+            // 
+            // p_LeaderID
+            // 
+            this.p_LeaderID.Text = "Leader ID";
+            this.p_LeaderID.Width = 174;
+            // 
+            // p_duration
+            // 
+            this.p_duration.Text = "Duration";
+            this.p_duration.Width = 100;
+            // 
+            // p_budget
+            // 
+            this.p_budget.Text = "Budget (RM)";
+            this.p_budget.Width = 120;
+            // 
+            // p_Status
+            // 
+            this.p_Status.Text = "Status";
+            this.p_Status.Width = 87;
             // 
             // PP_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 701);
+            this.ClientSize = new System.Drawing.Size(1013, 700);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -376,6 +432,13 @@
         private System.Windows.Forms.Button ModifyProject;
         private System.Windows.Forms.Button CreateProject;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListView AllProjectListView;
+        private System.Windows.Forms.ListView listView_eq;
+        private System.Windows.Forms.ColumnHeader p_ID;
+        private System.Windows.Forms.ColumnHeader p_Name;
+        private System.Windows.Forms.ColumnHeader p_Desc;
+        private System.Windows.Forms.ColumnHeader p_LeaderID;
+        private System.Windows.Forms.ColumnHeader p_duration;
+        private System.Windows.Forms.ColumnHeader p_budget;
+        private System.Windows.Forms.ColumnHeader p_Status;
     }
 }
