@@ -122,7 +122,7 @@
             // chA_Eid
             // 
             chA_Eid.Text = "ID";
-            chA_Eid.Width = 85;
+            chA_Eid.Width = 84;
             // 
             // tabControl1
             // 
@@ -133,7 +133,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(877, 652);
+            this.tabControl1.Size = new System.Drawing.Size(966, 652);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -161,7 +161,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(869, 619);
+            this.tabPage1.Size = new System.Drawing.Size(958, 619);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(667, 529);
+            this.label15.Location = new System.Drawing.Point(696, 529);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(38, 20);
             this.label15.TabIndex = 20;
@@ -179,7 +179,7 @@
             // label_totalCatUsed
             // 
             this.label_totalCatUsed.AutoSize = true;
-            this.label_totalCatUsed.Location = new System.Drawing.Point(667, 419);
+            this.label_totalCatUsed.Location = new System.Drawing.Point(696, 419);
             this.label_totalCatUsed.Name = "label_totalCatUsed";
             this.label_totalCatUsed.Size = new System.Drawing.Size(13, 20);
             this.label_totalCatUsed.TabIndex = 19;
@@ -189,7 +189,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(479, 449);
+            this.label14.Location = new System.Drawing.Point(508, 449);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(186, 20);
             this.label14.TabIndex = 18;
@@ -199,7 +199,7 @@
             // 
             this.label_TotalEqCost.AutoSize = true;
             this.label_TotalEqCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TotalEqCost.Location = new System.Drawing.Point(703, 520);
+            this.label_TotalEqCost.Location = new System.Drawing.Point(732, 520);
             this.label_TotalEqCost.Name = "label_TotalEqCost";
             this.label_TotalEqCost.Size = new System.Drawing.Size(19, 29);
             this.label_TotalEqCost.TabIndex = 17;
@@ -209,7 +209,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(473, 529);
+            this.label9.Location = new System.Drawing.Point(502, 529);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(192, 20);
             this.label9.TabIndex = 16;
@@ -218,7 +218,7 @@
             // label_TotalCat
             // 
             this.label_TotalCat.AutoSize = true;
-            this.label_TotalCat.Location = new System.Drawing.Point(667, 449);
+            this.label_TotalCat.Location = new System.Drawing.Point(696, 449);
             this.label_TotalCat.Name = "label_TotalCat";
             this.label_TotalCat.Size = new System.Drawing.Size(13, 20);
             this.label_TotalCat.TabIndex = 15;
@@ -294,7 +294,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(496, 419);
+            this.label5.Location = new System.Drawing.Point(525, 419);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 20);
             this.label5.TabIndex = 7;
@@ -314,7 +314,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(442, 27);
+            this.label3.Location = new System.Drawing.Point(479, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 24);
             this.label3.TabIndex = 5;
@@ -347,14 +347,14 @@
             legend1.IsDockedInsideChartArea = false;
             legend1.Name = "Legend1";
             this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(446, 67);
+            this.chart2.Location = new System.Drawing.Point(483, 67);
             this.chart2.Name = "chart2";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "s1";
             this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(400, 328);
+            this.chart2.Size = new System.Drawing.Size(442, 328);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
             // 
@@ -374,7 +374,7 @@
             series2.Legend = "Legend1";
             series2.Name = "s1";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(400, 328);
+            this.chart1.Size = new System.Drawing.Size(442, 328);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -393,17 +393,18 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(869, 619);
+            this.tabPage2.Size = new System.Drawing.Size(958, 619);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Equipment Inventory";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // comboBox_FilterByCat
             // 
+            this.comboBox_FilterByCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_FilterByCat.FormattingEnabled = true;
-            this.comboBox_FilterByCat.Location = new System.Drawing.Point(618, 42);
+            this.comboBox_FilterByCat.Location = new System.Drawing.Point(664, 42);
             this.comboBox_FilterByCat.Name = "comboBox_FilterByCat";
-            this.comboBox_FilterByCat.Size = new System.Drawing.Size(223, 28);
+            this.comboBox_FilterByCat.Size = new System.Drawing.Size(266, 28);
             this.comboBox_FilterByCat.TabIndex = 16;
             this.comboBox_FilterByCat.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterByCat_SelectedIndexChanged);
             // 
@@ -411,7 +412,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(614, 16);
+            this.label17.Location = new System.Drawing.Point(660, 17);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(160, 20);
             this.label17.TabIndex = 15;
@@ -462,7 +463,7 @@
             this.b_eDelete.Enabled = false;
             this.b_eDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_eDelete.ForeColor = System.Drawing.Color.Red;
-            this.b_eDelete.Location = new System.Drawing.Point(744, 566);
+            this.b_eDelete.Location = new System.Drawing.Point(833, 566);
             this.b_eDelete.Name = "b_eDelete";
             this.b_eDelete.Size = new System.Drawing.Size(97, 38);
             this.b_eDelete.TabIndex = 10;
@@ -475,7 +476,7 @@
             this.b_eModify.Enabled = false;
             this.b_eModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_eModify.ForeColor = System.Drawing.Color.Green;
-            this.b_eModify.Location = new System.Drawing.Point(641, 566);
+            this.b_eModify.Location = new System.Drawing.Point(730, 566);
             this.b_eModify.Name = "b_eModify";
             this.b_eModify.Size = new System.Drawing.Size(97, 38);
             this.b_eModify.TabIndex = 9;
@@ -499,7 +500,7 @@
             this.listView_eq.HideSelection = false;
             this.listView_eq.Location = new System.Drawing.Point(28, 83);
             this.listView_eq.Name = "listView_eq";
-            this.listView_eq.Size = new System.Drawing.Size(813, 477);
+            this.listView_eq.Size = new System.Drawing.Size(902, 477);
             this.listView_eq.TabIndex = 7;
             this.listView_eq.UseCompatibleStateImageBehavior = false;
             this.listView_eq.View = System.Windows.Forms.View.Details;
@@ -513,22 +514,22 @@
             // ch_Name
             // 
             this.ch_Name.Text = "Name";
-            this.ch_Name.Width = 118;
+            this.ch_Name.Width = 150;
             // 
             // ch_Desc
             // 
             this.ch_Desc.Text = "Description";
-            this.ch_Desc.Width = 153;
+            this.ch_Desc.Width = 150;
             // 
             // ch_Category
             // 
             this.ch_Category.Text = "Category";
-            this.ch_Category.Width = 123;
+            this.ch_Category.Width = 174;
             // 
             // ch_Cost
             // 
             this.ch_Cost.Text = "Cost";
-            this.ch_Cost.Width = 120;
+            this.ch_Cost.Width = 100;
             // 
             // ch_CostPerDay
             // 
@@ -538,13 +539,13 @@
             // ch_Status
             // 
             this.ch_Status.Text = "Status";
-            this.ch_Status.Width = 88;
+            this.ch_Status.Width = 87;
             // 
             // textBox_Search
             // 
             this.textBox_Search.Location = new System.Drawing.Point(28, 43);
             this.textBox_Search.Name = "textBox_Search";
-            this.textBox_Search.Size = new System.Drawing.Size(572, 26);
+            this.textBox_Search.Size = new System.Drawing.Size(615, 26);
             this.textBox_Search.TabIndex = 6;
             this.textBox_Search.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
@@ -564,7 +565,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(869, 619);
+            this.tabPage3.Size = new System.Drawing.Size(958, 619);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Status Management";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -572,7 +573,7 @@
             // label_TotalDamaged
             // 
             this.label_TotalDamaged.AutoSize = true;
-            this.label_TotalDamaged.Location = new System.Drawing.Point(663, 264);
+            this.label_TotalDamaged.Location = new System.Drawing.Point(697, 268);
             this.label_TotalDamaged.Name = "label_TotalDamaged";
             this.label_TotalDamaged.Size = new System.Drawing.Size(23, 20);
             this.label_TotalDamaged.TabIndex = 15;
@@ -581,7 +582,7 @@
             // label_TotalAvailable
             // 
             this.label_TotalAvailable.AutoSize = true;
-            this.label_TotalAvailable.Location = new System.Drawing.Point(236, 264);
+            this.label_TotalAvailable.Location = new System.Drawing.Point(226, 267);
             this.label_TotalAvailable.Name = "label_TotalAvailable";
             this.label_TotalAvailable.Size = new System.Drawing.Size(23, 20);
             this.label_TotalAvailable.TabIndex = 14;
@@ -590,7 +591,7 @@
             // label_TotalOnLoan
             // 
             this.label_TotalOnLoan.AutoSize = true;
-            this.label_TotalOnLoan.Location = new System.Drawing.Point(231, 24);
+            this.label_TotalOnLoan.Location = new System.Drawing.Point(221, 24);
             this.label_TotalOnLoan.Name = "label_TotalOnLoan";
             this.label_TotalOnLoan.Size = new System.Drawing.Size(23, 20);
             this.label_TotalOnLoan.TabIndex = 13;
@@ -601,7 +602,7 @@
             this.button_ToAvailable.Enabled = false;
             this.button_ToAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ToAvailable.ForeColor = System.Drawing.Color.Green;
-            this.button_ToAvailable.Location = new System.Drawing.Point(445, 565);
+            this.button_ToAvailable.Location = new System.Drawing.Point(489, 565);
             this.button_ToAvailable.Name = "button_ToAvailable";
             this.button_ToAvailable.Size = new System.Drawing.Size(120, 38);
             this.button_ToAvailable.TabIndex = 12;
@@ -614,7 +615,7 @@
             this.button_ToDamaged.Enabled = false;
             this.button_ToDamaged.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ToDamaged.ForeColor = System.Drawing.Color.Red;
-            this.button_ToDamaged.Location = new System.Drawing.Point(302, 565);
+            this.button_ToDamaged.Location = new System.Drawing.Point(346, 565);
             this.button_ToDamaged.Name = "button_ToDamaged";
             this.button_ToDamaged.Size = new System.Drawing.Size(120, 38);
             this.button_ToDamaged.TabIndex = 11;
@@ -626,11 +627,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(441, 264);
+            this.label13.Location = new System.Drawing.Point(485, 264);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(216, 24);
+            this.label13.Size = new System.Drawing.Size(206, 24);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Damaged Equipments";
+            this.label13.Text = "Damaged Equipment";
             // 
             // label12
             // 
@@ -638,9 +639,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(18, 264);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(212, 24);
+            this.label12.Size = new System.Drawing.Size(202, 24);
             this.label12.TabIndex = 6;
-            this.label12.Text = "Available Equipments";
+            this.label12.Text = "Available Equipment";
             // 
             // label11
             // 
@@ -648,9 +649,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(18, 21);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(207, 24);
+            this.label11.Size = new System.Drawing.Size(197, 24);
             this.label11.TabIndex = 5;
-            this.label11.Text = "On Loan Equipments";
+            this.label11.Text = "On Loan Equipment";
             // 
             // listView_damagedStatus
             // 
@@ -659,9 +660,9 @@
             this.chD_Name,
             this.chD_Category});
             this.listView_damagedStatus.HideSelection = false;
-            this.listView_damagedStatus.Location = new System.Drawing.Point(445, 291);
+            this.listView_damagedStatus.Location = new System.Drawing.Point(489, 291);
             this.listView_damagedStatus.Name = "listView_damagedStatus";
-            this.listView_damagedStatus.Size = new System.Drawing.Size(400, 268);
+            this.listView_damagedStatus.Size = new System.Drawing.Size(444, 268);
             this.listView_damagedStatus.TabIndex = 2;
             this.listView_damagedStatus.UseCompatibleStateImageBehavior = false;
             this.listView_damagedStatus.View = System.Windows.Forms.View.Details;
@@ -675,12 +676,12 @@
             // chD_Name
             // 
             this.chD_Name.Text = "Name";
-            this.chD_Name.Width = 146;
+            this.chD_Name.Width = 153;
             // 
             // chD_Category
             // 
             this.chD_Category.Text = "Category";
-            this.chD_Category.Width = 165;
+            this.chD_Category.Width = 202;
             // 
             // listView_availableStatus
             // 
@@ -691,7 +692,7 @@
             this.listView_availableStatus.HideSelection = false;
             this.listView_availableStatus.Location = new System.Drawing.Point(22, 291);
             this.listView_availableStatus.Name = "listView_availableStatus";
-            this.listView_availableStatus.Size = new System.Drawing.Size(400, 268);
+            this.listView_availableStatus.Size = new System.Drawing.Size(444, 268);
             this.listView_availableStatus.TabIndex = 1;
             this.listView_availableStatus.UseCompatibleStateImageBehavior = false;
             this.listView_availableStatus.View = System.Windows.Forms.View.Details;
@@ -700,12 +701,12 @@
             // chA_Name
             // 
             this.chA_Name.Text = "Name";
-            this.chA_Name.Width = 146;
+            this.chA_Name.Width = 152;
             // 
             // chA_Category
             // 
             this.chA_Category.Text = " Category";
-            this.chA_Category.Width = 165;
+            this.chA_Category.Width = 185;
             // 
             // listView_onloanStatus
             // 
@@ -716,7 +717,7 @@
             this.listView_onloanStatus.HideSelection = false;
             this.listView_onloanStatus.Location = new System.Drawing.Point(22, 48);
             this.listView_onloanStatus.Name = "listView_onloanStatus";
-            this.listView_onloanStatus.Size = new System.Drawing.Size(823, 201);
+            this.listView_onloanStatus.Size = new System.Drawing.Size(911, 201);
             this.listView_onloanStatus.TabIndex = 0;
             this.listView_onloanStatus.UseCompatibleStateImageBehavior = false;
             this.listView_onloanStatus.View = System.Windows.Forms.View.Details;
@@ -744,7 +745,7 @@
             this.categorizationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(877, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(967, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -802,7 +803,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 680);
+            this.ClientSize = new System.Drawing.Size(967, 680);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

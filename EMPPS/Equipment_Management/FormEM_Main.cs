@@ -15,6 +15,8 @@ namespace EMPPS.Equipment_Management
 {
     public partial class FormEM_Main : Form
     {
+        private static List<Category> forComboBoxFilterbyCat = new List<Category>();
+
         public FormEM_Main()
         {
             InitializeComponent();
@@ -25,6 +27,9 @@ namespace EMPPS.Equipment_Management
         private void EM_Main_Load(object sender, EventArgs e)
         {
             LoadReloadViews();
+
+            
+
         }
 
 
@@ -40,8 +45,6 @@ namespace EMPPS.Equipment_Management
         {
             var ea_win = new FormEquipmentAdd();
             ea_win.ShowDialog();
-
-
             LoadReloadViews();
         }
         private void editCategToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,7 +76,66 @@ namespace EMPPS.Equipment_Management
         }
         private void comboBoxFilterByCat_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (textBox_Search.Text != "")
+            {
 
+            }
+            else if (textBox_Search.Text == ""  && comboBox_FilterByCat.SelectedIndex == 0)
+            {
+                // Load Full Equipment List
+                //LoadReloadViews();
+            }
+            else if (comboBox_FilterByCat.SelectedIndex < 0)
+            {
+                // Do nothing.
+            }
+            else
+            {
+                // Update the ListView_eq with only comboBoxFilterByCat
+                listView_eq.Items.Clear();
+                foreach (var item in FileHandling.equipmentList)
+                {
+                    if (string.Compare(item.E_Category.ToString(),comboBox_FilterByCat.SelectedValue.ToString()) == 0)
+                    {
+                        ListViewItem lvItem = new ListViewItem(item.E_Id);
+                        lvItem.SubItems.Add(item.E_Name);
+                        lvItem.SubItems.Add(item.E_Desc);
+
+                        // Set Category index -> Category Name
+                        foreach (var ci in FileHandling.categoryList)
+                        {
+                            if (item.E_Category == ci.C_Index)
+                            {
+                                lvItem.SubItems.Add(ci.C_Name);
+                            }
+
+                        }
+
+                        lvItem.SubItems.Add(item.E_Cost.ToString("0.00"));
+                        lvItem.SubItems.Add(item.E_CostPerDay.ToString("0.00"));
+
+                        // Set Status index -> Status Name
+                        lvItem.UseItemStyleForSubItems = false;
+                        if (item.E_Status == 0)
+                        {
+                            lvItem.SubItems.Add("Available");
+                            lvItem.SubItems[6].ForeColor = Color.Green;
+                        }
+                        else if (item.E_Status == 1)
+                        {
+                            lvItem.SubItems.Add("On Loan");
+                            lvItem.SubItems[6].ForeColor = Color.Gray;
+                        }
+                        else if (item.E_Status == 2)
+                        {
+                            lvItem.SubItems.Add("Damaged");
+                            lvItem.SubItems[6].ForeColor = Color.Red;
+                        }
+
+                        listView_eq.Items.Add(lvItem);
+                    }
+                }
+            }
         }
 
         
@@ -368,6 +430,50 @@ namespace EMPPS.Equipment_Management
             //   ---------------------
             //  | Equipment Inventory |
             //   ---------------------
+
+            // Load comboBox_FilterByCat.DataSource
+            forComboBoxFilterbyCat.Clear();
+            comboBox_FilterByCat.DataSource = null;
+            comboBox_FilterByCat.Items.Clear();
+
+            forComboBoxFilterbyCat.Add(new Category(-1, " "));
+            foreach (var item in FileHandling.categoryList)
+            {
+                forComboBoxFilterbyCat.Add((Category)item);
+            }
+            comboBox_FilterByCat.DataSource = forComboBoxFilterbyCat;
+            comboBox_FilterByCat.DisplayMember = "C_Name";
+            comboBox_FilterByCat.ValueMember = "C_Index";
+            comboBox_FilterByCat.SelectedIndex = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             // Update the ListView_eq
             listView_eq.Items.Clear();
