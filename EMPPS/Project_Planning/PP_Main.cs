@@ -97,7 +97,8 @@ namespace EMPPS.Project_Planning
 
         private void ModifyProject_Click(object sender, EventArgs e)
         {
-            var updateProj = new PP_Update();
+            string ID = AllProjectListView.SelectedItems[0].Text.ToString();
+            var updateProj = new PP_Update(ID);
             updateProj.ShowDialog();
             LoadPP_Main();
         }
