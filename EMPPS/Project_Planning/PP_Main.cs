@@ -14,7 +14,6 @@ namespace EMPPS.Project_Planning
 {
     public partial class PP_Main : Form
     {
-        private bool filterCategoryIsCollapsed;
 
         public PP_Main()
         {
@@ -81,32 +80,9 @@ namespace EMPPS.Project_Planning
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (filterCategoryIsCollapsed)
-            {
-                AllProjectFilterCategory.Image = Resources.Collapse;
-                panelFilterCategory.Height += 10;
-                if (panelFilterCategory.Size == panelFilterCategory.MaximumSize)
-                {
-                    timer1.Stop();
-                    filterCategoryIsCollapsed = false;
-                }
-            } else
-            {
-                AllProjectFilterCategory.Image = Resources.Expand;
-                panelFilterCategory.Height -= 10;
-                if (panelFilterCategory.Size == panelFilterCategory.MinimumSize)
-                {
-                    timer1.Stop();
-                    filterCategoryIsCollapsed = true;
-                }
-            }
-        }
 
         private void AllProjectFilterCategory_Click_1(object sender, EventArgs e)
         {
-            timer1.Start();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
