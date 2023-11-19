@@ -97,12 +97,16 @@
             this.chOL_Eid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chOL_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chOL_Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chOL_PID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chOL_PName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chOL_PDuration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEquipmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categorizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCategToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.chOL_LID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileHandlingBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -314,7 +318,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(479, 27);
+            this.label3.Location = new System.Drawing.Point(602, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 24);
             this.label3.TabIndex = 5;
@@ -324,7 +328,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 27);
+            this.label2.Location = new System.Drawing.Point(162, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 24);
             this.label2.TabIndex = 4;
@@ -431,7 +435,7 @@
             // label_TotalEquipment2
             // 
             this.label_TotalEquipment2.AutoSize = true;
-            this.label_TotalEquipment2.Location = new System.Drawing.Point(363, 575);
+            this.label_TotalEquipment2.Location = new System.Drawing.Point(419, 575);
             this.label_TotalEquipment2.Name = "label_TotalEquipment2";
             this.label_TotalEquipment2.Size = new System.Drawing.Size(13, 20);
             this.label_TotalEquipment2.TabIndex = 13;
@@ -443,9 +447,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(198, 575);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(159, 20);
+            this.label10.Size = new System.Drawing.Size(215, 20);
             this.label10.TabIndex = 12;
-            this.label10.Text = "Total Equipments :";
+            this.label10.Text = "Total Found Equipments :";
             // 
             // b_eAdd
             // 
@@ -573,7 +577,7 @@
             // label_TotalDamaged
             // 
             this.label_TotalDamaged.AutoSize = true;
-            this.label_TotalDamaged.Location = new System.Drawing.Point(697, 268);
+            this.label_TotalDamaged.Location = new System.Drawing.Point(697, 264);
             this.label_TotalDamaged.Name = "label_TotalDamaged";
             this.label_TotalDamaged.Size = new System.Drawing.Size(23, 20);
             this.label_TotalDamaged.TabIndex = 15;
@@ -582,7 +586,7 @@
             // label_TotalAvailable
             // 
             this.label_TotalAvailable.AutoSize = true;
-            this.label_TotalAvailable.Location = new System.Drawing.Point(226, 267);
+            this.label_TotalAvailable.Location = new System.Drawing.Point(226, 264);
             this.label_TotalAvailable.Name = "label_TotalAvailable";
             this.label_TotalAvailable.Size = new System.Drawing.Size(23, 20);
             this.label_TotalAvailable.TabIndex = 14;
@@ -591,7 +595,7 @@
             // label_TotalOnLoan
             // 
             this.label_TotalOnLoan.AutoSize = true;
-            this.label_TotalOnLoan.Location = new System.Drawing.Point(221, 24);
+            this.label_TotalOnLoan.Location = new System.Drawing.Point(221, 21);
             this.label_TotalOnLoan.Name = "label_TotalOnLoan";
             this.label_TotalOnLoan.Size = new System.Drawing.Size(23, 20);
             this.label_TotalOnLoan.TabIndex = 13;
@@ -713,9 +717,13 @@
             this.listView_onloanStatus.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chOL_Eid,
             this.chOL_Name,
-            this.chOL_Category});
+            this.chOL_Category,
+            this.chOL_PID,
+            this.chOL_PName,
+            this.chOL_LID,
+            this.chOL_PDuration});
             this.listView_onloanStatus.HideSelection = false;
-            this.listView_onloanStatus.Location = new System.Drawing.Point(22, 48);
+            this.listView_onloanStatus.Location = new System.Drawing.Point(22, 47);
             this.listView_onloanStatus.Name = "listView_onloanStatus";
             this.listView_onloanStatus.Size = new System.Drawing.Size(911, 201);
             this.listView_onloanStatus.TabIndex = 0;
@@ -726,17 +734,34 @@
             // chOL_Eid
             // 
             this.chOL_Eid.Text = "ID";
-            this.chOL_Eid.Width = 74;
+            this.chOL_Eid.Width = 85;
             // 
             // chOL_Name
             // 
             this.chOL_Name.Text = "Name";
-            this.chOL_Name.Width = 132;
+            this.chOL_Name.Width = 153;
             // 
             // chOL_Category
             // 
             this.chOL_Category.Text = "Category";
-            this.chOL_Category.Width = 238;
+            this.chOL_Category.Width = 202;
+            // 
+            // chOL_PID
+            // 
+            this.chOL_PID.Text = "Project ID";
+            this.chOL_PID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chOL_PID.Width = 85;
+            // 
+            // chOL_PName
+            // 
+            this.chOL_PName.Text = "Project Name";
+            this.chOL_PName.Width = 222;
+            // 
+            // chOL_PDuration
+            // 
+            this.chOL_PDuration.Text = "Duration";
+            this.chOL_PDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chOL_PDuration.Width = 75;
             // 
             // menuStrip1
             // 
@@ -786,6 +811,12 @@
             this.addCategoryToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.addCategoryToolStripMenuItem1.Text = "Add Category";
             this.addCategoryToolStripMenuItem1.Click += new System.EventHandler(this.addCategoryToolStripMenuItem1_Click);
+            // 
+            // chOL_LID
+            // 
+            this.chOL_LID.Text = "Leader ID";
+            this.chOL_LID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chOL_LID.Width = 85;
             // 
             // equipmentBindingSource
             // 
@@ -905,5 +936,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBox_FilterByCat;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ColumnHeader chOL_PID;
+        private System.Windows.Forms.ColumnHeader chOL_PName;
+        private System.Windows.Forms.ColumnHeader chOL_PDuration;
+        private System.Windows.Forms.ColumnHeader chOL_LID;
     }
 }
