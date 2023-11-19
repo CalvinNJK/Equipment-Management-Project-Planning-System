@@ -65,9 +65,9 @@
             this.ch_ID,
             this.ch_Name,
             this.ch_Desc,
-            this.ch_Category,
             this.ch_Cost,
             this.ch_CostPerDay,
+            this.ch_Category,
             this.ch_Status});
             this.ChooseEquipmentListView.Cursor = System.Windows.Forms.Cursors.Default;
             this.ChooseEquipmentListView.FullRowSelect = true;
@@ -76,7 +76,7 @@
             this.ChooseEquipmentListView.Location = new System.Drawing.Point(26, 244);
             this.ChooseEquipmentListView.Margin = new System.Windows.Forms.Padding(6);
             this.ChooseEquipmentListView.Name = "ChooseEquipmentListView";
-            this.ChooseEquipmentListView.Size = new System.Drawing.Size(1182, 510);
+            this.ChooseEquipmentListView.Size = new System.Drawing.Size(1182, 464);
             this.ChooseEquipmentListView.TabIndex = 8;
             this.ChooseEquipmentListView.UseCompatibleStateImageBehavior = false;
             this.ChooseEquipmentListView.View = System.Windows.Forms.View.Details;
@@ -130,7 +130,7 @@
             // 
             this.CreateProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CreateProject.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.CreateProject.Location = new System.Drawing.Point(1007, 765);
+            this.CreateProject.Location = new System.Drawing.Point(1007, 719);
             this.CreateProject.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CreateProject.Name = "CreateProject";
             this.CreateProject.Size = new System.Drawing.Size(201, 38);
@@ -302,7 +302,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 808);
+            this.ClientSize = new System.Drawing.Size(1234, 761);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.AddEqBtn);
