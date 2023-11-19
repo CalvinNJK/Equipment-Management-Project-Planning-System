@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -98,12 +99,25 @@ namespace EMPPS.Project_Planning
             if (ChooseEquipmentListView.CheckedItems.Count > 0)
             {
                 ListView.CheckedListViewItemCollection checkedItems = ChooseEquipmentListView.CheckedItems;
-                int index = 0;
+                
                 foreach (ListViewItem item in checkedItems)
                 {
-                    if (!EquipmentListBox.Items.Contains(item))
-                        EquipmentListBox.Items.Add(item.SubItems[index].Text);
+                    bool itemExists = false;
+                    foreach (var existingItem in EquipmentListBox.Items)
+                    {
+                        if (existingItem.ToString() == item.SubItems[0].Text)
+                        {
+                            itemExists = true;
+                            break;
+                        }
+                    }
+                    if (!itemExists)
+                    {
+                        EquipmentListBox.Items.Add(item.SubItems[0].Text);
+                        
+                    }
                 }
+                
             }
         }
 
@@ -253,6 +267,20 @@ namespace EMPPS.Project_Planning
             return budget;
         }
 
+        private void p_budget_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calBudgetBtn_Click(object sender, EventArgs e)
+        {
+            if (p_duration != null)
+            {
+                string[] eqList = EquipmentListBox.Items.OfType<string>().ToArray();
+                p_budget.Text = calculateBudget(int.Parse(p_duration.Text), eqList).ToString();
+
+            }
+        }
     }
     
 }

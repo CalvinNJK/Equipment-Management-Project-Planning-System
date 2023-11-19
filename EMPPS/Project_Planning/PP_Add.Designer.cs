@@ -54,6 +54,9 @@
             this.AddEqBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.budgetLabel = new System.Windows.Forms.Label();
+            this.p_budget = new System.Windows.Forms.Label();
+            this.calBudgetBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.p_duration)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,20 +97,23 @@
             // ch_Desc
             // 
             this.ch_Desc.Text = "Description";
-            this.ch_Desc.Width = 356;
+            this.ch_Desc.Width = 346;
             // 
             // ch_Category
             // 
+            this.ch_Category.DisplayIndex = 3;
             this.ch_Category.Text = "Category";
             this.ch_Category.Width = 174;
             // 
             // ch_Cost
             // 
+            this.ch_Cost.DisplayIndex = 4;
             this.ch_Cost.Text = "Cost";
             this.ch_Cost.Width = 100;
             // 
             // ch_CostPerDay
             // 
+            this.ch_CostPerDay.DisplayIndex = 5;
             this.ch_CostPerDay.Text = "Cost Per Day";
             this.ch_CostPerDay.Width = 142;
             // 
@@ -268,7 +274,7 @@
             // AddEqBtn
             // 
             this.AddEqBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.AddEqBtn.ForeColor = System.Drawing.Color.Green;
+            this.AddEqBtn.ForeColor = System.Drawing.Color.Olive;
             this.AddEqBtn.Location = new System.Drawing.Point(1007, 200);
             this.AddEqBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddEqBtn.Name = "AddEqBtn";
@@ -298,11 +304,47 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Leader ID";
             // 
+            // budgetLabel
+            // 
+            this.budgetLabel.AutoSize = true;
+            this.budgetLabel.Location = new System.Drawing.Point(24, 207);
+            this.budgetLabel.Name = "budgetLabel";
+            this.budgetLabel.Size = new System.Drawing.Size(180, 25);
+            this.budgetLabel.TabIndex = 30;
+            this.budgetLabel.Text = "Project Budget: RM";
+            // 
+            // p_budget
+            // 
+            this.p_budget.AutoSize = true;
+            this.p_budget.ForeColor = System.Drawing.Color.Green;
+            this.p_budget.Location = new System.Drawing.Point(366, 207);
+            this.p_budget.Name = "p_budget";
+            this.p_budget.Size = new System.Drawing.Size(50, 25);
+            this.p_budget.TabIndex = 31;
+            this.p_budget.Text = "0.00";
+            this.p_budget.Click += new System.EventHandler(this.p_budget_Click);
+            // 
+            // calBudgetBtn
+            // 
+            this.calBudgetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.calBudgetBtn.ForeColor = System.Drawing.Color.Green;
+            this.calBudgetBtn.Location = new System.Drawing.Point(451, 200);
+            this.calBudgetBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.calBudgetBtn.Name = "calBudgetBtn";
+            this.calBudgetBtn.Size = new System.Drawing.Size(219, 38);
+            this.calBudgetBtn.TabIndex = 32;
+            this.calBudgetBtn.Text = "Calculate Budget";
+            this.calBudgetBtn.UseVisualStyleBackColor = true;
+            this.calBudgetBtn.Click += new System.EventHandler(this.calBudgetBtn_Click);
+            // 
             // PP_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 761);
+            this.Controls.Add(this.calBudgetBtn);
+            this.Controls.Add(this.p_budget);
+            this.Controls.Add(this.budgetLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.AddEqBtn);
@@ -361,5 +403,8 @@
         private System.Windows.Forms.Button AddEqBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label budgetLabel;
+        private System.Windows.Forms.Label p_budget;
+        private System.Windows.Forms.Button calBudgetBtn;
     }
 }

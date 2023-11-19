@@ -53,6 +53,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ChooseEquipmentListView = new System.Windows.Forms.ListView();
+            this.p_budget = new System.Windows.Forms.Label();
+            this.budgetLabel = new System.Windows.Forms.Label();
+            this.calBudgetBtn = new System.Windows.Forms.Button();
+            this.UpProjBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.p_duration)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,6 +181,7 @@
             // 
             // p_id
             // 
+            this.p_id.Enabled = false;
             this.p_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.p_id.Location = new System.Drawing.Point(24, 37);
             this.p_id.Name = "p_id";
@@ -292,17 +297,69 @@
             this.ChooseEquipmentListView.Location = new System.Drawing.Point(24, 251);
             this.ChooseEquipmentListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ChooseEquipmentListView.Name = "ChooseEquipmentListView";
-            this.ChooseEquipmentListView.Size = new System.Drawing.Size(1182, 510);
+            this.ChooseEquipmentListView.Size = new System.Drawing.Size(1182, 464);
             this.ChooseEquipmentListView.TabIndex = 30;
             this.ChooseEquipmentListView.UseCompatibleStateImageBehavior = false;
             this.ChooseEquipmentListView.View = System.Windows.Forms.View.Details;
             this.ChooseEquipmentListView.SelectedIndexChanged += new System.EventHandler(this.ChooseEquipmentListView_SelectedIndexChanged);
             // 
+            // p_budget
+            // 
+            this.p_budget.AutoSize = true;
+            this.p_budget.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.p_budget.ForeColor = System.Drawing.Color.Green;
+            this.p_budget.Location = new System.Drawing.Point(364, 214);
+            this.p_budget.Name = "p_budget";
+            this.p_budget.Size = new System.Drawing.Size(50, 25);
+            this.p_budget.TabIndex = 50;
+            this.p_budget.Text = "0.00";
+            this.p_budget.Click += new System.EventHandler(this.p_budget_Click);
+            // 
+            // budgetLabel
+            // 
+            this.budgetLabel.AutoSize = true;
+            this.budgetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.budgetLabel.Location = new System.Drawing.Point(22, 214);
+            this.budgetLabel.Name = "budgetLabel";
+            this.budgetLabel.Size = new System.Drawing.Size(180, 25);
+            this.budgetLabel.TabIndex = 49;
+            this.budgetLabel.Text = "Project Budget: RM";
+            // 
+            // calBudgetBtn
+            // 
+            this.calBudgetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.calBudgetBtn.ForeColor = System.Drawing.Color.Green;
+            this.calBudgetBtn.Location = new System.Drawing.Point(449, 207);
+            this.calBudgetBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.calBudgetBtn.Name = "calBudgetBtn";
+            this.calBudgetBtn.Size = new System.Drawing.Size(219, 38);
+            this.calBudgetBtn.TabIndex = 51;
+            this.calBudgetBtn.Text = "Calculate Budget";
+            this.calBudgetBtn.UseVisualStyleBackColor = true;
+            this.calBudgetBtn.Click += new System.EventHandler(this.calBudgetBtn_Click);
+            // 
+            // UpProjBtn
+            // 
+            this.UpProjBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.UpProjBtn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.UpProjBtn.Location = new System.Drawing.Point(1007, 719);
+            this.UpProjBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.UpProjBtn.Name = "UpProjBtn";
+            this.UpProjBtn.Size = new System.Drawing.Size(201, 38);
+            this.UpProjBtn.TabIndex = 52;
+            this.UpProjBtn.Text = "Update Project";
+            this.UpProjBtn.UseVisualStyleBackColor = true;
+            this.UpProjBtn.Click += new System.EventHandler(this.UpProjBtn_Click);
+            // 
             // PP_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 816);
+            this.ClientSize = new System.Drawing.Size(1234, 761);
+            this.Controls.Add(this.UpProjBtn);
+            this.Controls.Add(this.calBudgetBtn);
+            this.Controls.Add(this.p_budget);
+            this.Controls.Add(this.budgetLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.AddEqBtn);
@@ -323,6 +380,7 @@
             this.Controls.Add(this.ChooseEquipmentListView);
             this.Name = "PP_Update";
             this.Text = "Update Project";
+            this.Load += new System.EventHandler(this.PP_Update_Load);
             ((System.ComponentModel.ISupportInitialize)(this.p_duration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,5 +414,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView ChooseEquipmentListView;
+        private System.Windows.Forms.Label p_budget;
+        private System.Windows.Forms.Label budgetLabel;
+        private System.Windows.Forms.Button calBudgetBtn;
+        private System.Windows.Forms.Button UpProjBtn;
     }
 }
