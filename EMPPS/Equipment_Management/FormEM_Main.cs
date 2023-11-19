@@ -650,6 +650,27 @@ namespace EMPPS.Equipment_Management
             // Update the ListView_onloanStatus
             listView_onloanStatus.Items.Clear();
             int totalOnLoan = 0;
+            /*
+                        foreach (var item in FileHandling.equipmentList)
+                        {
+                            if (item.E_Status == 1)
+                            {
+                                ListViewItem lvonloanEq = new ListViewItem(item.E_Id);
+                                lvonloanEq.SubItems.Add(item.E_Name);
+                                foreach (var ci in FileHandling.categoryList)
+                                {
+                                    if (item.E_Category == ci.C_Index)
+                                    {
+                                        lvonloanEq.SubItems.Add(ci.C_Name);
+                                    }
+
+                                }
+
+                                totalOnLoan += 1;
+                                listView_onloanStatus.Items.Add(lvonloanEq);
+                            }
+                        }
+            */
 
             foreach (var item in FileHandling.equipmentList)
             {
@@ -657,20 +678,35 @@ namespace EMPPS.Equipment_Management
                 {
                     ListViewItem lvonloanEq = new ListViewItem(item.E_Id);
                     lvonloanEq.SubItems.Add(item.E_Name);
+
                     foreach (var ci in FileHandling.categoryList)
                     {
                         if (item.E_Category == ci.C_Index)
                         {
                             lvonloanEq.SubItems.Add(ci.C_Name);
+                            break;
                         }
+                    }
 
+                    foreach (var project in FileHandling.projectList)
+                    {
+                        foreach (var eqLoan in project.P_EID)
+                        {
+                            if (string.Compare(eqLoan,item.E_Id) == 0)
+                            {
+                                lvonloanEq.SubItems.Add(project.P_ID);
+                                lvonloanEq.SubItems.Add(project.P_Name);
+                                lvonloanEq.SubItems.Add(project.P_LeaderId);
+                                lvonloanEq.SubItems.Add(project.P_Duration.ToString());
+                                break;
+                            }
+                        }
                     }
 
                     totalOnLoan += 1;
                     listView_onloanStatus.Items.Add(lvonloanEq);
                 }
             }
-
 
             // Update the listView_AvailableStatus
             listView_availableStatus.Items.Clear();
@@ -687,6 +723,7 @@ namespace EMPPS.Equipment_Management
                         if (item.E_Category == ci.C_Index)
                         {
                             lvAvailableEq.SubItems.Add(ci.C_Name);
+                            break;
                         }
 
                     }
@@ -712,6 +749,7 @@ namespace EMPPS.Equipment_Management
                         if (item.E_Category == ci.C_Index)
                         {
                             lvDamagedEq.SubItems.Add(ci.C_Name);
+                            break;
                         }
 
                     }
