@@ -112,11 +112,23 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Project_Planning\PP_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project_Planning\PP_Add.Designer.cs">
+      <DependentUpon>PP_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Project_Planning\PP_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Project_Planning\PP_Main.Designer.cs">
       <DependentUpon>PP_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Planning\PP_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project_Planning\PP_Update.Designer.cs">
+      <DependentUpon>PP_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Equipment_Management\FormCategory.resx">
@@ -140,8 +152,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Project_Planning\PP_Add.resx">
+      <DependentUpon>PP_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Project_Planning\PP_Main.resx">
       <DependentUpon>PP_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Planning\PP_Update.resx">
+      <DependentUpon>PP_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
