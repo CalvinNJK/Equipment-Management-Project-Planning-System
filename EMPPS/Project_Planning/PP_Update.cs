@@ -12,7 +12,8 @@ namespace EMPPS.Project_Planning
 {
     public partial class PP_Update : Form
     {
-        public PP_Update()
+        private string ID;
+        public PP_Update(ID)
         {
             InitializeComponent();
         }
