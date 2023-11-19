@@ -40,7 +40,7 @@ namespace EMPPS.Project_Planning
 
             foreach (var item in FileHandling.projectList)
             {
-                string p_eid = string.Join(".", item.P_EID);
+                string p_eid = string.Join(", ", item.P_EID);
 
                 ListViewItem lvi = new ListViewItem(item.P_ID);
                 lvi.SubItems.Add(item.P_Name);
@@ -48,7 +48,7 @@ namespace EMPPS.Project_Planning
                 lvi.SubItems.Add(item.P_LeaderId);
                 lvi.SubItems.Add(item.P_Duration.ToString());
                 lvi.SubItems.Add(item.P_Budget.ToString("0.00"));
-                lvi.SubItems.Add(item.P_Status.ToString());
+                lvi.SubItems.Add((item.P_Status == 0)? "Planning" : (item.P_Status == 1) ? "On Hold" : "Completed");
                 lvi.SubItems.Add(p_eid);
 
                 AllProjectListView.Items.Add(lvi);
