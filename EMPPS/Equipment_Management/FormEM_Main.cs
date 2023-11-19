@@ -36,11 +36,8 @@ namespace EMPPS.Equipment_Management
 
 
 
-
-
-
         //
-        // Menu
+        // Menu Bar
         //
         private void addEquipmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -63,6 +60,39 @@ namespace EMPPS.Equipment_Management
         }
 
 
+
+
+
+
+
+        //   ---------------------
+        //  | Equipment Inventory |
+        //   ---------------------
+
+        //
+        // ListView
+        //
+        private void listView_eq_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Toggle enable when item selected
+            if (listView_eq.SelectedItems.Count == 0)
+            {
+                b_eModify.Enabled = false;
+                b_eDelete.Enabled = false;
+            }
+            else
+            {
+                b_eModify.Enabled = true;
+                b_eDelete.Enabled = true;
+            }
+        }
+        
+
+        private void listView_eq_MouseDoubleClick(object sender, EventArgs e)
+        {
+            //Console.WriteLine($"{listView_eq.SelectedItems[0].Text} selected.");
+
+        }
 
 
 
@@ -261,58 +291,53 @@ namespace EMPPS.Equipment_Management
         }
 
 
-
-
-
-
-
-
-        //   ---------------------
-        //  | Equipment Inventory |
-        //   ---------------------
-
-        //
-        // ListView
-        //
-        private void listView_eq_SelectedIndexChanged(object sender, EventArgs e)
+        // Only Reload the listView_eq
+        void LoadReloadFUllListView_eq()
         {
-            // Toggle enable when item selected
-            if (listView_eq.SelectedItems.Count == 0)
+            // Update the ListView_eq
+            listView_eq.Items.Clear();
+            foreach (var item in FileHandling.equipmentList)
             {
-                b_eModify.Enabled = false;
-                b_eDelete.Enabled = false;
+                ListViewItem lvItem = new ListViewItem(item.E_Id);
+                lvItem.SubItems.Add(item.E_Name);
+                lvItem.SubItems.Add(item.E_Desc);
+
+                // Set Category index -> Category Name
+                foreach (var ci in FileHandling.categoryList)
+                {
+                    if (item.E_Category == ci.C_Index)
+                    {
+                        lvItem.SubItems.Add(ci.C_Name);
+                    }
+
+                }
+
+                lvItem.SubItems.Add(item.E_Cost.ToString("0.00"));
+                lvItem.SubItems.Add(item.E_CostPerDay.ToString("0.00"));
+
+                // Set Status index -> Status Name
+                lvItem.UseItemStyleForSubItems = false;
+                if (item.E_Status == 0)
+                {
+                    lvItem.SubItems.Add("Available");
+                    lvItem.SubItems[6].ForeColor = Color.Green;
+                }
+                else if (item.E_Status == 1)
+                {
+                    lvItem.SubItems.Add("On Loan");
+                    lvItem.SubItems[6].ForeColor = Color.Gray;
+                }
+                else if (item.E_Status == 2)
+                {
+                    lvItem.SubItems.Add("Damaged");
+                    lvItem.SubItems[6].ForeColor = Color.Red;
+                }
+
+                listView_eq.Items.Add(lvItem);
             }
-            else
-            {
-                b_eModify.Enabled = true;
-                b_eDelete.Enabled = true;
-            }
+
+            label_TotalEquipment2.Text = FileHandling.equipmentList.Count().ToString();
         }
-        
-
-
-
-
-
-        private void listView_eq_MouseDoubleClick(object sender, EventArgs e)
-        {
-            //Console.WriteLine($"{listView_eq.SelectedItems[0].Text} selected.");
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -377,6 +402,11 @@ namespace EMPPS.Equipment_Management
             b_eModify.Enabled = false;
             b_eDelete.Enabled = false;
         }
+
+
+
+
+
 
 
 
@@ -469,16 +499,14 @@ namespace EMPPS.Equipment_Management
 
 
 
-
-
         //
-        // Load/Reload all the views
+        // Load/Reload all the items
         //
         private void LoadReloadViews()
         {
-            //   ---------------------
-            //  | Equipment Inventory |
-            //   ---------------------
+            //   -----------
+            //  | Dashboard |
+            //   -----------
             int s_Available = 0;
             int s_Damaged = 0;
             int s_OnLoan = 0;
@@ -520,8 +548,6 @@ namespace EMPPS.Equipment_Management
 
             foreach (var result in query)
             {
-                //Console.WriteLine("Index: {0}, Count: {1}", result.Index, result.Count); // Console for debugging
-
                 foreach (var item in FileHandling.categoryList)
                 {
                     if (string.Compare(result.Index.ToString(), item.C_Index.ToString()) == 0)
@@ -542,7 +568,6 @@ namespace EMPPS.Equipment_Management
                 totalEqCost += item.E_Cost;
             }
             label_TotalEqCost.Text = totalEqCost.ToString("0.00");
-
 
 
 
@@ -614,7 +639,6 @@ namespace EMPPS.Equipment_Management
 
             // Update the labels
             label_TotalEquipment2.Text = FileHandling.equipmentList.Count().ToString();
-
 
 
 
@@ -703,56 +727,6 @@ namespace EMPPS.Equipment_Management
             label_TotalAvailable.Text = "(" + totalAvailable.ToString() + ")";
             label_TotalDamaged.Text = "(" + totalDamaged.ToString() + ")";
 
-        }
-
-        
-
-
-        void LoadReloadFUllListView_eq()
-        {
-            // Update the ListView_eq
-            listView_eq.Items.Clear();
-            foreach (var item in FileHandling.equipmentList)
-            {
-                ListViewItem lvItem = new ListViewItem(item.E_Id);
-                lvItem.SubItems.Add(item.E_Name);
-                lvItem.SubItems.Add(item.E_Desc);
-
-                // Set Category index -> Category Name
-                foreach (var ci in FileHandling.categoryList)
-                {
-                    if (item.E_Category == ci.C_Index)
-                    {
-                        lvItem.SubItems.Add(ci.C_Name);
-                    }
-
-                }
-
-                lvItem.SubItems.Add(item.E_Cost.ToString("0.00"));
-                lvItem.SubItems.Add(item.E_CostPerDay.ToString("0.00"));
-
-                // Set Status index -> Status Name
-                lvItem.UseItemStyleForSubItems = false;
-                if (item.E_Status == 0)
-                {
-                    lvItem.SubItems.Add("Available");
-                    lvItem.SubItems[6].ForeColor = Color.Green;
-                }
-                else if (item.E_Status == 1)
-                {
-                    lvItem.SubItems.Add("On Loan");
-                    lvItem.SubItems[6].ForeColor = Color.Gray;
-                }
-                else if (item.E_Status == 2)
-                {
-                    lvItem.SubItems.Add("Damaged");
-                    lvItem.SubItems[6].ForeColor = Color.Red;
-                }
-
-                listView_eq.Items.Add(lvItem);
-            }
-
-            label_TotalEquipment2.Text = FileHandling.equipmentList.Count().ToString();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace EMPPS.Equipment_Management
 {
     public partial class FormEquipmentModify : Form
     {
-        // ID passed from ListView_equipment
+        // ID passed from ListView_eq
         private string id;
 
         public FormEquipmentModify(string id)
@@ -54,7 +54,6 @@ namespace EMPPS.Equipment_Management
                             comboBox_cat.SelectedValue = ci.C_Index;
                             break;
                         }
-
                     }
                     break;
                 }

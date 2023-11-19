@@ -93,7 +93,6 @@ namespace EMPPS.Equipment_Management
                         {
                             FileHandling.categoryList.Remove(item);
                             Console.WriteLine("// REMOVED SELECTED CATEGORY: " + item.ToString());
-                            //Console.WriteLine("// Removed selected category: " + listView_c.SelectedItems[0].SubItems[1].Text + " " + listView_c.SelectedItems[0].Text);  // DO NOT USE THIS ANYMORE
                             // -----
                             LoadListView_c();
                             // -----
@@ -113,6 +112,7 @@ namespace EMPPS.Equipment_Management
             b_cModify.Enabled = false;
             b_cDelete.Enabled = false;
         }
+
 
 
 

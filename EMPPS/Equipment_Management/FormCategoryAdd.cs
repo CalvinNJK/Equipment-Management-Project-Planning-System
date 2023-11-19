@@ -25,6 +25,12 @@ namespace EMPPS.Equipment_Management
             Console.WriteLine("\n// Add Category Window Created");
         }
 
+
+
+
+        //
+        // Button
+        //
         private void button_Add_Click(object sender, EventArgs e)
         {
             bool check = false;
@@ -70,7 +76,5 @@ namespace EMPPS.Equipment_Management
             }
 
         }
-
-        
     }
 }
