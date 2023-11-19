@@ -210,7 +210,7 @@
             this.CreateProject.TabIndex = 32;
             this.CreateProject.Text = "Update Project";
             this.CreateProject.UseVisualStyleBackColor = true;
-            this.CreateProject.Click += new System.EventHandler(this.CreateProject_Click);
+            this.CreateProject.Click += new System.EventHandler(this.UpProjBtn_Click);
             // 
             // label1
             // 

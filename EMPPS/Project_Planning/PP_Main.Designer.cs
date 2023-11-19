@@ -45,12 +45,16 @@
             this.CreateProject = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.p_EID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.searchLabel = new System.Windows.Forms.Label();
+            this.filterByComboBox = new System.Windows.Forms.ComboBox();
             this.AllProjectTabPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllProjectTabPage
             // 
+            this.AllProjectTabPage.Controls.Add(this.filterByComboBox);
+            this.AllProjectTabPage.Controls.Add(this.searchLabel);
             this.AllProjectTabPage.Controls.Add(this.AllProjectListView);
             this.AllProjectTabPage.Controls.Add(this.AllProjectSearchBar);
             this.AllProjectTabPage.Controls.Add(this.b_eAdd);
@@ -130,12 +134,11 @@
             // AllProjectSearchBar
             // 
             this.AllProjectSearchBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.AllProjectSearchBar.Location = new System.Drawing.Point(27, 29);
+            this.AllProjectSearchBar.Location = new System.Drawing.Point(257, 25);
             this.AllProjectSearchBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AllProjectSearchBar.Name = "AllProjectSearchBar";
-            this.AllProjectSearchBar.Size = new System.Drawing.Size(360, 30);
+            this.AllProjectSearchBar.Size = new System.Drawing.Size(451, 30);
             this.AllProjectSearchBar.TabIndex = 1;
-            this.AllProjectSearchBar.Text = "Search Project";
             this.AllProjectSearchBar.TextChanged += new System.EventHandler(this.AllProjectSearchBar_TextChanged);
             // 
             // b_eAdd
@@ -205,6 +208,31 @@
             this.p_EID.Text = "Equipments";
             this.p_EID.Width = 152;
             // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(14, 28);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(236, 25);
+            this.searchLabel.TabIndex = 9;
+            this.searchLabel.Text = "Search By Project Name: ";
+            this.searchLabel.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // filterByComboBox
+            // 
+            this.filterByComboBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.filterByComboBox.FormattingEnabled = true;
+            this.filterByComboBox.Items.AddRange(new object[] {
+            "Planning",
+            "On Hold",
+            "Completed"});
+            this.filterByComboBox.Location = new System.Drawing.Point(952, 22);
+            this.filterByComboBox.Name = "filterByComboBox";
+            this.filterByComboBox.Size = new System.Drawing.Size(231, 33);
+            this.filterByComboBox.TabIndex = 10;
+            this.filterByComboBox.Text = "Filter By Project Status";
+            this.filterByComboBox.SelectedIndexChanged += new System.EventHandler(this.filterByComboBox_SelectedIndexChanged);
+            // 
             // PP_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -241,5 +269,7 @@
         private System.Windows.Forms.Button CreateProject;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ColumnHeader p_EID;
+        private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.ComboBox filterByComboBox;
     }
 }

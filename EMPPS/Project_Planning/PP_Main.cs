@@ -27,8 +27,34 @@ namespace EMPPS.Project_Planning
 
         private void AllProjectSearchBar_TextChanged(object sender, EventArgs e)
         {
+            searchFunc();
         }
 
+        private void filterByComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            searchFunc();
+        }
+
+        private void searchFunc()
+        {
+            if (AllProjectSearchBar.Text == "" && filterByComboBox.SelectedItem == null)
+            {
+                LoadPP_Main();
+            }
+            else if (AllProjectSearchBar.Text != "" &&  filterByComboBox.SelectedItem == null) 
+            {
+                List<ListViewItem> result = new List<ListViewItem>();
+                 foreach(ListViewItem item in AllProjectListView.Items)
+                {
+                    if(item.SubItems[1].ToString().ToLower().Contains(AllProjectSearchBar.Text.ToLower()))
+                    {
+                        result.Add(item);
+                    }
+                }
+                 AllProjectListView.Items.Clear();
+                AllProjectListView.Items.AddRange(result.ToArray());
+            }
+        }
         private void PP_Main_Load(object sender, EventArgs e)
         {
             LoadPP_Main();
@@ -153,5 +179,12 @@ namespace EMPPS.Project_Planning
                 DeleteProject.Enabled = true;
             }
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

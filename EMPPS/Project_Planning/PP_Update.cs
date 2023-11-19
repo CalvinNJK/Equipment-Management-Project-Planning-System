@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace EMPPS.Project_Planning
 {
@@ -140,12 +141,12 @@ namespace EMPPS.Project_Planning
 
         private void ChooseEquipmentListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            EquipmentListBox.Items.Clear();
+            
         }
 
         private void ClearEqBtn_Click(object sender, EventArgs e)
         {
-
+            EquipmentListBox.Items.Clear();
         }
 
         private void AddEqBtn_Click(object sender, EventArgs e)
