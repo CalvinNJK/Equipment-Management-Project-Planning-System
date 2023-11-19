@@ -109,7 +109,7 @@ namespace EMPPS
                     while ((line = readerProjectCSV.ReadLine()) != null)
                     {
                         string[] temp = line.Split(',');
-                        int[] eidArray = temp[7].Split('.').Select(int.Parse).ToArray();
+                        string[] eidArray = temp[7].Split('.');
                         projectList.Add(new Project(temp[0], temp[1], temp[2], temp[3], Int32.Parse(temp[4]), Double.Parse(temp[5]), Int32.Parse(temp[6]), eidArray));
                     }
                 }
@@ -203,7 +203,7 @@ namespace EMPPS
                 foreach (var item in FileHandling.projectList)
                 {
                     string[] eidArrayString = item.P_EID.Select(x=> x.ToString()).ToArray();
-                    string p_eid = string.Join(",", eidArrayString);
+                    string p_eid = string.Join(".", eidArrayString);
 
                     writerProjectCSV.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget},{item.P_Status},{p_eid}");
                     Console.WriteLine($"{item.P_ID},{item.P_Name},{item.P_Desc},{item.P_LeaderId},{item.P_Duration},{item.P_Budget},{item.P_Status},{p_eid}");

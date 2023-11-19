@@ -16,7 +16,7 @@ namespace EMPPS.Classes
         private int p_duration;
         private double p_budget;
         private int p_status;
-        private int[] p_eid;
+        private string[] p_eid;
 
         // Setter & Getter
         public string P_ID
@@ -57,7 +57,7 @@ namespace EMPPS.Classes
             set { p_status = value; }
         }
 
-        public int[] P_EID
+        public string[] P_EID
         {
             get { return p_eid; }
             set { p_eid = value; }
@@ -76,7 +76,7 @@ namespace EMPPS.Classes
             this.p_status = 0;
         }
 
-        public Project(string id, string name, string desc, string leaderid, int duration, double budget , int p_status, int[] p_eid)
+        public Project(string id, string name, string desc, string leaderid, int duration, double budget , int p_status, string[] p_eid)
         {
             this.p_id = id;
             this.p_name = name;
