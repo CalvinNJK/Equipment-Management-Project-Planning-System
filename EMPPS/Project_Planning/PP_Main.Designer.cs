@@ -30,6 +30,7 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.AllProjectTabPage = new System.Windows.Forms.TabPage();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.AllProjectListView = new System.Windows.Forms.ListView();
             this.p_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.p_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,22 +39,19 @@
             this.p_duration = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.p_budget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.p_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.p_EID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AllProjectSearchBar = new System.Windows.Forms.TextBox();
             this.b_eAdd = new System.Windows.Forms.Button();
             this.DeleteProject = new System.Windows.Forms.Button();
             this.ModifyProject = new System.Windows.Forms.Button();
             this.CreateProject = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.p_EID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.searchLabel = new System.Windows.Forms.Label();
-            this.filterByComboBox = new System.Windows.Forms.ComboBox();
             this.AllProjectTabPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllProjectTabPage
             // 
-            this.AllProjectTabPage.Controls.Add(this.filterByComboBox);
             this.AllProjectTabPage.Controls.Add(this.searchLabel);
             this.AllProjectTabPage.Controls.Add(this.AllProjectListView);
             this.AllProjectTabPage.Controls.Add(this.AllProjectSearchBar);
@@ -70,6 +68,16 @@
             this.AllProjectTabPage.Text = "All Project";
             this.AllProjectTabPage.UseVisualStyleBackColor = true;
             this.AllProjectTabPage.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(14, 28);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(236, 25);
+            this.searchLabel.TabIndex = 9;
+            this.searchLabel.Text = "Search By Project Name: ";
+            this.searchLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // AllProjectListView
             // 
@@ -130,6 +138,11 @@
             // 
             this.p_Status.Text = "Status";
             this.p_Status.Width = 87;
+            // 
+            // p_EID
+            // 
+            this.p_EID.Text = "Equipments";
+            this.p_EID.Width = 152;
             // 
             // AllProjectSearchBar
             // 
@@ -203,36 +216,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1209, 665);
             this.tabControl1.TabIndex = 5;
             // 
-            // p_EID
-            // 
-            this.p_EID.Text = "Equipments";
-            this.p_EID.Width = 152;
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(14, 28);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(236, 25);
-            this.searchLabel.TabIndex = 9;
-            this.searchLabel.Text = "Search By Project Name: ";
-            this.searchLabel.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // filterByComboBox
-            // 
-            this.filterByComboBox.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.filterByComboBox.FormattingEnabled = true;
-            this.filterByComboBox.Items.AddRange(new object[] {
-            "Planning",
-            "On Hold",
-            "Completed"});
-            this.filterByComboBox.Location = new System.Drawing.Point(952, 22);
-            this.filterByComboBox.Name = "filterByComboBox";
-            this.filterByComboBox.Size = new System.Drawing.Size(231, 33);
-            this.filterByComboBox.TabIndex = 10;
-            this.filterByComboBox.Text = "Filter By Project Status";
-            this.filterByComboBox.SelectedIndexChanged += new System.EventHandler(this.filterByComboBox_SelectedIndexChanged);
-            // 
             // PP_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -270,6 +253,5 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ColumnHeader p_EID;
         private System.Windows.Forms.Label searchLabel;
-        private System.Windows.Forms.ComboBox filterByComboBox;
     }
 }

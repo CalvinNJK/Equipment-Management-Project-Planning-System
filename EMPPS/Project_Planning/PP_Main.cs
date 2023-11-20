@@ -30,30 +30,29 @@ namespace EMPPS.Project_Planning
             searchFunc();
         }
 
-        private void filterByComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            searchFunc();
-        }
-
         private void searchFunc()
         {
-            if (AllProjectSearchBar.Text == "" && filterByComboBox.SelectedItem == null)
+            //Load All
+            if (AllProjectSearchBar.Text == "")
             {
                 LoadPP_Main();
             }
-            else if (AllProjectSearchBar.Text != "" &&  filterByComboBox.SelectedItem == null) 
+            //Seach Bar
+            else if (AllProjectSearchBar.Text != "") 
             {
+                
                 List<ListViewItem> result = new List<ListViewItem>();
-                 foreach(ListViewItem item in AllProjectListView.Items)
+                foreach (ListViewItem item in AllProjectListView.Items)
                 {
-                    if(item.SubItems[1].ToString().ToLower().Contains(AllProjectSearchBar.Text.ToLower()))
+                    if (item.SubItems[1].ToString().ToLower().Contains(AllProjectSearchBar.Text.ToLower()))
                     {
                         result.Add(item);
                     }
                 }
-                 AllProjectListView.Items.Clear();
+                AllProjectListView.Items.Clear();
                 AllProjectListView.Items.AddRange(result.ToArray());
             }
+            
         }
         private void PP_Main_Load(object sender, EventArgs e)
         {
