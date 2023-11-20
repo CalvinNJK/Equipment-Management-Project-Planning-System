@@ -214,7 +214,7 @@ namespace EMPPS.Project_Planning
 
                         }
                         FileHandling.projectList.Remove(item);
-                        MessageBox.Show(($"Project {item.P_ID} {item.P_Name} is deleted!"), "Successfully deleted", 0, MessageBoxIcon.Information);
+                        MessageBox.Show(($"Project ({item.P_ID} {item.P_Name}) is deleted!"), "Successfully deleted", 0, MessageBoxIcon.Information);
                         FileHandling.WriteAllEquipment();
                         FileHandling.WriteAllProject();
                         LoadPP_Main();

@@ -43,32 +43,37 @@ namespace EMPPS.Project_Planning
                         Console.WriteLine(item.P_EID.Length);
                         EquipmentListBox.Items.Add(item.P_EID[i]);
 
-                        //find equipment
-                        var matchingEq = FileHandling.equipmentList.First(v => v.E_Id == item.P_EID[i]);
-
-                        //add previous equipment into list view
-                        ListViewItem oldItem = new ListViewItem(matchingEq.E_Id);
-                        oldItem.SubItems.Add(matchingEq.E_Name);
-                        oldItem.SubItems.Add(matchingEq.E_Desc);
-                        oldItem.SubItems.Add(matchingEq.E_Cost.ToString("0.00"));
-                        oldItem.SubItems.Add(matchingEq.E_CostPerDay.ToString("0.00"));
-                        foreach (var ci in FileHandling.categoryList)
+                        if (item.P_EID.Length >0)
                         {
-                            if (matchingEq.E_Category == ci.C_Index)
+                            //find equipment
+                            var matchingEq = FileHandling.equipmentList.First(v => v.E_Id == item.P_EID[i]);
+
+                            //add previous equipment into list view
+                            ListViewItem oldItem = new ListViewItem(matchingEq.E_Id);
+                            oldItem.SubItems.Add(matchingEq.E_Name);
+                            oldItem.SubItems.Add(matchingEq.E_Desc);
+                            oldItem.SubItems.Add(matchingEq.E_Cost.ToString("0.00"));
+                            oldItem.SubItems.Add(matchingEq.E_CostPerDay.ToString("0.00"));
+                            foreach (var ci in FileHandling.categoryList)
                             {
-                                oldItem.SubItems.Add(ci.C_Name);
+                                if (matchingEq.E_Category == ci.C_Index)
+                                {
+                                    oldItem.SubItems.Add(ci.C_Name);
+                                }
+
+                            }
+                            oldItem.UseItemStyleForSubItems = false;
+                            if (matchingEq.E_Status == 1)
+                            {
+                                oldItem.SubItems.Add("On Loan");
+                                oldItem.SubItems[6].ForeColor = Color.Blue;
+                                oldItem.Checked = true;
                             }
 
-                        }
-                        oldItem.UseItemStyleForSubItems = false;
-                        if (matchingEq.E_Status == 1)
-                        {
-                            oldItem.SubItems.Add("On Loan");
-                            oldItem.SubItems[6].ForeColor = Color.Blue;
-                        }
 
-                        oldItem.Checked = true;
-                        ChooseEquipmentListView.Items.Add(oldItem);
+                            ChooseEquipmentListView.Items.Add(oldItem);
+                        }
+                        
                     }
                 }
             }
@@ -311,6 +316,7 @@ namespace EMPPS.Project_Planning
 
                 FileHandling.WriteAllEquipment();
                 FileHandling.WriteAllProject();
+                PP_Update_Load(sender, EventArgs.Empty);
                 this.Close();
             }
         }
