@@ -130,7 +130,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.label1.Location = new System.Drawing.Point(22, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Project ID";
             // 
@@ -153,7 +153,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(25, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 16);
+            this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Project Name";
             // 
@@ -163,7 +163,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 16);
+            this.label3.Size = new System.Drawing.Size(218, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Project Duration (Month)";
             // 
@@ -173,7 +173,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(794, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 16);
+            this.label4.Size = new System.Drawing.Size(214, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "Selected Equipment List";
             // 
@@ -188,7 +188,7 @@
             // 
             this.p_id.Location = new System.Drawing.Point(26, 45);
             this.p_id.Name = "p_id";
-            this.p_id.Size = new System.Drawing.Size(178, 26);
+            this.p_id.Size = new System.Drawing.Size(178, 30);
             this.p_id.TabIndex = 15;
             this.p_id.TextChanged += new System.EventHandler(this.p_id_TextChanged);
             // 
@@ -196,7 +196,7 @@
             // 
             this.p_name.Location = new System.Drawing.Point(26, 107);
             this.p_name.Name = "p_name";
-            this.p_name.Size = new System.Drawing.Size(390, 26);
+            this.p_name.Size = new System.Drawing.Size(390, 30);
             this.p_name.TabIndex = 16;
             this.p_name.TextChanged += new System.EventHandler(this.p_name_TextChanged);
             // 
@@ -204,7 +204,7 @@
             // 
             this.p_leaderID.Location = new System.Drawing.Point(237, 45);
             this.p_leaderID.Name = "p_leaderID";
-            this.p_leaderID.Size = new System.Drawing.Size(178, 26);
+            this.p_leaderID.Size = new System.Drawing.Size(178, 30);
             this.p_leaderID.TabIndex = 17;
             this.p_leaderID.TextChanged += new System.EventHandler(this.p_leaderID_TextChanged);
             // 
@@ -214,16 +214,16 @@
             this.p_desc.Name = "p_desc";
             this.p_desc.Size = new System.Drawing.Size(321, 166);
             this.p_desc.TabIndex = 18;
-            this.p_desc.Text = "Enter Project Description Here";
+            this.p_desc.Text = "";
             this.p_desc.TextChanged += new System.EventHandler(this.p_desc_TextChanged);
             // 
             // EquipmentListBox
             // 
             this.EquipmentListBox.FormattingEnabled = true;
-            this.EquipmentListBox.ItemHeight = 20;
+            this.EquipmentListBox.ItemHeight = 25;
             this.EquipmentListBox.Location = new System.Drawing.Point(797, 47);
             this.EquipmentListBox.Name = "EquipmentListBox";
-            this.EquipmentListBox.Size = new System.Drawing.Size(410, 164);
+            this.EquipmentListBox.Size = new System.Drawing.Size(410, 154);
             this.EquipmentListBox.TabIndex = 19;
             this.EquipmentListBox.SelectedIndexChanged += new System.EventHandler(this.EquipmentListBox_SelectedIndexChanged);
             // 
@@ -231,7 +231,7 @@
             // 
             this.p_duration.Location = new System.Drawing.Point(28, 177);
             this.p_duration.Name = "p_duration";
-            this.p_duration.Size = new System.Drawing.Size(178, 26);
+            this.p_duration.Size = new System.Drawing.Size(178, 30);
             this.p_duration.TabIndex = 21;
             this.p_duration.ValueChanged += new System.EventHandler(this.p_duration_ValueChanged);
             // 
@@ -241,7 +241,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(236, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 16);
+            this.label6.Size = new System.Drawing.Size(129, 20);
             this.label6.TabIndex = 22;
             this.label6.Text = "Project Status";
             // 
@@ -255,7 +255,7 @@
             "Completed"});
             this.p_status.Location = new System.Drawing.Point(239, 176);
             this.p_status.Name = "p_status";
-            this.p_status.Size = new System.Drawing.Size(179, 28);
+            this.p_status.Size = new System.Drawing.Size(179, 33);
             this.p_status.TabIndex = 23;
             this.p_status.Text = "Select Status";
             this.p_status.SelectedIndexChanged += new System.EventHandler(this.p_status_SelectedIndexChanged);
@@ -292,7 +292,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(25, 26);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 16);
+            this.label7.Size = new System.Drawing.Size(94, 20);
             this.label7.TabIndex = 27;
             this.label7.Text = "Project ID";
             // 
@@ -302,7 +302,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(234, 26);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 16);
+            this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 29;
             this.label8.Text = "Leader ID";
             // 
@@ -312,7 +312,7 @@
             this.budgetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.budgetLabel.Location = new System.Drawing.Point(24, 246);
             this.budgetLabel.Name = "budgetLabel";
-            this.budgetLabel.Size = new System.Drawing.Size(165, 20);
+            this.budgetLabel.Size = new System.Drawing.Size(198, 25);
             this.budgetLabel.TabIndex = 30;
             this.budgetLabel.Text = "Project Budget: RM";
             // 
@@ -323,7 +323,7 @@
             this.p_budget.ForeColor = System.Drawing.Color.Green;
             this.p_budget.Location = new System.Drawing.Point(195, 243);
             this.p_budget.Name = "p_budget";
-            this.p_budget.Size = new System.Drawing.Size(49, 24);
+            this.p_budget.Size = new System.Drawing.Size(62, 29);
             this.p_budget.TabIndex = 31;
             this.p_budget.Text = "0.00";
             this.p_budget.Click += new System.EventHandler(this.p_budget_Click);
@@ -347,13 +347,13 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(448, 26);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 16);
+            this.label9.Size = new System.Drawing.Size(172, 20);
             this.label9.TabIndex = 33;
             this.label9.Text = "Project Description";
             // 
             // PP_Add
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 870);
             this.Controls.Add(this.label9);

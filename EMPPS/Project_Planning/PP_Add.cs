@@ -248,7 +248,7 @@ namespace EMPPS.Project_Planning
                     FileHandling.equipmentList.FirstOrDefault(v => v.E_Id == eq).E_Status = 1;
                 }
                 FileHandling.projectList.Add(newProj);
-                MessageBox.Show(($"Project ({newProj.P_ID}: {newProj.P_Name} sucessfully created."), "Successful Created New Project", 0, MessageBoxIcon.Information);
+                MessageBox.Show(($"Project ({newProj.P_ID}: {newProj.P_Name}) sucessfully created."), "Successful Created New Project", 0, MessageBoxIcon.Information);
 
                 FileHandling.WriteAllEquipment();
                 FileHandling.WriteAllProject();

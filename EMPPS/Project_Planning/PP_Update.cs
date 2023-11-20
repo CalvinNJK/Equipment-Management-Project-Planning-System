@@ -307,7 +307,7 @@ namespace EMPPS.Project_Planning
                 }
                 
                 
-                MessageBox.Show(($"Project ({upProj.P_ID}: {upProj.P_Name} sucessfully created."), "Successful Created New Project", 0, MessageBoxIcon.Information);
+                MessageBox.Show(($"Project ({upProj.P_ID}: {upProj.P_Name}) sucessfully updated."), "Successful Update Project", 0, MessageBoxIcon.Information);
 
                 FileHandling.WriteAllEquipment();
                 FileHandling.WriteAllProject();
