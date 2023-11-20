@@ -147,6 +147,8 @@ namespace EMPPS.Project_Planning
                 AllProjectListView.Items.Add(lvi);
             }
             AllProjectListView.Sorting = SortOrder.Ascending;
+
+            filterComboBox.SelectedIndex = 0;
     }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

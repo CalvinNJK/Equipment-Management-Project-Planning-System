@@ -48,12 +48,14 @@
             this.ModifyProject = new System.Windows.Forms.Button();
             this.CreateProject = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label1 = new System.Windows.Forms.Label();
             this.AllProjectTabPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllProjectTabPage
             // 
+            this.AllProjectTabPage.Controls.Add(this.label1);
             this.AllProjectTabPage.Controls.Add(this.filterComboBox);
             this.AllProjectTabPage.Controls.Add(this.searchLabel);
             this.AllProjectTabPage.Controls.Add(this.AllProjectListView);
@@ -125,7 +127,7 @@
             // p_ID
             // 
             this.p_ID.Text = "ID";
-            this.p_ID.Width = 91;
+            this.p_ID.Width = 48;
             // 
             // p_Name
             // 
@@ -135,32 +137,32 @@
             // p_Desc
             // 
             this.p_Desc.Text = "Description";
-            this.p_Desc.Width = 299;
+            this.p_Desc.Width = 291;
             // 
             // p_LeaderID
             // 
             this.p_LeaderID.Text = "Leader ID";
-            this.p_LeaderID.Width = 112;
+            this.p_LeaderID.Width = 104;
             // 
             // p_duration
             // 
-            this.p_duration.Text = "Duration";
-            this.p_duration.Width = 100;
+            this.p_duration.Text = "Duration (Month)";
+            this.p_duration.Width = 162;
             // 
             // p_budget
             // 
-            this.p_budget.Text = "Budget (RM)";
-            this.p_budget.Width = 146;
+            this.p_budget.Text = "Total Budget (RM)";
+            this.p_budget.Width = 175;
             // 
             // p_Status
             // 
             this.p_Status.Text = "Status";
-            this.p_Status.Width = 87;
+            this.p_Status.Width = 101;
             // 
             // p_EID
             // 
             this.p_EID.Text = "Equipments";
-            this.p_EID.Width = 152;
+            this.p_EID.Width = 161;
             // 
             // AllProjectSearchBar
             // 
@@ -234,6 +236,15 @@
             this.tabControl1.Size = new System.Drawing.Size(1247, 737);
             this.tabControl1.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(993, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(208, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Filter By Project Status";
+            // 
             // PP_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -277,5 +288,6 @@
         private System.Windows.Forms.ColumnHeader p_EID;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.ComboBox filterComboBox;
+        private System.Windows.Forms.Label label1;
     }
 }
