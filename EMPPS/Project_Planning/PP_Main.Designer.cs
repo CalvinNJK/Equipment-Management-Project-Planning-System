@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PP_Main));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.AllProjectTabPage = new System.Windows.Forms.TabPage();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.searchLabel = new System.Windows.Forms.Label();
             this.AllProjectListView = new System.Windows.Forms.ListView();
             this.p_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,6 +54,7 @@
             // 
             // AllProjectTabPage
             // 
+            this.AllProjectTabPage.Controls.Add(this.filterComboBox);
             this.AllProjectTabPage.Controls.Add(this.searchLabel);
             this.AllProjectTabPage.Controls.Add(this.AllProjectListView);
             this.AllProjectTabPage.Controls.Add(this.AllProjectSearchBar);
@@ -60,15 +62,29 @@
             this.AllProjectTabPage.Controls.Add(this.DeleteProject);
             this.AllProjectTabPage.Controls.Add(this.ModifyProject);
             this.AllProjectTabPage.Controls.Add(this.CreateProject);
-            this.AllProjectTabPage.Location = new System.Drawing.Point(4, 29);
+            this.AllProjectTabPage.Location = new System.Drawing.Point(4, 34);
             this.AllProjectTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.AllProjectTabPage.Name = "AllProjectTabPage";
             this.AllProjectTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.AllProjectTabPage.Size = new System.Drawing.Size(1239, 704);
+            this.AllProjectTabPage.Size = new System.Drawing.Size(1239, 699);
             this.AllProjectTabPage.TabIndex = 0;
             this.AllProjectTabPage.Text = "All Project";
             this.AllProjectTabPage.UseVisualStyleBackColor = true;
             this.AllProjectTabPage.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // filterComboBox
+            // 
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Items.AddRange(new object[] {
+            "(All)",
+            "Planning",
+            "On Hold",
+            "Completed"});
+            this.filterComboBox.Location = new System.Drawing.Point(998, 40);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(219, 33);
+            this.filterComboBox.TabIndex = 10;
+            this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged);
             // 
             // searchLabel
             // 
@@ -76,9 +92,9 @@
             this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchLabel.Location = new System.Drawing.Point(14, 18);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(218, 20);
+            this.searchLabel.Size = new System.Drawing.Size(233, 25);
             this.searchLabel.TabIndex = 9;
-            this.searchLabel.Text = "Search By Project Name : ";
+            this.searchLabel.Text = "Search By Key Word : ";
             this.searchLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // AllProjectListView
@@ -152,7 +168,7 @@
             this.AllProjectSearchBar.Location = new System.Drawing.Point(18, 43);
             this.AllProjectSearchBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AllProjectSearchBar.Name = "AllProjectSearchBar";
-            this.AllProjectSearchBar.Size = new System.Drawing.Size(604, 26);
+            this.AllProjectSearchBar.Size = new System.Drawing.Size(604, 30);
             this.AllProjectSearchBar.TabIndex = 1;
             this.AllProjectSearchBar.TextChanged += new System.EventHandler(this.AllProjectSearchBar_TextChanged);
             // 
@@ -220,7 +236,7 @@
             // 
             // PP_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 735);
             this.Controls.Add(this.tabControl1);
@@ -260,5 +276,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ColumnHeader p_EID;
         private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.ComboBox filterComboBox;
     }
 }

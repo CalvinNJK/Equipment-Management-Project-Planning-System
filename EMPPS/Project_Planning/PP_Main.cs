@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Diagnostics.Eventing.Reader;
+using System.ComponentModel.Design;
 
 namespace EMPPS.Project_Planning
 {
@@ -25,35 +27,101 @@ namespace EMPPS.Project_Planning
 
         }
 
-        private void AllProjectSearchBar_TextChanged(object sender, EventArgs e)
-        {
-            searchFunc();
-        }
-
         private void searchFunc()
         {
             //Load All
-            if (AllProjectSearchBar.Text == "")
+            if (AllProjectSearchBar.Text == "" && filterComboBox.SelectedIndex == 0)
             {
                 LoadPP_Main();
             }
             //Seach Bar
-            else if (AllProjectSearchBar.Text != "") 
+            else if (AllProjectSearchBar.Text != "" && filterComboBox.SelectedIndex == 0)
             {
-                
-                List<ListViewItem> result = new List<ListViewItem>();
-                foreach (ListViewItem item in AllProjectListView.Items)
-                {
-                    if (item.SubItems[1].ToString().ToLower().Contains(AllProjectSearchBar.Text.ToLower()))
-                    {
-                        result.Add(item);
-                    }
-                }
                 AllProjectListView.Items.Clear();
-                AllProjectListView.Items.AddRange(result.ToArray());
+                foreach (var item in FileHandling.projectList)
+                {
+                    string p_eid = string.Join(", ", item.P_EID);
+
+                    if (item.P_ID.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_Name.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_Desc.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_LeaderId.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_Duration.ToString().Contains(AllProjectSearchBar.Text) ||
+                        item.P_Budget.ToString().Contains(AllProjectSearchBar.Text) ||
+                        item.P_Status.ToString().Contains(AllProjectSearchBar.Text) ||
+                        p_eid.Contains(AllProjectSearchBar.Text))
+                    {
+                        ListViewItem lvItem1 = new ListViewItem(item.P_ID);
+                        lvItem1.SubItems.Add(item.P_Name);
+                        lvItem1.SubItems.Add(item.P_Desc);
+                        lvItem1.SubItems.Add(item.P_LeaderId);
+                        lvItem1.SubItems.Add(item.P_Duration.ToString());
+                        lvItem1.SubItems.Add(item.P_Budget.ToString("0.00"));
+                        lvItem1.SubItems.Add((item.P_Status == 0) ? "Planning" : (item.P_Status == 1) ? "On Hold" : "Completed");
+                        lvItem1.SubItems.Add(p_eid);
+
+                        AllProjectListView.Items.Add(lvItem1);
+                    }
+                    AllProjectListView.Sorting = SortOrder.Ascending;
+                }
             }
-            
+            else if (AllProjectSearchBar.Text != "" && filterComboBox.SelectedIndex != 0)
+            {
+                AllProjectListView.Items.Clear();
+                foreach (var item in FileHandling.projectList)
+                {
+                    string p_eid = string.Join(", ", item.P_EID);
+
+                    if ((item.P_ID.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_Name.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_Desc.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_LeaderId.ToLower().Contains(AllProjectSearchBar.Text.ToLower()) ||
+                        item.P_Duration.ToString().Contains(AllProjectSearchBar.Text) ||
+                        item.P_Budget.ToString().Contains(AllProjectSearchBar.Text) ||
+                        item.P_Status.ToString().Contains(AllProjectSearchBar.Text) ||
+                        p_eid.Contains(AllProjectSearchBar.Text)) &&
+                        (item.P_Status+1).ToString() == filterComboBox.SelectedIndex.ToString())
+                    {
+                        ListViewItem lvItem1 = new ListViewItem(item.P_ID);
+                        lvItem1.SubItems.Add(item.P_Name);
+                        lvItem1.SubItems.Add(item.P_Desc);
+                        lvItem1.SubItems.Add(item.P_LeaderId);
+                        lvItem1.SubItems.Add(item.P_Duration.ToString());
+                        lvItem1.SubItems.Add(item.P_Budget.ToString("0.00"));
+                        lvItem1.SubItems.Add((item.P_Status == 0) ? "Planning" : (item.P_Status == 1) ? "On Hold" : "Completed");
+                        lvItem1.SubItems.Add(p_eid);
+
+                        AllProjectListView.Items.Add(lvItem1);
+                    }
+                    AllProjectListView.Sorting = SortOrder.Ascending;
+                }
+            }
+            else if (AllProjectSearchBar.Text == "" && filterComboBox.SelectedIndex != 0)
+            {
+                AllProjectListView.Items.Clear();
+                foreach (var item in FileHandling.projectList)
+                {
+                    string p_eid = string.Join(", ", item.P_EID);
+
+                    if ((item.P_Status+1).ToString() == filterComboBox.SelectedIndex.ToString())
+                    {
+                        ListViewItem lvItem1 = new ListViewItem(item.P_ID);
+                        lvItem1.SubItems.Add(item.P_Name);
+                        lvItem1.SubItems.Add(item.P_Desc);
+                        lvItem1.SubItems.Add(item.P_LeaderId);
+                        lvItem1.SubItems.Add(item.P_Duration.ToString());
+                        lvItem1.SubItems.Add(item.P_Budget.ToString("0.00"));
+                        lvItem1.SubItems.Add((item.P_Status == 0) ? "Planning" : (item.P_Status == 1) ? "On Hold" : "Completed");
+                        lvItem1.SubItems.Add(p_eid);
+
+                        AllProjectListView.Items.Add(lvItem1);
+                    }
+                    AllProjectListView.Sorting = SortOrder.Ascending;
+                }
+            }
         }
+    
+
         private void PP_Main_Load(object sender, EventArgs e)
         {
             LoadPP_Main();
@@ -73,13 +141,13 @@ namespace EMPPS.Project_Planning
                 lvi.SubItems.Add(item.P_LeaderId);
                 lvi.SubItems.Add(item.P_Duration.ToString());
                 lvi.SubItems.Add(item.P_Budget.ToString("0.00"));
-                lvi.SubItems.Add((item.P_Status == 0)? "Planning" : (item.P_Status == 1) ? "On Hold" : "Completed");
+                lvi.SubItems.Add((item.P_Status == 0) ? "Planning" : (item.P_Status == 1) ? "On Hold" : "Completed");
                 lvi.SubItems.Add(p_eid);
 
                 AllProjectListView.Items.Add(lvi);
             }
             AllProjectListView.Sorting = SortOrder.Ascending;
-        }
+    }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -185,6 +253,13 @@ namespace EMPPS.Project_Planning
 
         }
 
-        
+        private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            searchFunc();
+        }
+        private void AllProjectSearchBar_TextChanged(object sender, EventArgs e)
+        {
+            searchFunc();
+        }
     }
 }
