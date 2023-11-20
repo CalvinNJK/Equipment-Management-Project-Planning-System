@@ -78,6 +78,7 @@ namespace EMPPS.Project_Planning
 
                 AllProjectListView.Items.Add(lvi);
             }
+            AllProjectListView.Sorting = SortOrder.Ascending;
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -310,7 +310,6 @@ namespace EMPPS.Project_Planning
                 {
                     FileHandling.equipmentList.FirstOrDefault(v => v.E_Id == eq).E_Status = 1;
                 }
-                FileHandling.projectList.Add(upProj);
                 MessageBox.Show(($"Project ({upProj.P_ID}: {upProj.P_Name} sucessfully created."), "Successful Created New Project", 0, MessageBoxIcon.Information);
 
                 FileHandling.WriteAllEquipment();
