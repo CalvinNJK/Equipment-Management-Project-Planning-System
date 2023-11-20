@@ -40,13 +40,13 @@ namespace EMPPS.Project_Planning
                     p_status.SelectedIndex = item.P_Status;
                     for (int i = 0; i < item.P_EID.Length; i++)
                     {
+                        Console.WriteLine(item.P_EID.Length);
                         EquipmentListBox.Items.Add(item.P_EID[i]);
 
                         //find equipment
                         var matchingEq = FileHandling.equipmentList.First(v => v.E_Id == item.P_EID[i]);
 
                         //add previous equipment into list view
-                        ChooseEquipmentListView.Items.Clear();
                         ListViewItem oldItem = new ListViewItem(matchingEq.E_Id);
                         oldItem.SubItems.Add(matchingEq.E_Name);
                         oldItem.SubItems.Add(matchingEq.E_Desc);
