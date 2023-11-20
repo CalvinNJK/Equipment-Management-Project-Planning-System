@@ -61,10 +61,10 @@ namespace EMPPS.Project_Planning
 
                         }
                         oldItem.UseItemStyleForSubItems = false;
-                        if (matchingEq.E_Status == 0)
+                        if (matchingEq.E_Status == 1)
                         {
-                            oldItem.SubItems.Add("Available");
-                            oldItem.SubItems[6].ForeColor = Color.Green;
+                            oldItem.SubItems.Add("On Loan");
+                            oldItem.SubItems[6].ForeColor = Color.Blue;
                         }
 
                         oldItem.Checked = true;
@@ -97,6 +97,7 @@ namespace EMPPS.Project_Planning
                         lvItem.SubItems.Add("Available");
                         lvItem.SubItems[6].ForeColor = Color.Green;
                     }
+                    
 
 
                     ChooseEquipmentListView.Items.Add(lvItem);
