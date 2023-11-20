@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PP_Main));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.AllProjectTabPage = new System.Windows.Forms.TabPage();
             this.searchLabel = new System.Windows.Forms.Label();
@@ -59,11 +60,11 @@
             this.AllProjectTabPage.Controls.Add(this.DeleteProject);
             this.AllProjectTabPage.Controls.Add(this.ModifyProject);
             this.AllProjectTabPage.Controls.Add(this.CreateProject);
-            this.AllProjectTabPage.Location = new System.Drawing.Point(4, 34);
+            this.AllProjectTabPage.Location = new System.Drawing.Point(4, 29);
             this.AllProjectTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.AllProjectTabPage.Name = "AllProjectTabPage";
             this.AllProjectTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.AllProjectTabPage.Size = new System.Drawing.Size(1201, 627);
+            this.AllProjectTabPage.Size = new System.Drawing.Size(1239, 704);
             this.AllProjectTabPage.TabIndex = 0;
             this.AllProjectTabPage.Text = "All Project";
             this.AllProjectTabPage.UseVisualStyleBackColor = true;
@@ -72,11 +73,12 @@
             // searchLabel
             // 
             this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(14, 28);
+            this.searchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLabel.Location = new System.Drawing.Point(14, 18);
             this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(236, 25);
+            this.searchLabel.Size = new System.Drawing.Size(218, 20);
             this.searchLabel.TabIndex = 9;
-            this.searchLabel.Text = "Search By Project Name: ";
+            this.searchLabel.Text = "Search By Project Name : ";
             this.searchLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // AllProjectListView
@@ -95,10 +97,10 @@
             this.AllProjectListView.FullRowSelect = true;
             this.AllProjectListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.AllProjectListView.HideSelection = false;
-            this.AllProjectListView.Location = new System.Drawing.Point(19, 64);
+            this.AllProjectListView.Location = new System.Drawing.Point(18, 90);
             this.AllProjectListView.Margin = new System.Windows.Forms.Padding(4);
             this.AllProjectListView.Name = "AllProjectListView";
-            this.AllProjectListView.Size = new System.Drawing.Size(1164, 488);
+            this.AllProjectListView.Size = new System.Drawing.Size(1199, 551);
             this.AllProjectListView.TabIndex = 8;
             this.AllProjectListView.UseCompatibleStateImageBehavior = false;
             this.AllProjectListView.View = System.Windows.Forms.View.Details;
@@ -147,10 +149,10 @@
             // AllProjectSearchBar
             // 
             this.AllProjectSearchBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.AllProjectSearchBar.Location = new System.Drawing.Point(257, 25);
+            this.AllProjectSearchBar.Location = new System.Drawing.Point(18, 43);
             this.AllProjectSearchBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AllProjectSearchBar.Name = "AllProjectSearchBar";
-            this.AllProjectSearchBar.Size = new System.Drawing.Size(451, 30);
+            this.AllProjectSearchBar.Size = new System.Drawing.Size(604, 26);
             this.AllProjectSearchBar.TabIndex = 1;
             this.AllProjectSearchBar.TextChanged += new System.EventHandler(this.AllProjectSearchBar_TextChanged);
             // 
@@ -168,9 +170,9 @@
             // DeleteProject
             // 
             this.DeleteProject.Enabled = false;
-            this.DeleteProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteProject.ForeColor = System.Drawing.Color.Red;
-            this.DeleteProject.Location = new System.Drawing.Point(1054, 566);
+            this.DeleteProject.Location = new System.Drawing.Point(1088, 649);
             this.DeleteProject.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteProject.Name = "DeleteProject";
             this.DeleteProject.Size = new System.Drawing.Size(129, 47);
@@ -182,21 +184,21 @@
             // ModifyProject
             // 
             this.ModifyProject.Enabled = false;
-            this.ModifyProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModifyProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModifyProject.ForeColor = System.Drawing.Color.Green;
-            this.ModifyProject.Location = new System.Drawing.Point(917, 566);
+            this.ModifyProject.Location = new System.Drawing.Point(951, 649);
             this.ModifyProject.Margin = new System.Windows.Forms.Padding(4);
             this.ModifyProject.Name = "ModifyProject";
             this.ModifyProject.Size = new System.Drawing.Size(129, 47);
             this.ModifyProject.TabIndex = 3;
-            this.ModifyProject.Text = "Modify";
+            this.ModifyProject.Text = "Update";
             this.ModifyProject.UseVisualStyleBackColor = true;
             this.ModifyProject.Click += new System.EventHandler(this.ModifyProject_Click);
             // 
             // CreateProject
             // 
-            this.CreateProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.CreateProject.Location = new System.Drawing.Point(19, 566);
+            this.CreateProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProject.Location = new System.Drawing.Point(18, 649);
             this.CreateProject.Margin = new System.Windows.Forms.Padding(4);
             this.CreateProject.Name = "CreateProject";
             this.CreateProject.Size = new System.Drawing.Size(201, 47);
@@ -209,22 +211,27 @@
             // 
             this.tabControl1.Controls.Add(this.AllProjectTabPage);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(13, 13);
+            this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1209, 665);
+            this.tabControl1.Size = new System.Drawing.Size(1247, 737);
             this.tabControl1.TabIndex = 5;
             // 
             // PP_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 700);
+            this.ClientSize = new System.Drawing.Size(1245, 735);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PP_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Planning";
             this.Load += new System.EventHandler(this.PP_Main_Load);
             this.AllProjectTabPage.ResumeLayout(false);
