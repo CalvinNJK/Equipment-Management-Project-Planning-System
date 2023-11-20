@@ -198,7 +198,7 @@ namespace EMPPS
                 Console.WriteLine("| Write PROJECT.csv |");
                 Console.WriteLine(" --------------------");
                 
-                writerProjectCSV.WriteLine($"ID,NAME,DESCRIPTION,LEADER ID,DURATION,BUDGET,EQUIPMENT ID");   // Project Header Line
+                writerProjectCSV.WriteLine($"ID,NAME,DESCRIPTION,LEADER ID,DURATION,BUDGET,STATUS,EQUIPMENT IDs");   // Project Header Line
                 
                 foreach (var item in FileHandling.projectList)
                 {
