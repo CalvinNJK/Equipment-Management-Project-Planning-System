@@ -32,9 +32,9 @@
             this.ch_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Desc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Cost = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_CostPerDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.CreateProject = new System.Windows.Forms.Button();
@@ -99,12 +99,6 @@
             this.ch_Desc.Text = "Description";
             this.ch_Desc.Width = 346;
             // 
-            // ch_Category
-            // 
-            this.ch_Category.DisplayIndex = 3;
-            this.ch_Category.Text = "Category";
-            this.ch_Category.Width = 174;
-            // 
             // ch_Cost
             // 
             this.ch_Cost.DisplayIndex = 4;
@@ -116,6 +110,12 @@
             this.ch_CostPerDay.DisplayIndex = 5;
             this.ch_CostPerDay.Text = "Cost Per Day";
             this.ch_CostPerDay.Width = 142;
+            // 
+            // ch_Category
+            // 
+            this.ch_Category.DisplayIndex = 3;
+            this.ch_Category.Text = "Category";
+            this.ch_Category.Width = 174;
             // 
             // ch_Status
             // 
@@ -317,7 +317,7 @@
             // 
             this.p_budget.AutoSize = true;
             this.p_budget.ForeColor = System.Drawing.Color.Green;
-            this.p_budget.Location = new System.Drawing.Point(366, 207);
+            this.p_budget.Location = new System.Drawing.Point(300, 207);
             this.p_budget.Name = "p_budget";
             this.p_budget.Size = new System.Drawing.Size(50, 25);
             this.p_budget.TabIndex = 31;

@@ -295,7 +295,7 @@
             this.ChooseEquipmentListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.ChooseEquipmentListView.HideSelection = false;
             this.ChooseEquipmentListView.Location = new System.Drawing.Point(24, 251);
-            this.ChooseEquipmentListView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ChooseEquipmentListView.Margin = new System.Windows.Forms.Padding(6);
             this.ChooseEquipmentListView.Name = "ChooseEquipmentListView";
             this.ChooseEquipmentListView.Size = new System.Drawing.Size(1182, 464);
             this.ChooseEquipmentListView.TabIndex = 30;
@@ -308,7 +308,7 @@
             this.p_budget.AutoSize = true;
             this.p_budget.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.p_budget.ForeColor = System.Drawing.Color.Green;
-            this.p_budget.Location = new System.Drawing.Point(364, 214);
+            this.p_budget.Location = new System.Drawing.Point(297, 214);
             this.p_budget.Name = "p_budget";
             this.p_budget.Size = new System.Drawing.Size(50, 25);
             this.p_budget.TabIndex = 50;
