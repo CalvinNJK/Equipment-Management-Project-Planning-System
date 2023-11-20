@@ -282,22 +282,14 @@ namespace EMPPS.Project_Planning
                 string[] preEqList = upProj.P_EID;
                 string[] eqList = EquipmentListBox.Items.OfType<string>().ToArray();
 
-                int status = 0;
-                if (p_status.SelectedItem.ToString() == "Completed")
-                {
-                    status = 0;
-                }
-                else
-                {
-                    status = 1;
-                }
+                int status = (p_status.SelectedItem.ToString() == "Completed") ? 0 : 1;
 
                 upProj.P_Name = p_name.Text;
                 upProj.P_Desc = p_desc.Text;
                 upProj.P_LeaderId = p_leaderID.Text;
                 upProj.P_Duration = int.Parse(p_duration.Text);
                 upProj.P_Budget = calculateBudget(upProj.P_Duration, eqList);
-                upProj.P_Status = status;
+                upProj.P_Status = p_status.SelectedIndex;
                 upProj.P_EID = eqList;
 
                 //change previous equipment loan -> available
@@ -308,8 +300,13 @@ namespace EMPPS.Project_Planning
                 // change selected equipment status -> on loan
                 foreach (var eq in eqList)
                 {
-                    FileHandling.equipmentList.FirstOrDefault(v => v.E_Id == eq).E_Status = 1;
+                    if (p_status.SelectedIndex == 2)
+                        FileHandling.equipmentList.FirstOrDefault(s => s.E_Id == eq).E_Status = 0;
+                    else
+                        FileHandling.equipmentList.FirstOrDefault(v => v.E_Id == eq).E_Status = 1;
                 }
+                
+                
                 MessageBox.Show(($"Project ({upProj.P_ID}: {upProj.P_Name} sucessfully created."), "Successful Created New Project", 0, MessageBoxIcon.Information);
 
                 FileHandling.WriteAllEquipment();
