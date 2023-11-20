@@ -277,7 +277,7 @@ namespace EMPPS.Project_Planning
             if (p_duration != null)
             {
                 string[] eqList = EquipmentListBox.Items.OfType<string>().ToArray();
-                p_budget.Text = calculateBudget(int.Parse(p_duration.Text), eqList).ToString();
+                p_budget.Text = calculateBudget(int.Parse(p_duration.Text), eqList).ToString("0.00");
 
             }
         }
